@@ -1,0 +1,9 @@
+'1539635709699':
+  alias: Jans test
+  sequence:
+  - condition: state
+    entity_id: device_tracker.jennysiphonejanslandetfunkarnu
+    state: home
+  - data:
+      entity_id: switch.Nr4
+    service: switch.turn_on

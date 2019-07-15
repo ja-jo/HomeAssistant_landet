@@ -1,0 +1,140 @@
+  lampor:
+    name: Lampor
+    entities:
+      - switch.Kallardorr
+      - switch.Nr5
+      - light.yeelight_color2_04cf8ca0152b
+      - light.yeelink_light_color2_miio132949501
+
+  parkering:
+    name: Parkering
+    entities:
+      - switch.Nr5
+  varme:
+    name: Varme
+    entities:
+      - switch.Nr6
+      - switch.Nr7
+  termostatelement:
+    name: Termostatelement
+    entities:
+      - switch.Nr4
+      - switch.Nr8
+      - switch.Nr9
+  jans:
+    name: Jans enheter
+    view: no
+    entities:
+      - device_tracker.jan
+      - device_tracker.jdasus
+      - device_tracker.jdasusbt
+      - device_tracker.janshonor9
+      - device_tracker.plkl01d618ed6d547a50a1
+  familjen:
+    name: Familjen
+    view: no
+    entities:
+      - device_tracker.jan
+      - device_tracker.jdasus
+      - device_tracker.jdasusbt
+      - device_tracker.janshonor9
+      - device_tracker.pelle
+      - device_tracker.galaxy_s6_edge
+      - device_tracker.galaxys6janslandetfunkarnu
+      - device_tracker.samsunggalaxys7janslandetfunkarnu
+      - device_tracker.plkl01d618ed6d547a50a1
+      - device_tracker.fiasdatorjanslandetfunkarnu
+      - device_tracker.desktoptipt83c
+
+  heaterak:
+    name: Heater AK
+    icon: mdi:alarm
+    view: yes
+    entities:
+      - group.mvak
+      - group.mvak2
+      - group.temp
+      - group.nattsankning
+      - group.varme
+      - group.termostatelement
+      - group.altandorrvakt
+      - climate.innetemp
+      - light.yeelight_color2_04cf8ca0152b
+      
+  mvak:
+    name: "Stugtimer1"
+    entities:
+      - sensor.departuretime_ak
+      - sensor.heater_start_time_ak
+      - input_number.heater_ak_hour
+      - input_number.heater_ak_minutes
+      - input_number.heating_temperature
+      - input_boolean.heating_timer
+      #- switch.nr4
+
+  mvak2:
+    name: "Stugtimer2"
+    entities:
+      - sensor.departuretime_ak2
+      - sensor.heater_start_time_ak2
+      - input_number.heater_ak2_hour
+      - input_number.heater_ak2_minutes
+      - input_number.heating_temperature2
+      - input_boolean.heating_timer2
+
+  nattsankning:
+    name: "Nattsankning 00-06"
+    entities:
+      - input_number.heating_dag
+      - input_number.heating_natt
+      - input_boolean.nattsankning_switch
+
+  husv:
+    name: "Stugvarme"
+    entities:
+      - sensor.departuretime_ak3
+      - sensor.heater_start_time_ak3
+      - input_number.heater_ak3_hour
+      - input_number.heater_ak3_minutes
+      - input_number.heating_temperature3
+      - input_boolean.heating_timer3
+
+  temp:
+    name: "Temp"
+    entities:
+      - sensor.inne_temperature
+      - sensor.ute_temperature
+      - sensor.yr_temperature
+      - sensor.kallar_temp
+      - sensor.kallar_fukt
+      - sensor.inne_temp1
+#      - sensor.inne_temp2
+#      - sensor.inne_temp2_offset
+      - sensor.temp_ute1
+      - sensor.xiaomi_temp
+      - sensor.xiaomi_fukt
+      - sensor.altandorr_temperature
+
+  testaut:
+    name: "Testautomater"
+    entities:
+      - automation.test1
+      - automation.test10
+      - automation.test2
+      - automation.test_pa
+      - automation.testjan2
+      - automation.husvarme
+      - automation.under5plus
+      - automation.under0
+      - automation.under5minus
+      - automation.pa13_om_under_5minus
+      - automation.pa15_om_under_0
+      - automation.pa_16_om_under5
+
+  altandorrvakt:
+    name: "Vakt for altandorr"
+    entities:
+      - input_number.varme_on_offset
+      - input_number.varme_off_offset
+      - automation.vakt_for_altandorren
+

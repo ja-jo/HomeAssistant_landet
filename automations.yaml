@@ -1,0 +1,121 @@
+- id: '1530605854807'
+  alias: Solnedgång
+  trigger:
+  - event: sunset
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: group.all_devices
+    state: home
+  action:
+  - data:
+      entity_id: group.lampor
+    service: switch.turn_on
+- id: '1530606991408'
+  alias: Efter midnatt
+  trigger:
+  - at: 00:30:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.lampor
+    service: switch.turn_off
+- id: '1530607106033'
+  alias: Test1
+  trigger:
+  - at: '15:32:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: group.all_devices
+    state: home
+  action:
+  - data:
+      entity_id: switch.Nr4
+    service: switch.turn_on
+- id: '1530607183376'
+  alias: Test2
+  trigger:
+  - event_data:
+      entity_id: switch.Nr4
+    event_type: 'to: "home"'
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: switch.Nr4
+    service: switch.turn_on
+- id: '1530651265283'
+  alias: Testjan2
+  trigger:
+  - entity_id: device_tracker.jan
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition: []
+  action:
+  - data:
+      entity_id: switch.Nr4
+    service: switch.turn_off
+- id: '1534023708995'
+  alias: Efter midnatt2
+  trigger:
+  - at: 00:50:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: group.lampor
+    service: switch.turn_off
+  - data:
+      entity_id: switch.nr4
+    service: switch.turn_off
+- id: '1535569899687'
+  alias: På13_om_under_5minus
+  trigger:
+  - at: '13:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: switch.nr4
+    state: 'on'
+  - below: '-5'
+    condition: numeric_state
+    entity_id: sensor.yr_temperature
+  action:
+  - data:
+      entity_id: group.varme
+    service: switch.turn_on
+- id: '1538683673824'
+  alias: På15_om_under_0
+  trigger:
+  - at: '15:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: switch.nr4
+    state: 'on'
+  - below: '0'
+    condition: numeric_state
+    entity_id: sensor.yr_temperature
+  action:
+  - data:
+      entity_id: group.varme
+    service: switch.turn_on
+- id: '1538685565464'
+  alias: På_16_om_under5
+  trigger:
+  - at: '16:00:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: switch.nr4
+    state: 'on'
+  - below: '5'
+    condition: numeric_state
+    entity_id: sensor.yr_temperature
+  action:
+  - data:
+      entity_id: group.varme
+    service: switch.turn_on

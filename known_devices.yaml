@@ -1,0 +1,600 @@
+
+jan:
+  hide_if_away: false
+  icon:
+  mac: 70:8A:09:D8:D5:45
+  name: Jans-Honor9
+  picture:
+  track: true
+
+janshonor9:
+  hide_if_away: false
+  icon:
+  mac: BT_70:8A:09:D8:DB:9A
+  name: Jans-Honor9-BT
+  picture:
+  track: false
+
+4grjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 00:16:A6:12:1D:E8
+  name: 4GR.jans-landet.funkar.nu
+  picture:
+  track: false
+
+d0e782f75ab0:
+  hide_if_away: false
+  icon:
+  mac: D0:E7:82:F7:5A:B0
+  name: d0e782f75ab0
+  picture:
+  track: false
+
+pelle:
+  hide_if_away: false
+  icon:
+  mac: EC:9B:F3:4F:6D:C6
+  name: Pelles-Samsung
+  picture:
+  track: true
+
+jdasusbt:
+  hide_if_away: false
+  icon:
+  mac: BT_94:A1:A2:BA:0E:03
+  name: JD-ASUS-BT
+  picture:
+  track: false
+
+jdasus:
+  hide_if_away: false
+  icon:
+  mac: 94:A1:A2:BA:0E:02
+  name: JD-ASUS
+  picture:
+  track: true
+
+adminsiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: B0:CA:68:24:AE:F4
+  name: Admins-iPhone
+  picture:
+  track: true
+
+medicarrieripadjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: E0:B9:BA:F0:DB:5C
+  name: Medicarrier-iPad
+  picture:
+  track: false
+
+kundtjatsiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: AC:1F:74:57:80:2B
+  name: KundtjatsiPhone
+  picture:
+  track: true
+
+fiasdatorjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 08:11:96:1F:A8:84
+  name: Fias-dator
+  picture:
+  track: true
+
+samsunggalaxys7janslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 2C:0E:3D:5E:63:BE
+  name: Samsung-Galaxy-S7
+  picture:
+  track: true
+
+galaxys6janslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: A4:08:EA:A7:B1:0C
+  name: Galaxy-S6
+  picture:
+  track: true
+
+galaxy_s6_edge:
+  hide_if_away: false
+  icon:
+  mac: BT_84:2E:27:8D:08:CA
+  name: Galaxy S6 edge+
+  picture:
+  track: false
+
+android7cb43713e34e635djanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 78:C3:E9:90:49:B2
+  name: android-7cb43713e34e635d.jans-landet.funkar.nu
+  picture:
+  track: true
+
+calypsosipadjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 34:12:98:70:CF:ED
+  name: Calypsos-iPad
+  picture:
+  track: true
+
+jakobsiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 64:70:33:3D:13:FC
+  name: Jakobs-iPhone
+  picture:
+  track: true
+
+liziphone6sjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 0C:D7:46:95:73:67
+  name: Liz-iPhone-6S
+  picture:
+  track: true
+
+ullasipohanssonjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: CC:78:5F:BF:93:30
+  name: UllasiPohansson
+  picture:
+  track: true
+
+michaelsiphone2janslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 38:CA:DA:6B:AC:89
+  name: MichaelsiPhone2
+  picture:
+  track: true
+
+vw_phone:
+  hide_if_away: false
+  icon:
+  mac: BT_00:26:7E:4D:23:32
+  name: VW PHONE
+  picture:
+  track: true
+
+petersuallsipadjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 60:D9:C7:9E:41:BE
+  name: PeterSuallsiPad
+  picture:
+  track: true
+
+petersulsiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: F0:79:60:6A:B3:3A
+  name: PeterSulsiPhone
+  picture:
+  track: true
+
+melvinsiphone6sjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 44:00:10:01:57:D9
+  name: MelvinsiPhone6S
+  picture:
+  track: true
+
+leahsiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 78:67:D7:37:5D:7E
+  name: Leahs-iPhone
+  picture:
+  track: true
+
+annsiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: D0:D2:B0:53:98:78
+  name: Anns-Iphone
+  picture:
+  track: true
+
+daniels_jobbipad:
+  hide_if_away: false
+  icon:
+  mac: BT_C0:B6:58:D3:3B:F0
+  name: Daniels jobbipad
+  picture:
+  track: false
+
+jennysiphonejanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: CC:44:63:1B:09:F0
+  name: Jennys-iPhone
+  picture:
+  track: true
+
+pellesdatorjanslandetfunkarnu:
+  hide_if_away: false
+  icon:
+  mac: 24:BE:05:1C:E2:EF
+  name: Pelles-dator
+  picture:
+  track: true
+
+78baf97911a9:
+  hide_if_away: false
+  icon:
+  mac: 78:BA:F9:79:11:A9
+  name: 78baf97911a9
+  picture:
+  track: false
+
+jansraspberrypi:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:05:58:0E
+  name: jans-raspberrypi
+  picture:
+  track: false
+
+iphone:
+  hide_if_away: false
+  icon:
+  mac: 98:9E:63:65:29:ED
+  name: iPhone
+  picture:
+  track: true
+
+desktoptipt83c:
+  hide_if_away: false
+  icon:
+  mac: 60:67:20:AA:2D:A8
+  name: Karins dator
+  picture:
+  track: true
+
+samsunggalaxys7:
+  hide_if_away: false
+  icon:
+  mac: 04:D6:AA:47:5D:42
+  name: Samsung-Galaxy-S7
+  picture:
+  track: true
+
+jennysipad:
+  hide_if_away: false
+  icon:
+  mac: F0:24:75:2F:51:6C
+  name: Jennys-iPad
+  picture:
+  track: true
+
+galaxya32017:
+  hide_if_away: false
+  icon:
+  mac: 4C:DD:31:B8:E3:06
+  name: Galaxy-A3-2017
+  picture:
+  track: true
+
+adminsiphone:
+  hide_if_away: false
+  icon:
+  mac: 48:60:BC:DA:BE:79
+  name: Admins-iPhone
+  picture:
+  track: true
+
+annasipad:
+  hide_if_away: false
+  icon:
+  mac: A4:E9:75:7A:F3:19
+  name: Annas-iPad
+  picture:
+  track: true
+
+749eaf1d025f:
+  hide_if_away: false
+  icon:
+  mac: 74:9E:AF:1D:02:5F
+  name: 749eaf1d025f
+  picture:
+  track: true
+
+iphone_2:
+  hide_if_away: false
+  icon:
+  mac: C0:B6:58:4D:2D:4A
+  name: iPhone
+  picture:
+  track: true
+
+danielsjobbipad:
+  hide_if_away: false
+  icon:
+  mac: C0:B6:58:CD:E8:01
+  name: Danielsjobbipad
+  picture:
+  track: true
+
+'21078644':
+  hide_if_away: false
+  icon:
+  mac: 88:66:A5:D7:34:F2
+  name: '21078644'
+  picture:
+  track: true
+
+routerasuscom:
+  hide_if_away: false
+  icon:
+  mac: 60:45:CB:5B:CA:A0
+  name: router.asus.com
+  picture:
+  track: false
+
+plkl01d618ed6d547a50a1:
+  hide_if_away: false
+  icon:
+  mac: 24:DF:6A:44:22:75
+  name: Jans-Honor7
+  picture:
+  track: true
+
+christisvensson:
+  hide_if_away: false
+  icon:
+  mac: 2C:F0:A2:8A:43:29
+  name: ChristiSvensson
+  picture:
+  track: true
+
+noelsunlsiphone:
+  hide_if_away: false
+  icon:
+  mac: 14:20:5E:28:CC:13
+  name: NoelSunlsiPhone
+  picture:
+  track: true
+
+janshp2:
+  hide_if_away: false
+  icon:
+  mac: 08:11:96:36:94:D0
+  name: jans-hp2
+  picture:
+  track: true
+
+android80838d3bb81f3a3f:
+  hide_if_away: false
+  icon:
+  mac: E8:99:C4:9E:F0:82
+  name: android-80838d3bb81f3a3f
+  picture:
+  track: false
+
+androidca9380fce0dfc6e0:
+  hide_if_away: false
+  icon:
+  mac: 40:40:A7:5E:EE:26
+  name: android-ca9380fce0dfc6e0
+  picture:
+  track: true
+
+24240e48da9c:
+  hide_if_away: false
+  icon:
+  mac: 24:24:0E:48:DA:9C
+  name: 24240e48da9c
+  picture:
+  track: true
+
+galaxya32017_2:
+  hide_if_away: false
+  icon:
+  mac: 88:BD:45:53:33:2F
+  name: Galaxy-A3-2017
+  picture:
+  track: true
+
+android_fb076e124a83f2b1:
+  hide_if_away: false
+  icon:
+  mac: 1C:B0:94:A6:36:6D
+  name: Android_klocka
+  picture:
+  track: false
+
+esp_d696ba:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:D6:96:BA
+  name: ESP D696BA
+  picture:
+  track: false
+
+esp_83e137:
+  hide_if_away: false
+  icon:
+  mac: 84:0D:8E:83:E1:37
+  name: ESP 83E137
+  picture:
+  track: false
+
+a4_c0_e1_ae_85_14:
+  hide_if_away: false
+  icon:
+  mac: A4:C0:E1:AE:85:14
+  name: a4 c0 e1 ae 85 14
+  picture:
+  track: true
+
+58_bd_a3_f7_21_96:
+  hide_if_away: false
+  icon:
+  mac: 58:BD:A3:F7:21:96
+  name: 58 bd a3 f7 21 96
+  picture:
+  track: true
+
+desktop_k2loi13:
+  hide_if_away: false
+  icon:
+  mac: 34:02:86:7D:EC:4A
+  name: DESKTOP-K2LOI13
+  picture:
+  track: true
+
+18_67_b0_10_1e_47:
+  hide_if_away: false
+  icon:
+  mac: 18:67:B0:10:1E:47
+  name: 18 67 b0 10 1e 47
+  picture:
+  track: true
+
+jans_zero:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:7A:1F:98
+  name: jans-zero
+  picture:
+  track: false
+
+galaxy_a8_2018:
+  hide_if_away: false
+  icon:
+  mac: C0:BD:C8:EF:66:D3
+  name: Galaxy-A8-2018
+  picture:
+  track: true
+
+huawei_p_smart_2019_c2d61:
+  hide_if_away: false
+  icon:
+  mac: F4:63:1F:26:7D:C8
+  name: HUAWEI P smart 2019-c2d61
+  picture:
+  track: true
+
+smode_yd06kmp6:
+  hide_if_away: false
+  icon:
+  mac: D0:C6:37:31:AB:6E
+  name: SMODE-YD06KMP6
+  picture:
+  track: true
+
+smode_yd06kmlh:
+  hide_if_away: false
+  icon:
+  mac: D0:C6:37:37:91:14
+  name: SMODE-YD06KMLH
+  picture:
+  track: true
+
+galaxy_a3_2017:
+  hide_if_away: false
+  icon:
+  mac: 88:BD:45:F8:B1:2A
+  name: Galaxy-A3-2017
+  picture:
+  track: true
+
+jennys_iphone:
+  hide_if_away: false
+  icon:
+  mac: F8:2D:7C:5E:3B:D2
+  name: Jennys-iPhone
+  picture:
+  track: true
+
+android_7c5557a452dbc782:
+  hide_if_away: false
+  icon:
+  mac: 30:C7:AE:64:74:85
+  name: android-7c5557a452dbc782
+  picture:
+  track: true
+
+galaxy_s7_edge:
+  hide_if_away: false
+  icon:
+  mac: 2C:0E:3D:7C:A3:D3
+  name: Galaxy-S7-edge
+  picture:
+  track: false
+
+samsung_galaxy_s7:
+  hide_if_away: false
+  icon:
+  mac: AC:5F:3E:4D:B1:B2
+  name: Samsung-Galaxy-S7
+  picture:
+  track: true
+
+michaels_iphone:
+  hide_if_away: false
+  icon:
+  mac: E4:B2:FB:44:A3:28
+  name: Michaels-iPhone
+  picture:
+  track: true
+
+gits_dator:
+  hide_if_away: false
+  icon:
+  mac: C4:85:08:22:82:6A
+  name: GITS-DATOR
+  picture:
+  track: true
+
+galaxy_s6:
+  hide_if_away: false
+  icon:
+  mac: 00:AE:FA:FD:73:72
+  name: Galaxy-S6
+  picture:
+  track: true
+
+yeelink_light_color2_miio132949501:
+  hide_if_away: false
+  icon:
+  mac: 04:CF:8C:A0:15:2B
+  name: Altanlampa
+  picture:
+  track: false
+
+esp_cd27de:
+  hide_if_away: false
+  icon:
+  mac: 60:01:94:CD:27:DE
+  name: ESP CD27DE
+  picture:
+  track: true
+
+nile_win10:
+  hide_if_away: false
+  icon:
+  mac: 44:85:00:D1:AE:25
+  name: NILE-WIN10
+  picture:
+  track: true
+
+android_cc04e7c2af32e976:
+  hide_if_away: false
+  icon:
+  mac: 90:21:55:B5:48:14
+  name: android cc04e7c2af32e976
+  picture:
+  track: true

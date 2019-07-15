@@ -1,0 +1,22 @@
+sensor.yr_wind_speed:
+  friendly_name: Vind
+sensor.yr_precipitation:
+  friendly_name: Regn
+sensor.yr_temperature:
+  friendly_name: Temperatur
+sensor.yr_symbol:
+  friendly_name: Vader
+sensor.yr_pressure:
+  friendly_name: Barometer
+sensor.yr_windDirection:
+  friendly_name: Vindriktning
+sensor.yr_humidity:
+  friendly_name: Fukt
+sensor.yr_fog:
+  friendly_name: Dimma
+sensor.altandorr_temperature:
+  friendly_name: Altandorr
+device_tracker.jennysiphonejanslandetfunkarnu:
+  friendly_name: Jennys iphone
+light.yeelight_color2_04cf8ca0152b:
+  friendly_name: Altanlampa

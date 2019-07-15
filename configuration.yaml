@@ -1,0 +1,463 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Jans automatiska burk
+  # Location required to calculate the time the sun rises and sets
+  latitude: 59.6631
+  longitude: 18.6004
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 11
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Stockholm
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  #api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+#  base_url: jans-landet.asuscomm.com:8123
+  #base_url: https://jans-landet.asuscomm.com:8123
+  #base_url: https://my-domain.duckdns.org:8123
+  #ssl_certificate: /home/homeassistant/.ssl/cert.pem
+  #ssl_key: /home/homeassistant/.ssl/key.pem
+  #ssl_certificate: /ssl/cert.pem
+  #ssl_key: /ssl/key.pem
+#  ssl_certificate: /home/homeassistant/.homeassistant/ssl/cert.pem
+#  ssl_key: /home/homeassistant/.homeassistant/ssl/key.pem
+  #ssl_key: /ssl/privkey.pem
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# Hur lange skall data sparas
+recorder:
+  purge_keep_days: 20
+
+# View all events in a logbook
+logbook:
+
+system_log:
+  fire_event: true
+
+# The System Health component provides an API to offer information on the system and its components.
+# It also allows to run diagnostic tools to diagnose problems.
+system_health:
+
+# Koppling till IFTTT
+ifttt:
+  key: gJ31koJur_SZMwloS4mt4
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+#light.yeelight_color2_04cf8ca0152b:
+#  friendly_name: Altan
+#light.yeelink_light_color2_miio132949501:
+#  friendly_name: Altan
+#yeelight:
+#  devices:
+#    192.168.1.47:
+#      name: Altan
+#      transition: 1000
+#      use_music_mode: true
+#      save_on_change: true
+
+# Anvand signal for meddelanden
+notify:
+  - name: Jans-automat
+    platform: signalmessenger
+    sender_nr: "+46704842816"
+    recp_nr: "+46709828233"
+    signal_cli_path: /home/homeassistant/signal-cli-0.6.2/bin
+
+# Weather prediction
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: memory_free
+      - type: swap_use_percent
+      - type: load_1m
+      - type: load_5m
+      - type: processor_use
+      - type: last_boot
+
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+#  - platform: dovado
+#    username: admin
+#    password: pellemaja
+#    host: 192.168.0.1
+#    sensors:
+#      - network
+  - platform: time_date
+    display_options:
+      - 'time'
+  - platform: template
+    sensors:
+      veckodag:
+        value_template: "{{ ['Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag','Söndag'][now().weekday()] }}"
+        entity_id: sensor.time
+  - platform: template
+    sensors:
+      manad:
+        value_template: "{{ ['Jan1','Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'][now().month] }}"
+        entity_id: sensor.time
+  - platform: onewire
+    names:
+      28-000005ad64c9: altandorr
+#      28-000007a8cb66: Nr1
+#      28-01131b71cfe3: Ute2
+#      28-01131b790468: Inne
+  - platform: template
+    sensors:
+      departuretime_ak:
+        friendly_name: 'Timer 1'
+        value_template: '{% if states.input_number.heater_ak_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_hour.state|round(0)|string }}:{% if states.input_number.heater_ak_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_minutes.state|round(0)|string }}'
+        entity_id: 
+         - input_number.heater_ak_minutes
+         - input_number.heater_ak_hour
+  - platform: template
+    sensors:
+      departuretime_ak2:
+        friendly_name: 'Timer 2'
+        value_template: '{% if states.input_number.heater_ak2_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak2_hour.state|round(0)|string }}:{% if states.input_number.heater_ak2_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak2_minutes.state|round(0)|string }}'
+        entity_id: 
+         - input_number.heater_ak2_minutes
+         - input_number.heater_ak2_hour
+  - platform: template
+    sensors:
+      departuretime_ak3:
+        friendly_name: 'Ankomsttid'
+        value_template: '{% if states.input_number.heater_ak3_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak3_hour.state|round(0)|string }}:{% if states.input_number.heater_ak3_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak3_minutes.state|round(0)|string }}'
+        entity_id: 
+         - input_number.heater_ak3_minutes
+         - input_number.heater_ak3_hour
+  - platform: mqtt
+    name: "Kallar temp"
+    state_topic: "homeassistant/DHT11/tempDHT"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Temp ute1"
+    state_topic: "homeassistant/max1/tempds1"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Kallar fukt"
+    state_topic: "homeassistant/DHT11/fuktDHT"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "Inne temp1"
+    state_topic: "homeassistant/mini1/temp1"
+    unit_of_measurement: "°C"
+#  - platform: mqtt
+#    name: "Inne temp2"
+#    state_topic: "homeassistant/mini1/temp2"
+#    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Xiaomi temp"
+    state_topic: "homeassistant/xiaomi/sensor1/temp"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Xiaomi fukt"
+    state_topic: "homeassistant/xiaomi/sensor1/fukt"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: "Xiaomi batteri"
+    state_topic: "homeassistant/xiaomi/sensor1/battery"
+    unit_of_measurement: "%"
+#  - platform: template
+#    sensors:
+#      inne_temp2_offset:
+#        value_template: '{{states.sensor.inne_temp2.state | float - 2.5}}'
+#        friendly_name: 'Inne temp2 offset'
+#        unit_of_measurement: "°C"
+  - platform: template
+    sensors:
+      thermostat_status:
+        friendly_name: 'Husvarme status'
+        value_template: "{{ states.climate.innetemp.attributes.operation_mode }}"
+  - platform: statistics
+    name: altan statistik
+    entity_id: sensor.altandorr_temp
+    sampling_size: 4
+  - platform: template
+    sensors:
+      altandorr_temp_delta:
+        friendly_name: "Altandorr Temperatur Delta"
+        value_template: "{{ states.sensor.altandorr_statistik_mean.attributes.max_value | float - states.sensor.altandorr_statistik_mean.attributes.min_value | float }}"
+        entity_id: sensor.altandorr_statistik_mean
+        unit_of_measurement: "C"
+
+#  - platform: smhi
+
+# Kanner av om altandorren ar oppen
+  - platform: template
+    sensors:
+      temp_diff:
+        friendly_name: Temperature Difference
+        value_template: >
+          {% if ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperature.state | float))
+            < (states.input_number.varme_on_offset.state | float ) %} varme_on
+          {% elif ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperature.state | float))
+            > (states.input_number.varme_off_offset.state | float ) %} varme_off
+          {% else %} pending {% endif %}
+
+device_tracker:
+#  - platform: bluetooth_tracker
+#    new_device_defaults:
+#      track_new_devices: false
+#  - platform: ping
+#    hosts:
+#      jan: 192.168.1.134
+  - platform: nmap_tracker
+    hosts: 192.168.1.1-255
+    interval_seconds: 30
+#  - platform: asuswrt
+#    host: 192.168.1.1
+#    username: admin
+#    password: 
+
+asuswrt:
+    host: 192.168.1.1
+    username: admin
+    password: pellemaja07
+
+#mqtt:
+
+# Arbetsdagar
+binary_sensor:
+  - platform: workday
+    country: SE
+    workdays: [mon, tue, wed, thu, fri]
+
+  - platform: trend
+    sensors:
+      altandorr_temperatur_down:
+        entity_id: sensor.altandorr_temperatur
+        invert: Yes
+
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+# Cloud
+cloud:
+mqtt:
+    broker: 192.168.1.134
+    username: "homeassistant"
+    password: "jans-ha"
+    discovery: true
+    discovery_prefix: homeassistant
+
+# Example configuration.yaml entry
+tellstick:
+  signal_repetitions: 3
+switch:
+  - platform: tellstick
+
+group: !include groups.yaml
+
+automation: !include automations.yaml
+
+automation 2: !include jans_auto.yaml
+
+script: !include scripts.yaml
+
+climate:
+  - platform: generic_thermostat
+    name: Innetemp
+    heater: group.varme
+    target_sensor: sensor.inne_temp1
+    #target_temp: 4
+    min_temp: 4
+    max_temp: 25
+    #precision: 1.0
+    initial_operation_mode: "auto"
+    min_cycle_duration:
+      minutes: 10
+
+# Input section
+input_number:
+  heater_ak_hour:
+    name: Timme
+    icon: mdi:timer
+    initial: 17
+    min: 0
+    max: 23
+    step: 1
+  
+  heater_ak_minutes:
+    name: Minut
+    icon: mdi:timer
+    initial: 00
+    min: 0
+    max: 55
+    step: 5
+
+  heater_ak2_hour:
+    name: Timme
+    icon: mdi:timer
+    initial: 17
+    min: 0
+    max: 23
+    step: 1
+  
+  heater_ak2_minutes:
+    name: Minut
+    icon: mdi:timer
+    initial: 00
+    min: 0
+    max: 55
+    step: 5
+
+  heater_ak3_hour:
+    name: Timme
+    icon: mdi:timer
+    initial: 17
+    min: 0
+    max: 23
+    step: 1
+  
+  heater_ak3_minutes:
+    name: Minut
+    icon: mdi:timer
+    initial: 00
+    min: 0
+    max: 55
+    step: 5
+  
+  heating_temperature:
+    name: Temperatur
+    min: 4
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+
+  heating_temperature2:
+    name: Temperatur2
+    min: 4
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+
+  heating_temperature3:
+    name: Temperatur3
+    min: 4
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+
+  heating_dag:
+    name: Dag
+    initial: 21
+    min: 4
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+
+  heating_natt:
+    name: Natt
+    initial: 18
+    min: 4
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+
+  varme_on_offset:
+    name: ON offset
+    initial: 1
+    min: 0
+    max: 10
+    step: 0.5
+
+  varme_off_offset:
+    name: OFF offset
+    initial: 2
+    min: 0
+    max: 10
+    step: 0.5
+
+input_boolean:
+  heating_timer:
+    name: Timer1
+    icon: mdi:toggle-switch
+
+  heating_timer2:
+    name: Timer2
+    icon: mdi:toggle-switch
+
+  heating_timer3:
+    name: Timer3
+    icon: mdi:toggle-switch
+
+  nattsankning_switch:
+    name: Nattsankning
+    icon: mdi:toggle-switch
+
+history_graph:
+  gr1:
+    name: Tempgraf
+    entities:
+      - sensor.inne_temperature
+      - sensor.ute_temperature
+      - sensor.yr_temperature
+      - sensor.kallar_temp
+      - sensor.inne_temp1
+      - sensor.temp_ute1
+      - sensor.xiaomi_temp
+      - sensor.altandorr_temperature
+    hours_to_show: 24
+    refresh: 60
+
+# Sensor section
+#sensor:
+#  - platform: template
+#    sensors:
+#      departuretime_ak:
+#        friendly_name: 'Ankomsttid'
+#        value_template: '{% if states.input_number.heater_ak_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_hour.state|round(0)|string }}:{% if states.input_number.heater_ak_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_minutes.state|round(0)|string }}'
+#        entity_id: 
+#         - input_number.heater_ak_minutes
+#         - input_number.heater_ak_hour
+#

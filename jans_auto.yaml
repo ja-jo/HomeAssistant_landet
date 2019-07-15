@@ -1,0 +1,447 @@
+  - alias: "On nar nagon kommer"
+    trigger:
+      platform: state
+      entity_id: group.all_devices
+      from: 'not_home'
+      to: 'home'
+    condition:
+      - condition: or
+        conditions:
+          - condition: sun
+            after: sunset
+          - condition: sun
+            before: sunrise
+    action:
+    - data:
+        entity_id: group.lampor
+      service: switch.turn_on
+
+  - alias: "Test pa"
+    trigger:
+      platform: state
+      entity_id: device_tracker.vw_phone
+      # Optional
+      from: 'not_home'
+      # Optional
+      to: 'home'
+    action:
+    - data:
+        entity_id: switch.Nr4
+      service: switch.turn_on
+#    - service: notify.telegram
+#      data_template:
+#        message: 'Test pa'
+
+  # Stang av varje timme
+  - alias: "Av nattetid"
+    trigger:
+      - platform: time_pattern
+        minutes: '40'
+        seconds: '00'
+    condition:
+      - condition: or
+        conditions:
+          - condition: sun
+            after: sunset
+          - condition: sun
+            before: sunrise
+      - condition: time
+        after: '00:00:00'
+        before: '12:00:00'
+    action:
+    - data:
+        entity_id: group.lampor
+        #entity_id: switch.Nr4
+      service: switch.turn_off
+    - service: light.turn_off
+      data:
+        entity_id: light.yeelight_color2_04cf8ca0152b
+
+
+  # Stang av vid soluppgang
+  - alias: "Av soluppgang"
+    trigger:
+      platform: sun
+      event: sunrise
+    action:
+    - data:
+        entity_id: group.lampor
+      service: switch.turn_off
+
+  # Test10
+  - alias: "Test10"
+    trigger:
+      - platform: time_pattern
+        hours: '11'
+        minutes: '30'
+        seconds: '20'
+#    condition:
+#      - condition: or
+#        conditions:
+#          - condition: sun
+#            after: sunset
+#          - condition: sun
+#            before: sunrise
+#      - condition: time
+#        after: '20:00:00'
+#        before: '22:00:00'
+    action:
+#      - service: notify.jans_automat
+#        data:
+#          message: "hello world2"
+#      - service: light.turn_on
+#        data:
+#          entity_id: light.yeelight_color2_04cf8ca0152b
+#      - service: climate.set_operation_mode
+#        data:
+#          entity_id: climate.innetemp
+#          operation_mode: off
+#      entity_id: climate.innetemp
+#      service_template: >
+#        {% if is_state ('sensor.temp_diff' , 'varme_on') %} climate.set_operation_mode
+#        {% else %} switch.turn_off {% endif %}
+      entity_id: climate.innetemp
+      service: climate.set_operation_mode
+      data_template:
+        operation_mode: >
+          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
+            heat
+          {% else %}
+            off
+          {% endif %}
+#    - data:
+#        entity_id: switch.Nr4
+#      service: switch.turn_on
+
+  - alias: "Temp timer"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+#        - condition: numeric_state
+#          entity_id: sensor.temp_ute1
+#          below: 20
+        - condition: state
+          entity_id: input_boolean.heating_timer
+          state: 'on'
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_temperature.state | float }}"
+      - service: input_boolean.turn_off
+        data_template:
+          entity_id: input_boolean.heating_timer
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.innetemp
+          operation_mode: heat
+#      - service: notify.signalmessenger
+#        data:
+#          message: Meddelande
+
+  - alias: "Temp timer2"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+#        - condition: numeric_state
+#          entity_id: sensor.temp_ute1
+#          below: 20
+        - condition: state
+          entity_id: input_boolean.heating_timer2
+          state: 'on'
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak2.state  }}'
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_temperature2.state | float }}"
+      - service: input_boolean.turn_off
+        data_template:
+          entity_id: input_boolean.heating_timer2
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.innetemp
+          operation_mode: heat
+
+  - alias: "Nattsankning_natt"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.temp_ute1
+          below: 20
+        - condition: state
+          entity_id: input_boolean.nattsankning_switch
+          state: 'on'
+        - condition: template
+          value_template: >
+            {{ states.climate.innetemp.attributes.temperature > 15 }}
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == "00:00"  }}'
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_natt.state | float }}"
+
+  - alias: "Nattsankning_dag"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.temp_ute1
+          below: 20
+        - condition: state
+          entity_id: input_boolean.nattsankning_switch
+          state: 'on'
+        - condition: template
+          value_template: >
+            {{ states.climate.innetemp.attributes.temperature > 15 }}
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == "06:00"  }}'
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_dag.state | float }}"
+
+  - alias: "Temp timer3"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.temp_ute1
+          below: 20
+        - condition: state
+          entity_id: input_boolean.heating_timer3
+          state: 'on'
+        - condition: template
+          value_template: '{{ ( now().strftime("%s") | float+( (states.input_number.heating_temperature3.state | float ) - ( states.sensor.inne_temp1.state | float ) ) / ( states.sensor.temp_ute1.state | float * (0.3/9.4) + 1.9319 ) *3600) | int >= strptime(now().strftime("%Y-%m-%d ")+ states.sensor.departuretime_ak3.state,"%Y-%m-%d %H:%M") | int }}'
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_temperature3.state | float }}"
+      - service: input_boolean.turn_off
+        data_template:
+          entity_id: input_boolean.heating_timer3
+
+  - alias: "Under5plus"
+    trigger:
+     - platform: time_pattern
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.ute_temperature
+          below: 5
+        - condition: state
+          entity_id: switch.nr4
+          state: 'on'
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 3600) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'
+    action:
+    - data:
+        entity_id: group.varme
+      service: switch.turn_on
+
+  - alias: "Under0"
+    trigger:
+     - platform: time_pattern
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.ute_temperature
+          below: 0
+        - condition: state
+          entity_id: switch.nr4
+          state: 'on'
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 2*3600) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'
+    action:
+    - data:
+        entity_id: group.varme
+      service: switch.turn_on
+
+  - alias: "Under5minus"
+    trigger:
+     - platform: time_pattern
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.ute_temperature
+          below: -5
+        - condition: state
+          entity_id: switch.nr4
+          state: 'on'
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 3*3600) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state  }}'
+    action:
+    - data:
+        entity_id: group.varme
+      service: switch.turn_on
+
+  - alias: "Husvarme"
+    trigger:
+     - platform: time_pattern
+       minutes: '/5'
+       seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: switch.nr4
+          state: 'on'
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + ( ( ( states("sensor.ute_temperature") | int * -1 ) / 5 +2 ) * 3600)) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state }}'
+    action:
+    - data:
+        #entity_id: group.varme
+        entity_id: switch.nr8
+      service: switch.turn_on
+
+  - alias: Sla pa termostatelement
+    trigger:
+      platform: state
+      entity_id: climate.innetemp
+      #from: off
+      to: heat
+    condition:
+      - condition: state
+        entity_id: climate.innetemp
+        state: heat
+    action:
+      - data:
+          entity_id: group.termostatelement
+        service: switch.turn_on
+
+  - alias: Sla av termostatelement
+    trigger:
+      platform: state
+      entity_id: climate.innetemp
+    condition:
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature < 20 }}
+      - condition: state
+        entity_id: climate.innetemp
+        state: idle
+      - condition: template
+        value_template: >
+          {{ trigger.to_state.attributes.temperature != trigger.from_state.attributes.temperature }}
+    action:
+      - data:
+          entity_id: group.termostatelement
+        service: switch.turn_off
+
+  - alias: Sla pa termostatelement2
+    trigger:
+      - platform: state
+        entity_id: sensor.thermostat_status
+        to: "heat"
+    condition:
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature >= 20 }}
+    action:
+      - data:
+          entity_id: group.termostatelement
+        service: switch.turn_on
+
+  - alias: Sla av termostatelement2
+    trigger:
+      - platform: state
+        entity_id: sensor.thermostat_status
+        to: "off"
+    condition:
+    action:
+      - data:
+          entity_id: group.termostatelement
+        service: switch.turn_off
+
+  - alias: 'Altandorr oppen'
+    trigger:
+      - platform: numeric_state
+        entity_id: 
+          sensor.altandorr_temp_delta
+        above: 0.3
+    condition:
+      - condition: state
+        entity_id: binary_sensor.altandorr_temperatur_down
+        state: 'on'
+    action:
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.innetemp
+          operation_mode: off
+
+  - alias: 'Vakt for altandorren'
+    initial_state: 'on'
+    trigger:
+      platform: state
+      entity_id: sensor.temp_diff
+    action:
+#      - service: climate.set_operation_mode
+#        data:
+#          entity_id: climate.innetemp
+#          operation_mode: off
+#      entity_id: group.termostatelement
+#      service_template: >
+#        {% if is_state ('sensor.temp_diff' , 'varme_on') %} switch.turn_on
+#        {% else %} switch.turn_off {% endif %}
+      service: climate.set_operation_mode
+      entity_id: climate.innetemp
+      data_template:
+        operation_mode: >
+          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
+            heat
+          {% elif is_state ('sensor.temp_diff' , 'varme_off') %}
+            off
+          {% endif %}
+#      entity_id: switch.solar_pump
+#      service_template: >
+#        {% if is_state ('sensor.temp_diff' , 'pump_on') %} switch.turn_on
+#        {% else %} switch.turn_off {% endif %}
+
+  # Sla av yeelight kl 00
+  - alias: "Altanlampa av"
+    trigger:
+      - platform: time_pattern
+        hours: '00'
+        minutes: '00'
+        seconds: '30'
+    action:
+      - service: light.turn_off
+        data:
+          entity_id: light.yeelight_color2_04cf8ca0152b
