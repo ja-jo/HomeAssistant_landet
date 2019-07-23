@@ -72,9 +72,9 @@
   - alias: "Test10"
     trigger:
       - platform: time_pattern
-        hours: '11'
-        minutes: '30'
-        seconds: '20'
+        hours: '23'
+        minutes: '27'
+        seconds: '10'
 #    condition:
 #      - condition: or
 #        conditions:
@@ -89,9 +89,11 @@
 #      - service: notify.jans_automat
 #        data:
 #          message: "hello world2"
-#      - service: light.turn_on
-#        data:
-#          entity_id: light.yeelight_color2_04cf8ca0152b
+      - service: light.turn_on
+        data:
+          entity_id: light.yeelight_color2_04cf8ca0152b
+          transition: 20
+          color_name: green
 #      - service: climate.set_operation_mode
 #        data:
 #          entity_id: climate.innetemp
@@ -100,15 +102,15 @@
 #      service_template: >
 #        {% if is_state ('sensor.temp_diff' , 'varme_on') %} climate.set_operation_mode
 #        {% else %} switch.turn_off {% endif %}
-      entity_id: climate.innetemp
-      service: climate.set_operation_mode
-      data_template:
-        operation_mode: >
-          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
-            heat
-          {% else %}
-            off
-          {% endif %}
+#      entity_id: climate.innetemp
+#      service: climate.set_operation_mode
+#      data_template:
+#        operation_mode: >
+#          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
+#            heat
+#          {% else %}
+#            off
+#          {% endif %}
 #    - data:
 #        entity_id: switch.Nr4
 #      service: switch.turn_on
@@ -445,3 +447,36 @@
       - service: light.turn_off
         data:
           entity_id: light.yeelight_color2_04cf8ca0152b
+
+  - alias: "Kl22"
+    trigger:
+      - platform: time_pattern
+        hours: '22'
+        minutes: '00'
+    condition:
+      - condition: state
+        entity_id: light.yeelight_color2_04cf8ca0152b
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.yeelight_color2_04cf8ca0152b
+          transition: 30
+          color_name: orange
+
+  - alias: "Kl23"
+    trigger:
+      - platform: time_pattern
+        hours: '23'
+        minutes: '00'
+    condition:
+      - condition: state
+        entity_id: light.yeelight_color2_04cf8ca0152b
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.yeelight_color2_04cf8ca0152b
+          transition: 30
+          color_name: gold
+

@@ -597,4 +597,36 @@ android_cc04e7c2af32e976:
   mac: 90:21:55:B5:48:14
   name: android cc04e7c2af32e976
   picture:
+  track: false
+
+lukashedsiphone:
+  hide_if_away: false
+  icon:
+  mac: 88:E9:FE:BC:38:9B
+  name: LukasHedsiPhone
+  picture:
+  track: true
+
+esp_3979a5:
+  hide_if_away: false
+  icon:
+  mac: EC:FA:BC:39:79:A5
+  name: ESP 3979A5
+  picture:
+  track: true
+
+android_69fb58268878b42a:
+  hide_if_away: false
+  icon:
+  mac: 08:60:6E:27:91:EF
+  name: android-69fb58268878b42a
+  picture:
+  track: true
+
+android_d5127368bb2f5261:
+  hide_if_away: false
+  icon:
+  mac: 00:00:00:00:00:00
+  name: android-d5127368bb2f5261
+  picture:
   track: true

@@ -202,9 +202,13 @@ sensor:
     state_topic: "homeassistant/xiaomi/sensor1/fukt"
     unit_of_measurement: "%"
   - platform: mqtt
-    name: "Xiaomi batteri"
-    state_topic: "homeassistant/xiaomi/sensor1/battery"
-    unit_of_measurement: "%"
+    name: "Temp ute1"
+    state_topic: "homeassistant/max1/tempds1"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Badvattentemp"
+    state_topic: "homeassistant/bad1/temp1"
+    unit_of_measurement: "°C"
 #  - platform: template
 #    sensors:
 #      inne_temp2_offset:
@@ -313,7 +317,8 @@ climate:
     min_temp: 4
     max_temp: 25
     #precision: 1.0
-    initial_operation_mode: "auto"
+    initial_hvac_mode: "heat"
+    #initial_operation_mode: "auto"
     min_cycle_duration:
       minutes: 10
 

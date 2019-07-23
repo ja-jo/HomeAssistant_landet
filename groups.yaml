@@ -60,6 +60,7 @@
       - group.altandorrvakt
       - climate.innetemp
       - light.yeelight_color2_04cf8ca0152b
+      - history_graph.tempgraf
       
   mvak:
     name: "Stugtimer1"
