@@ -581,7 +581,7 @@ esp_cd27de:
   mac: 60:01:94:CD:27:DE
   name: ESP CD27DE
   picture:
-  track: true
+  track: false
 
 nile_win10:
   hide_if_away: false
@@ -621,7 +621,7 @@ android_69fb58268878b42a:
   mac: 08:60:6E:27:91:EF
   name: android-69fb58268878b42a
   picture:
-  track: true
+  track: false
 
 android_d5127368bb2f5261:
   hide_if_away: false

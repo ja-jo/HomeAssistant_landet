@@ -411,14 +411,14 @@ input_number:
 
   varme_on_offset:
     name: ON offset
-    initial: 1
+    initial: 1.5
     min: 0
     max: 10
     step: 0.5
 
   varme_off_offset:
     name: OFF offset
-    initial: 2
+    initial: 2.5
     min: 0
     max: 10
     step: 0.5
