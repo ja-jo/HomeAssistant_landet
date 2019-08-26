@@ -94,12 +94,12 @@ sun:
 #      save_on_change: true
 
 # Anvand signal for meddelanden
-notify:
-  - name: Jans-automat
-    platform: signalmessenger
-    sender_nr: "+46704842816"
-    recp_nr: "+46709828233"
-    signal_cli_path: /home/homeassistant/signal-cli-0.6.2/bin
+#notify:
+#  - name: Jans-automat
+#    platform: signalmessenger
+#    sender_nr: "+46704842816"
+#    recp_nr: "+46709828233"
+#    signal_cli_path: /home/homeassistant/signal-cli-0.6.2/bin
 
 # Weather prediction
 sensor:
@@ -219,7 +219,7 @@ sensor:
     sensors:
       thermostat_status:
         friendly_name: 'Husvarme status'
-        value_template: "{{ states.climate.innetemp.attributes.operation_mode }}"
+        value_template: "{{ states.climate.innetemp.attributes.hvac_action }}"
   - platform: statistics
     name: altan statistik
     entity_id: sensor.altandorr_temp
@@ -255,6 +255,7 @@ device_tracker:
 #      jan: 192.168.1.134
   - platform: nmap_tracker
     hosts: 192.168.1.1-255
+    exclude: 192.168.1.134
     interval_seconds: 30
 #  - platform: asuswrt
 #    host: 192.168.1.1
@@ -296,7 +297,7 @@ mqtt:
 
 # Example configuration.yaml entry
 tellstick:
-  signal_repetitions: 3
+  signal_repetitions: 2
 switch:
   - platform: tellstick
 
@@ -315,7 +316,7 @@ climate:
     target_sensor: sensor.inne_temp1
     #target_temp: 4
     min_temp: 4
-    max_temp: 25
+    max_temp: 30
     #precision: 1.0
     initial_hvac_mode: "heat"
     #initial_operation_mode: "auto"

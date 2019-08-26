@@ -630,3 +630,27 @@ android_d5127368bb2f5261:
   name: android-d5127368bb2f5261
   picture:
   track: true
+
+arnes:
+  hide_if_away: false
+  icon:
+  mac: 00:19:D2:6F:79:42
+  name: Arnes
+  picture:
+  track: true
+
+00_16_d4_bd_6d_a7:
+  hide_if_away: false
+  icon:
+  mac: 00:16:D4:BD:6D:A7
+  name: 00 16 d4 bd 6d a7
+  picture:
+  track: true
+
+med010:
+  hide_if_away: false
+  icon:
+  mac: B8:EE:65:5F:B2:61
+  name: MED010
+  picture:
+  track: true

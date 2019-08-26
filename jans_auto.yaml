@@ -357,7 +357,8 @@
         value_template: >
           {{ states.climate.innetemp.attributes.temperature < 20 }}
       - condition: state
-        entity_id: climate.innetemp
+        #entity_id: climate.innetemp
+        entity_id: sensor.thermostat_status
         state: idle
       - condition: template
         value_template: >
