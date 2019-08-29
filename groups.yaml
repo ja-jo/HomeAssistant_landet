@@ -30,6 +30,8 @@
       - device_tracker.jdasusbt
       - device_tracker.janshonor9
       - device_tracker.plkl01d618ed6d547a50a1
+      - device_tracker.med010
+
   familjen:
     name: Familjen
     view: no
@@ -43,6 +45,7 @@
       - device_tracker.galaxys6janslandetfunkarnu
       - device_tracker.samsunggalaxys7janslandetfunkarnu
       - device_tracker.plkl01d618ed6d547a50a1
+      - device_tracker.med010
       - device_tracker.fiasdatorjanslandetfunkarnu
       - device_tracker.desktoptipt83c
 

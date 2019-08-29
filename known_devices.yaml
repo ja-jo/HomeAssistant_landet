@@ -654,3 +654,11 @@ med010:
   name: MED010
   picture:
   track: true
+
+johns_ipad:
+  hide_if_away: false
+  icon:
+  mac: F0:24:75:12:EB:53
+  name: Johns-iPad
+  picture:
+  track: true
