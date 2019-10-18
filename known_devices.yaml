@@ -662,3 +662,11 @@ johns_ipad:
   name: Johns-iPad
   picture:
   track: true
+
+fias_ipad:
+  hide_if_away: false
+  icon:
+  mac: BC:B8:63:F0:84:60
+  name: Fias-iPad
+  picture:
+  track: true
