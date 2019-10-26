@@ -220,17 +220,17 @@ sensor:
       thermostat_status:
         friendly_name: 'Husvarme status'
         value_template: "{{ states.climate.innetemp.attributes.hvac_action }}"
-  - platform: statistics
-    name: altan statistik
-    entity_id: sensor.altandorr_temp
-    sampling_size: 4
-  - platform: template
-    sensors:
-      altandorr_temp_delta:
-        friendly_name: "Altandorr Temperatur Delta"
-        value_template: "{{ states.sensor.altandorr_statistik_mean.attributes.max_value | float - states.sensor.altandorr_statistik_mean.attributes.min_value | float }}"
-        entity_id: sensor.altandorr_statistik_mean
-        unit_of_measurement: "C"
+#  - platform: statistics
+#    name: altan statistik
+#    entity_id: sensor.altandorr_temp
+#    sampling_size: 4
+#  - platform: template
+#    sensors:
+#      altandorr_temp_delta:
+#        friendly_name: "Altandorr Temperatur Delta"
+#        value_template: "{{ states.sensor.altandorr_statistik_mean.attributes.max_value | float - states.sensor.altandorr_statistik_mean.attributes.min_value | float }}"
+#        entity_id: sensor.altandorr_statistik_mean
+#        unit_of_measurement: "C"
 
 #  - platform: smhi
 

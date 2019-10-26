@@ -670,3 +670,11 @@ fias_ipad:
   name: Fias-iPad
   picture:
   track: true
+
+78_ba_f9_79_11_a3:
+  hide_if_away: false
+  icon:
+  mac: 78:BA:F9:79:11:A3
+  name: 78 ba f9 79 11 a3
+  picture:
+  track: true

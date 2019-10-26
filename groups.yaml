@@ -59,6 +59,7 @@
       - device_tracker.med010
       - device_tracker.fiasdatorjanslandetfunkarnu
       - device_tracker.desktoptipt83c
+      - device_tracker.fias_ipad
 
   heaterak:
     name: Heater AK
