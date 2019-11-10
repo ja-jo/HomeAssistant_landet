@@ -275,11 +275,12 @@ binary_sensor:
     country: SE
     workdays: [mon, tue, wed, thu, fri]
 
-  - platform: trend
-    sensors:
-      altandorr_temperatur_down:
-        entity_id: sensor.altandorr_temperatur
-        invert: Yes
+# Anvands ej
+#  - platform: trend
+#    sensors:
+#      altandorr_temperatur_down:
+#        entity_id: sensor.altandorr_temperatur
+#        invert: Yes
 
 # Text to speech
 tts:

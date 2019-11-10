@@ -394,6 +394,20 @@
           entity_id: group.termostatelement
         service: switch.turn_off
 
+  - alias: Sla av termostatelement3
+    trigger:
+      - platform: state
+        entity_id: sensor.thermostat_status
+        to: "idle"
+    condition:
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature < 20 }}
+    action:
+      - data:
+          entity_id: group.termostatelement
+        service: switch.turn_off
+
 #  - alias: 'Altandorr oppen'
 #    trigger:
 #      - platform: numeric_state
