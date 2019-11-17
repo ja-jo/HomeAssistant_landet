@@ -3,6 +3,7 @@
     entities:
       - switch.Kallardorr
       - switch.Nr5
+      - switch.Nr9
       - light.yeelight_color2_04cf8ca0152b
       - light.yeelink_light_color2_miio132949501
 
@@ -14,13 +15,12 @@
     name: Varme
     entities:
       - switch.Nr6
-      - switch.Nr7
   termostatelement:
     name: Termostatelement
     entities:
+      - switch.Nr7
       - switch.Nr4
       - switch.Nr8
-      - switch.Nr9
       - switch.Nr10
   sovrum:
     name: Sovrum

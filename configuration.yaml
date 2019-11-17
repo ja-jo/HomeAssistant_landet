@@ -101,6 +101,8 @@ sun:
 #    recp_nr: "+46709828233"
 #    signal_cli_path: /home/homeassistant/signal-cli-0.6.2/bin
 
+recorder:
+
 # Weather prediction
 sensor:
   - platform: systemmonitor
@@ -246,6 +248,9 @@ sensor:
             > (states.input_number.varme_off_offset.state | float ) %} varme_off
           {% else %} pending {% endif %}
 
+  - platform: statistics
+    entity_id: sensor.inne_temp1
+
 device_tracker:
 #  - platform: bluetooth_tracker
 #    new_device_defaults:
@@ -329,7 +334,7 @@ input_number:
   heater_ak_hour:
     name: Timme
     icon: mdi:timer
-    initial: 17
+    #initial: 17
     min: 0
     max: 23
     step: 1
@@ -337,7 +342,7 @@ input_number:
   heater_ak_minutes:
     name: Minut
     icon: mdi:timer
-    initial: 00
+    #initial: 00
     min: 0
     max: 55
     step: 5
@@ -345,7 +350,7 @@ input_number:
   heater_ak2_hour:
     name: Timme
     icon: mdi:timer
-    initial: 17
+    #initial: 17
     min: 0
     max: 23
     step: 1
@@ -353,7 +358,7 @@ input_number:
   heater_ak2_minutes:
     name: Minut
     icon: mdi:timer
-    initial: 00
+    #initial: 00
     min: 0
     max: 55
     step: 5
@@ -361,7 +366,7 @@ input_number:
   heater_ak3_hour:
     name: Timme
     icon: mdi:timer
-    initial: 17
+    #initial: 17
     min: 0
     max: 23
     step: 1
@@ -369,7 +374,7 @@ input_number:
   heater_ak3_minutes:
     name: Minut
     icon: mdi:timer
-    initial: 00
+    #initial: 00
     min: 0
     max: 55
     step: 5
