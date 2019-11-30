@@ -678,3 +678,19 @@ fias_ipad:
   name: 78 ba f9 79 11 a3
   picture:
   track: false
+
+esp_8934dc:
+  hide_if_away: false
+  icon:
+  mac: D8:F1:5B:89:34:DC
+  name: ESP 8934DC
+  picture:
+  track: true
+
+sonoff_0937:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:15:43:A9
+  name: sonoff-0937
+  picture:
+  track: true

@@ -307,6 +307,19 @@ tellstick:
 switch:
   - platform: tellstick
 
+  - platform: mqtt
+    name: "Sonoff power"
+    state_topic: "stat/sonoff/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/sonoff/POWER"
+    availability_topic: "tele/sonoff/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
 group: !include groups.yaml
 
 automation: !include automations.yaml
@@ -447,6 +460,12 @@ input_boolean:
     name: Nattsankning
     icon: mdi:toggle-switch
 
+tuya:
+  username: ja-jo@bredband.net
+  password: Asien99
+  country_code: 46
+  platform: tuya
+
 history_graph:
   gr1:
     name: Tempgraf
@@ -473,3 +492,4 @@ history_graph:
 #         - input_number.heater_ak_minutes
 #         - input_number.heater_ak_hour
 #
+
