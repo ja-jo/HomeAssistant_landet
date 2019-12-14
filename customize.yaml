@@ -20,3 +20,12 @@ device_tracker.jennysiphonejanslandetfunkarnu:
   friendly_name: Jennys iphone
 light.yeelight_color2_04cf8ca0152b:
   friendly_name: Altanlampa
+
+# Add an entry for each entity that you want to overwrite.
+sensor.test_volt1:
+  hidden: true
+sensor.test_volt2:
+  hidden: true
+sensor.test_volt3:
+  hidden: true
+

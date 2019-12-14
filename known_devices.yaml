@@ -685,12 +685,20 @@ esp_8934dc:
   mac: D8:F1:5B:89:34:DC
   name: ESP 8934DC
   picture:
-  track: true
+  track: false
 
 sonoff_0937:
   hide_if_away: false
   icon:
   mac: CC:50:E3:15:43:A9
   name: sonoff-0937
+  picture:
+  track: false
+
+espressif:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:AE:06:F0
+  name: espressif
   picture:
   track: true

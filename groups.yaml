@@ -5,6 +5,7 @@
       - switch.Nr5
       - switch.Nr9
       - switch.sonoff_power
+      - switch.slampher_power
       - light.yeelight_color2_04cf8ca0152b
       - light.yeelink_light_color2_miio132949501
       - light.75287157d8f15b8934dc

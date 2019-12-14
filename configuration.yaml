@@ -251,6 +251,43 @@ sensor:
   - platform: statistics
     entity_id: sensor.inne_temp1
 
+  - platform: mqtt
+    name: "Test volt1"
+    state_topic: "homeassistant/volt1"
+  - platform: mqtt
+    name: "Test volt2"
+    state_topic: "homeassistant/volt2"
+  - platform: mqtt
+    name: "Test volt3"
+    state_topic: "homeassistant/volt3"
+
+  - platform: template
+    sensors:
+      volt1_ut:
+        value_template: >-
+          {% if states('sensor.test_volt1')|float > 0 %}
+            {{ ((states('sensor.test_volt1') | float +166.25)/396.51) | round(1) }}
+          {% else %}
+            0
+          {% endif %}
+        unit_of_measurement: "V"
+      volt2_ut:
+        value_template: >-
+          {% if states('sensor.test_volt2')|float > 0 %}
+            {{ ((states('sensor.test_volt2') | float +158.75)/213.05) | round(1) }}
+          {% else %}
+            0
+          {% endif %}
+        unit_of_measurement: "V"
+      volt3_ut:
+        value_template: >-
+          {% if states('sensor.test_volt3')|float > 0 %}
+            {{ ((states('sensor.test_volt3') | float +154.96)/161.00) | round(1) }}
+          {% else %}
+            0
+          {% endif %}
+        unit_of_measurement: "V"
+
 device_tracker:
 #  - platform: bluetooth_tracker
 #    new_device_defaults:
@@ -313,6 +350,19 @@ switch:
     value_template: "{{ value_json.POWER }}"
     command_topic: "cmnd/sonoff/POWER"
     availability_topic: "tele/sonoff/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
+    name: "Slampher power"
+    state_topic: "stat/slampher/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/slampher/POWER"
+    availability_topic: "tele/slampher/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"

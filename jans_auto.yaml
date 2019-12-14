@@ -1,3 +1,19 @@
+#- alias: Solnedgang2
+#  trigger:
+#  - event: sunset
+#    platform: sun
+#  condition:
+#  - condition: template
+#    value_template: >
+#      {{ states.climate.innetemp.attributes.temperature > 15 }}
+#  action:
+#  - data:
+#      entity_id: group.lampor
+#    service: switch.turn_on
+#  - data:
+#      color_name: yellow
+#      entity_id: light.yeelight_color2_04cf8ca0152b
+#    service: light.turn_on
   - alias: "On nar nagon kommer"
     trigger:
       platform: state
@@ -57,6 +73,31 @@
       data:
         entity_id: light.yeelight_color2_04cf8ca0152b
 
+  # Stang av varje timme om ingen ar hemma
+  - alias: "Av kvall"
+    trigger:
+      - platform: time_pattern
+        minutes: '10'
+        seconds: '00'
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          after: '15:00:00'
+          before: '00:00:00'
+        - condition: state
+          entity_id: group.all_devices
+          state: not_home
+        - condition: template
+          value_template: >
+            {{ states.climate.innetemp.attributes.temperature < 15 }}
+    action:
+    - data:
+        entity_id: group.lampor
+      service: switch.turn_off
+    - service: light.turn_off
+      data:
+        entity_id: light.yeelight_color2_04cf8ca0152b
 
   # Stang av vid soluppgang
   - alias: "Av soluppgang"
