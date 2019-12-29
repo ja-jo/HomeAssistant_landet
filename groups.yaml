@@ -65,19 +65,26 @@
 
   heaterak:
     name: Heater AK
-    icon: mdi:home-assistant
+    icon: mdi:home
     view: yes
     entities:
       - group.mvak
       - group.mvak2
-      - group.nattsankning
       - group.varme
       - group.termostatelement
-      - group.altandorrvakt
       - climate.innetemp
-      - light.altanlampa
+      - group.lampor
       - history_graph.tempgraf
+      #- light.altanlampa
       
+  huskonfig:
+    name: Hus konfig
+    icon: mdi:home-assistant
+    view: yes
+    entities:
+      - group.nattsankning
+      - group.altandorrvakt
+
   mvak:
     name: "Stugtimer1"
     entities:
@@ -155,6 +162,8 @@
       - input_number.varme_on_offset
       - input_number.varme_off_offset
       - automation.vakt_for_altandorren
+
+
 
   mc:
     name: MC
