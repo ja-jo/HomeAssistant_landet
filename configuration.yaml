@@ -272,29 +272,32 @@ sensor:
 
   - platform: template
     sensors:
-      volt1_ut:
+      batteri1:
         value_template: >-
           {% if states('sensor.test_volt1')|float > 0 %}
             {{ ((states('sensor.test_volt1') | float +80.69)/326.74) | round(1) }}
           {% else %}
             0
           {% endif %}
+        friendly_name: "Batteri1"
         unit_of_measurement: "V"
-      volt2_ut:
+      batteri2:
         value_template: >-
           {% if states('sensor.test_volt2')|float > 0 %}
             {{ ((states('sensor.test_volt2') | float +157.55)/213.93) | round(1) }}
           {% else %}
             0
           {% endif %}
+        friendly_name: "Batteri2"
         unit_of_measurement: "V"
-      volt3_ut:
+      batteri3:
         value_template: >-
           {% if states('sensor.test_volt3')|float > 0 %}
             {{ ((states('sensor.test_volt3') | float +157.72)/162.48) | round(1) }}
           {% else %}
             0
           {% endif %}
+        friendly_name: "Batteri3"
         unit_of_measurement: "V"
 
 device_tracker:
