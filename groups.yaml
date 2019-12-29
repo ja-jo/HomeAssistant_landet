@@ -138,6 +138,7 @@
     entities:
       - automation.test1
       - automation.test10
+      - automation.test11
       - automation.test2
       - automation.test_pa
       - automation.testjan2

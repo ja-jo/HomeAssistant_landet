@@ -67,11 +67,10 @@
     action:
     - data:
         entity_id: group.lampor
-        #entity_id: switch.Nr4
+      service: light.turn_off
+    - data:
+        entity_id: group.lampor
       service: switch.turn_off
-    - service: light.turn_off
-      data:
-        entity_id: light.altanlampa
 
   # Stang av varje timme om ingen ar hemma
   - alias: "Av kvall"
@@ -94,10 +93,10 @@
     action:
     - data:
         entity_id: group.lampor
+      service: light.turn_off
+    - data:
+        entity_id: group.lampor
       service: switch.turn_off
-    - service: light.turn_off
-      data:
-        entity_id: light.altanlampa
 
   # Stang av vid soluppgang
   - alias: "Av soluppgang"
@@ -105,6 +104,9 @@
       platform: sun
       event: sunrise
     action:
+    - data:
+        entity_id: group.lampor
+      service: light.turn_off
     - data:
         entity_id: group.lampor
       service: switch.turn_off

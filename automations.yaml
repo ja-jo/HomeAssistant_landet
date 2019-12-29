@@ -12,6 +12,7 @@
       entity_id: group.lampor
     service: switch.turn_on
   - data:
+      brightness_pct: 100
       color_name: yellow
       entity_id: light.altanlampa
     service: light.turn_on
