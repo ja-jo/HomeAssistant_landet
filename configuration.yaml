@@ -319,7 +319,7 @@ device_tracker:
 asuswrt:
     host: 192.168.1.1
     username: admin
-    password: pellemaja07
+    password: !secret asus_password
 
 #mqtt:
 
@@ -346,7 +346,7 @@ cloud:
 mqtt:
     broker: 192.168.1.134
     username: "homeassistant"
-    password: "jans-ha"
+    password: !secret mqtt_password
     discovery: true
     discovery_prefix: homeassistant
 
@@ -524,7 +524,7 @@ input_boolean:
 
 tuya:
   username: ja-jo@bredband.net
-  password: Asien99
+  password: !secret tuya_password
   country_code: 46
   platform: tuya
 

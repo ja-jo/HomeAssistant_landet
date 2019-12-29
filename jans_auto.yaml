@@ -111,6 +111,22 @@
         entity_id: group.lampor
       service: switch.turn_off
 
+  # Test11
+#  - alias: "Test11"
+#    trigger:
+#      - platform: time_pattern
+#        hours: '16'
+#        minutes: '38'
+#        seconds: '10'
+#    action:
+#    - data:
+#        entity_id: group.lampor
+#      service: light.turn_on
+#    - data:
+#        entity_id: group.lampor
+#      service: switch.turn_on
+
+
   # Test10
   - alias: "Test10"
     trigger:

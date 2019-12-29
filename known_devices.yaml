@@ -709,4 +709,4 @@ yeelink_light_color2_miap152b:
   mac: 04:CF:8C:A0:15:2B
   name: Altanlampa
   picture:
-  track: true
+  track: false
