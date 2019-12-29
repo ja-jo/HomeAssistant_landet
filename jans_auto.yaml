@@ -71,7 +71,7 @@
       service: switch.turn_off
     - service: light.turn_off
       data:
-        entity_id: light.yeelight_color2_04cf8ca0152b
+        entity_id: light.altanlampa
 
   # Stang av varje timme om ingen ar hemma
   - alias: "Av kvall"
@@ -97,7 +97,7 @@
       service: switch.turn_off
     - service: light.turn_off
       data:
-        entity_id: light.yeelight_color2_04cf8ca0152b
+        entity_id: light.altanlampa
 
   # Stang av vid soluppgang
   - alias: "Av soluppgang"
@@ -132,7 +132,7 @@
 #          message: "hello world2"
       - service: light.turn_on
         data:
-          entity_id: light.yeelight_color2_04cf8ca0152b
+          entity_id: light.altanlampa
           transition: 20
           color_name: green
 #      - service: climate.set_operation_mode
@@ -497,27 +497,96 @@
   - alias: "Altanlampa av"
     trigger:
       - platform: time_pattern
-        hours: '00'
-        minutes: '00'
+        hours: '0'
+        minutes: '0'
         seconds: '30'
     action:
       - service: light.turn_off
         data:
-          entity_id: light.yeelight_color2_04cf8ca0152b
+          entity_id: light.altanlampa
+
+  - alias: "Kl16"
+    trigger:
+      - platform: time_pattern
+        hours: '16'
+        minutes: '0'
+    condition:
+      - condition: state
+        entity_id: light.altanlampa
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.altanlampa
+          brightness_pct: 100
+          transition: 30
+          color_name: white
+
+  - alias: "Kl17"
+    trigger:
+      - platform: time_pattern
+        hours: '17'
+        minutes: '0'
+    condition:
+      - condition: state
+        entity_id: light.altanlampa
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.altanlampa
+          brightness_pct: 100
+          transition: 30
+          color_name: white
+
+  - alias: "Kl18"
+    trigger:
+      - platform: time_pattern
+        hours: '18'
+        minutes: '0'
+    condition:
+      - condition: state
+        entity_id: light.altanlampa
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.altanlampa
+          brightness_pct: 100
+          transition: 30
+          color_name: white
+
+  - alias: "Kl19"
+    trigger:
+      - platform: time_pattern
+        hours: '19'
+        minutes: '0'
+    condition:
+      - condition: state
+        entity_id: light.altanlampa
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.altanlampa
+          brightness_pct: 100
+          transition: 30
+          color_name: white
 
   - alias: "Kl20"
     trigger:
       - platform: time_pattern
         hours: '20'
-        minutes: '00'
+        minutes: '0'
     condition:
       - condition: state
-        entity_id: light.yeelight_color2_04cf8ca0152b
+        entity_id: light.altanlampa
         state: 'on'
     action:
       - service: light.turn_on
         data:
-          entity_id: light.yeelight_color2_04cf8ca0152b
+          entity_id: light.altanlampa
+          brightness_pct: 100
           transition: 30
           color_name: white
 
@@ -525,15 +594,16 @@
     trigger:
       - platform: time_pattern
         hours: '21'
-        minutes: '00'
+        minutes: '0'
     condition:
       - condition: state
-        entity_id: light.yeelight_color2_04cf8ca0152b
+        entity_id: light.altanlampa
         state: 'on'
     action:
       - service: light.turn_on
         data:
-          entity_id: light.yeelight_color2_04cf8ca0152b
+          entity_id: light.altanlampa
+          brightness_pct: 100
           transition: 30
           color_name: yellow
 
@@ -541,15 +611,16 @@
     trigger:
       - platform: time_pattern
         hours: '22'
-        minutes: '00'
+        minutes: '0'
     condition:
       - condition: state
-        entity_id: light.yeelight_color2_04cf8ca0152b
+        entity_id: light.altanlampa
         state: 'on'
     action:
       - service: light.turn_on
         data:
-          entity_id: light.yeelight_color2_04cf8ca0152b
+          entity_id: light.altanlampa
+          brightness_pct: 70
           transition: 30
           color_name: orange
 
@@ -557,15 +628,16 @@
     trigger:
       - platform: time_pattern
         hours: '23'
-        minutes: '00'
+        minutes: '0'
     condition:
       - condition: state
-        entity_id: light.yeelight_color2_04cf8ca0152b
+        entity_id: light.altanlampa
         state: 'on'
     action:
       - service: light.turn_on
         data:
-          entity_id: light.yeelight_color2_04cf8ca0152b
+          entity_id: light.altanlampa
+          brightness_pct: 50
           transition: 30
           color_name: gold
 

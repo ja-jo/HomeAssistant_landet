@@ -50,6 +50,8 @@ updater:
 
 # Discover some devices automatically
 discovery:
+  ignore:
+    - yeelight
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 #conversation:
@@ -93,6 +95,15 @@ sun:
 #      use_music_mode: true
 #      save_on_change: true
 
+# Example configuration.yaml entry
+yeelight:
+  devices:
+    192.168.1.47:
+      name: Altanlampa
+      transition: 1000
+      save_on_change: true
+
+
 # Anvand signal for meddelanden
 #notify:
 #  - name: Jans-automat
@@ -100,8 +111,6 @@ sun:
 #    sender_nr: "+46704842816"
 #    recp_nr: "+46709828233"
 #    signal_cli_path: /home/homeassistant/signal-cli-0.6.2/bin
-
-recorder:
 
 # Weather prediction
 sensor:
@@ -266,7 +275,7 @@ sensor:
       volt1_ut:
         value_template: >-
           {% if states('sensor.test_volt1')|float > 0 %}
-            {{ ((states('sensor.test_volt1') | float +166.25)/396.51) | round(1) }}
+            {{ ((states('sensor.test_volt1') | float +80.69)/326.74) | round(1) }}
           {% else %}
             0
           {% endif %}
@@ -274,7 +283,7 @@ sensor:
       volt2_ut:
         value_template: >-
           {% if states('sensor.test_volt2')|float > 0 %}
-            {{ ((states('sensor.test_volt2') | float +158.75)/213.05) | round(1) }}
+            {{ ((states('sensor.test_volt2') | float +157.55)/213.93) | round(1) }}
           {% else %}
             0
           {% endif %}
@@ -282,7 +291,7 @@ sensor:
       volt3_ut:
         value_template: >-
           {% if states('sensor.test_volt3')|float > 0 %}
-            {{ ((states('sensor.test_volt3') | float +154.96)/161.00) | round(1) }}
+            {{ ((states('sensor.test_volt3') | float +157.72)/162.48) | round(1) }}
           {% else %}
             0
           {% endif %}

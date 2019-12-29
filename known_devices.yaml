@@ -567,13 +567,13 @@ galaxy_s6:
   picture:
   track: true
 
-yeelink_light_color2_miio132949501:
-  hide_if_away: false
-  icon:
-  mac: 04:CF:8C:A0:15:2B
-  name: Altanlampa
-  picture:
-  track: false
+#yeelink_light_color2_miio132949501:
+#  hide_if_away: false
+#  icon:
+#  mac: 04:CF:8C:A0:15:2B
+#  name: Altanlampa
+#  picture:
+#  track: false
 
 esp_cd27de:
   hide_if_away: false
@@ -700,5 +700,13 @@ espressif:
   icon:
   mac: CC:50:E3:AE:06:F0
   name: espressif
+  picture:
+  track: false
+
+yeelink_light_color2_miap152b:
+  hide_if_away: false
+  icon:
+  mac: 04:CF:8C:A0:15:2B
+  name: Altanlampa
   picture:
   track: true
