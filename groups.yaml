@@ -71,17 +71,25 @@
       - group.mvak
       - group.mvak2
       - group.varme
+      - group.temp
       - group.termostatelement
       - climate.innetemp
       - group.lampor
       - history_graph.tempgraf
-      #- light.altanlampa
-      
+
   huskonfig:
     name: Hus konfig
     icon: mdi:home-assistant
     view: yes
     entities:
+      - group.mvak
+      - group.mvak2
+      - group.varme
+      - group.temp
+      - group.termostatelement
+      - climate.innetemp
+      - group.lampor
+      - history_graph.tempgraf
       - group.nattsankning
       - group.altandorrvakt
 
