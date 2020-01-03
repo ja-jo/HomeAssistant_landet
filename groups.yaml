@@ -13,10 +13,12 @@
     name: Parkering
     entities:
       - switch.Nr5
+
   varme:
     name: Varme
     entities:
       - switch.Nr6
+
   termostatelement:
     name: Termostatelement
     entities:
@@ -24,16 +26,12 @@
       - switch.Nr4
       - switch.Nr8
       - switch.Nr10
+
   sovrum:
     name: Sovrum
     entities:
       - switch.Nr4
-  nytt:
-    name: Nytt
-    entities:
-      - switch.Nr10
-      - switch.Nr11
-      - switch.Nr12
+
   jans:
     name: Jans enheter
     view: no

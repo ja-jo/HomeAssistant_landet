@@ -710,3 +710,27 @@ yeelink_light_color2_miap152b:
   name: Altanlampa
   picture:
   track: false
+
+laptop_93m7kn27:
+  hide_if_away: false
+  icon:
+  mac: 30:F7:72:0A:A8:C1
+  name: LAPTOP-93M7KN27
+  picture:
+  track: true
+
+jans_raspberrypi:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:50:0D:5B
+  name: jans-raspberrypi
+  picture:
+  track: true
+
+esp_be35c3:
+  hide_if_away: false
+  icon:
+  mac: 2C:F4:32:BE:35:C3
+  name: ESP BE35C3
+  picture:
+  track: true

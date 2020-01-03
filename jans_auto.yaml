@@ -621,7 +621,7 @@
       - service: light.turn_on
         data:
           entity_id: light.altanlampa
-          brightness_pct: 100
+          brightness_pct: 80
           transition: 30
           color_name: yellow
 
