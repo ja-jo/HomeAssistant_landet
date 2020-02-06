@@ -8,17 +8,17 @@
     entity_id: group.all_devices
     state: home
   action:
-  - data:
-      entity_id: group.lampor
-    service: switch.turn_on
-  - data:
-      entity_id: group.lampor
-    service: light.turn_on
-  - data:
-      brightness_pct: 100
-      color_name: yellow
-      entity_id: light.altanlampa
-    service: light.turn_on
+    - service: light.turn_on
+      data:
+        entity_id: group.lampor
+    - service: light.turn_on
+      data:
+        brightness_pct: 100
+        color_name: yellow
+        entity_id: light.altanlampa
+    - service: switch.turn_on
+      data:
+        entity_id: group.lampor
 - id: '1530606991408'
   alias: Efter midnatt
   trigger:
@@ -26,9 +26,9 @@
     platform: time
   condition: []
   action:
-  - data:
-      entity_id: group.lampor
-    service: switch.turn_off
+    - service: switch.turn_off
+      data:
+        entity_id: group.lampor
 - id: '1530607106033'
   alias: Test1
   trigger:
@@ -39,9 +39,9 @@
     entity_id: group.all_devices
     state: home
   action:
-  - data:
-      entity_id: switch.Nr4
-    service: switch.turn_on
+    - data:
+        entity_id: switch.Nr4
+      service: switch.turn_on
 - id: '1530607183376'
   alias: Test2
   trigger:

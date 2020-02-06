@@ -14,6 +14,7 @@
 #      color_name: yellow
 #      entity_id: light.yeelight_color2_04cf8ca0152b
 #    service: light.turn_on
+
   - alias: "On nar nagon kommer"
     trigger:
       platform: state
@@ -28,9 +29,12 @@
           - condition: sun
             before: sunrise
     action:
-    - data:
-        entity_id: group.lampor
-      service: switch.turn_on
+      - service: switch.turn_on
+        data:
+          entity_id: group.lampor
+      - service: light.turn_on
+        data:
+          entity_id: group.lampor
 
   - alias: "Test pa"
     trigger:
@@ -65,12 +69,12 @@
         after: '00:00:00'
         before: '12:00:00'
     action:
-    - data:
-        entity_id: group.lampor
-      service: light.turn_off
-    - data:
-        entity_id: group.lampor
-      service: switch.turn_off
+      - service: light.turn_off
+        data:
+          entity_id: group.lampor
+      - service: switch.turn_off
+        data:
+          entity_id: group.lampor
 
   # Stang av varje timme om ingen ar hemma
   - alias: "Av kvall"
@@ -91,12 +95,12 @@
           value_template: >
             {{ states.climate.innetemp.attributes.temperature < 15 }}
     action:
-    - data:
-        entity_id: group.lampor
-      service: light.turn_off
-    - data:
-        entity_id: group.lampor
-      service: switch.turn_off
+      - service: light.turn_off
+        data:
+          entity_id: group.lampor
+      - service: switch.turn_off
+        data:
+          entity_id: group.lampor
 
   # Stang av vid soluppgang
   - alias: "Av soluppgang"
@@ -104,12 +108,12 @@
       platform: sun
       event: sunrise
     action:
-    - data:
-        entity_id: group.lampor
-      service: light.turn_off
-    - data:
-        entity_id: group.lampor
-      service: switch.turn_off
+      - service: light.turn_off
+        data:
+          entity_id: group.lampor
+      - service: switch.turn_off
+        data:
+          entity_id: group.lampor
 
   # Test11
 #  - alias: "Test11"
@@ -395,9 +399,7 @@
   - alias: Sla pa termostatelement
     trigger:
       platform: state
-      #entity_id: climate.innetemp
       entity_id: sensor.thermostat_status
-      #from: off
       to: heating
     condition:
 #      - condition: state
@@ -411,7 +413,8 @@
   - alias: Sla av termostatelement
     trigger:
       platform: state
-      entity_id: climate.innetemp
+      #entity_id: climate.innetemp
+      entity_id: sensor.thermostat_status
     condition:
       - condition: template
         value_template: >
@@ -434,12 +437,15 @@
         entity_id: sensor.thermostat_status
         to: "heating"
     condition:
-#      - condition: template
-#        value_template: >
-#          {{ states.climate.innetemp.attributes.temperature >= 20 }}
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature >= 20 }}
     action:
       - data:
           entity_id: group.termostatelement
+        service: switch.turn_on
+      - data:
+          entity_id: switch.sonoffbasic_power
         service: switch.turn_on
 
   - alias: Sla av termostatelement2

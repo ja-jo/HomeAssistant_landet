@@ -4,7 +4,7 @@
       - switch.Kallardorr
       - switch.Nr5
       - switch.Nr9
-      - switch.sonoff_power
+      - switch.105460322cf432be35c3
       - switch.slampher_power
       - light.altanlampa
       - light.75287157d8f15b8934dc
@@ -26,6 +26,8 @@
       - switch.Nr4
       - switch.Nr8
       - switch.Nr10
+      - switch.sonoff_power
+      - switch.sonoffth16_power
 
   sovrum:
     name: Sovrum
@@ -144,6 +146,9 @@
       - sensor.xiaomi_temp
       - sensor.xiaomi_fukt
       - sensor.altandorr_temperature
+      - sensor.sonoffth16b_temp
+      - sensor.temp_th16a
+      - sensor.fukt_th16a
 
   testaut:
     name: "Testautomater"
@@ -179,4 +184,6 @@
       - sensor.batteri1
       - sensor.batteri2
       - sensor.batteri3
+      - sensor.mijia2_temperatur
+      - sensor.mijia2_fukt
       

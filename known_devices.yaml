@@ -133,7 +133,7 @@ jakobsiphonejanslandetfunkarnu:
   mac: 64:70:33:3D:13:FC
   name: Jakobs-iPhone
   picture:
-  track: true
+  track: false
 
 liziphone6sjanslandetfunkarnu:
   hide_if_away: false
@@ -221,7 +221,7 @@ jennysiphonejanslandetfunkarnu:
   mac: CC:44:63:1B:09:F0
   name: Jennys-iPhone
   picture:
-  track: true
+  track: false
 
 pellesdatorjanslandetfunkarnu:
   hide_if_away: false
@@ -517,7 +517,7 @@ jennys_iphone:
   mac: F8:2D:7C:5E:3B:D2
   name: Jennys-iPhone
   picture:
-  track: true
+  track: false
 
 android_7c5557a452dbc782:
   hide_if_away: false
@@ -725,7 +725,7 @@ jans_raspberrypi:
   mac: B8:27:EB:50:0D:5B
   name: jans-raspberrypi
   picture:
-  track: true
+  track: false
 
 esp_be35c3:
   hide_if_away: false
@@ -733,4 +733,20 @@ esp_be35c3:
   mac: 2C:F4:32:BE:35:C3
   name: ESP BE35C3
   picture:
-  track: true
+  track: false
+
+sonoffbasic_1523:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:C1:A5:F3
+  name: sonoffbasic-1523
+  picture:
+  track: false
+
+tasmotath16b_4150:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:B5:B0:36
+  name: tasmotaTH16b-4150
+  picture:
+  track: false

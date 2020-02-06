@@ -270,6 +270,25 @@ sensor:
     name: "Test volt3"
     state_topic: "homeassistant/volt3"
 
+  - platform: mqtt
+    state_topic: 'homeassistant/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/582D3438050B' # MQTT topic, check MQTT messages; replace AA... with id (BLE MAC) of your device
+    name: "Mijia2_temperatur"
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.tem | is_defined }}'
+    expire_after: 21600 # 6 hours
+  - platform: mqtt
+    state_topic: 'homeassistant/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/582D3438050B'
+    name: "Mijia2_fukt"
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.hum | is_defined }}'
+    expire_after: 21600 # 6 hours
+  - platform: mqtt
+    state_topic: 'homeassistant/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/582D3438050B'
+    name: "Mijia2_batteri"
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.batt | is_defined }}'
+    expire_after: 21600 # 6 hours
+
   - platform: template
     sensors:
       batteri1:
@@ -300,6 +319,38 @@ sensor:
         friendly_name: "Batteri3"
         unit_of_measurement: "V"
 
+  - platform: mqtt
+    name: "SonoffTH16B temp"
+    state_topic: "tele/tasmotaTH16b/SENSOR"
+    value_template: "{{ value_json['DS18B20'].Temperature }}"
+    unit_of_measurement: "°C"
+    availability_topic: "tele/tasmotaTH16b/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    device_class: temperature
+
+  - platform: mqtt
+    name: "Temp TH16A"
+    state_topic: "tele/tasmotaTH16A/SENSOR"
+    value_template: "{{ value_json['DHT11'].Temperature }}"
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
+    availability_topic: "tele/tasmotaTH16A/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    device_class: temperature
+
+  - platform: mqtt
+    name: "Fukt TH16A"
+    state_topic: "tele/tasmotaTH16A/SENSOR"
+    value_template: "{{ value_json['DHT11'].Humidity }}"
+    unit_of_measurement: "%"
+    icon: mdi:water-percent
+    availability_topic: "tele/tasmotaTH16A/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    device_class: humidity
+
 device_tracker:
 #  - platform: bluetooth_tracker
 #    new_device_defaults:
@@ -328,6 +379,8 @@ binary_sensor:
   - platform: workday
     country: SE
     workdays: [mon, tue, wed, thu, fri]
+
+  - platform: aurora
 
 # Anvands ej
 #  - platform: trend
@@ -382,6 +435,45 @@ switch:
     payload_not_available: "Offline"
     retain: false
 
+  - platform: mqtt
+    name: "SonoffBasic power"
+    state_topic: "stat/sonoffbasic/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/sonoffbasic/POWER"
+    availability_topic: "tele/sonoffbasic/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
+    name: "SonoffTH16A"
+    state_topic: "stat/tasmotaTH16A/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/tasmotaTH16A/POWER"
+    availability_topic: "tele/tasmotaTH16A/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
+    name: "SonoffTH16B power"
+    state_topic: "stat/tasmotaTH16b/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/tasmotaTH16b/POWER"
+    availability_topic: "tele/tasmotaTH16b/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
 group: !include groups.yaml
 
 automation: !include automations.yaml
@@ -394,7 +486,8 @@ climate:
   - platform: generic_thermostat
     name: Innetemp
     heater: group.varme
-    target_sensor: sensor.inne_temp1
+    #target_sensor: sensor.inne_temp1
+    target_sensor: sensor.altandorr_temperature
     #target_temp: 4
     min_temp: 4
     max_temp: 30
