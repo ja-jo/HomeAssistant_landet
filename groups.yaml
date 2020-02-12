@@ -27,12 +27,13 @@
       - switch.Nr8
       - switch.Nr10
       - switch.sonoff_power
-      - switch.sonoffth16_power
+      - switch.sonoffth16a
+      - switch.sonoffbasic_power
 
   sovrum:
     name: Sovrum
     entities:
-      - switch.Nr4
+      - switch.sonoffbasic_power
 
   jans:
     name: Jans enheter
@@ -88,10 +89,12 @@
       - group.temp
       - group.termostatelement
       - climate.innetemp
+      - climate.gaststuga
       - group.lampor
       - history_graph.tempgraf
       - group.nattsankning
       - group.altandorrvakt
+      - switch.sonoffth16b_power
 
   mvak:
     name: "Stugtimer1"
@@ -146,9 +149,9 @@
       - sensor.xiaomi_temp
       - sensor.xiaomi_fukt
       - sensor.altandorr_temperature
-      - sensor.sonoffth16b_temp
-      - sensor.temp_th16a
-      - sensor.fukt_th16a
+      - sensor.sonoffth16a_temp
+      - sensor.temp_th16b
+      - sensor.fukt_th16b
 
   testaut:
     name: "Testautomater"

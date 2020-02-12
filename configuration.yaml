@@ -196,6 +196,7 @@ sensor:
     name: "Kallar fukt"
     state_topic: "homeassistant/DHT11/fuktDHT"
     unit_of_measurement: "%"
+    icon: mdi:water-percent
   - platform: mqtt
     name: "Inne temp1"
     state_topic: "homeassistant/mini1/temp1"
@@ -212,6 +213,7 @@ sensor:
     name: "Xiaomi fukt"
     state_topic: "homeassistant/xiaomi/sensor1/fukt"
     unit_of_measurement: "%"
+    icon: mdi:water-percent
   - platform: mqtt
     name: "Temp ute1"
     state_topic: "homeassistant/max1/tempds1"
@@ -280,6 +282,7 @@ sensor:
     state_topic: 'homeassistant/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/582D3438050B'
     name: "Mijia2_fukt"
     unit_of_measurement: '%'
+    icon: mdi:water-percent
     value_template: '{{ value_json.hum | is_defined }}'
     expire_after: 21600 # 6 hours
   - platform: mqtt
@@ -320,33 +323,33 @@ sensor:
         unit_of_measurement: "V"
 
   - platform: mqtt
-    name: "SonoffTH16B temp"
-    state_topic: "tele/tasmotaTH16b/SENSOR"
+    name: "SonoffTH16A temp"
+    state_topic: "tele/tasmotaTH16A/SENSOR"
     value_template: "{{ value_json['DS18B20'].Temperature }}"
     unit_of_measurement: "°C"
+    availability_topic: "tele/tasmotaTH16A/LWT"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    device_class: temperature
+
+  - platform: mqtt
+    name: "Temp TH16b"
+    state_topic: "tele/tasmotaTH16b/SENSOR"
+    value_template: "{{ value_json['DHT11'].Temperature }}"
+    unit_of_measurement: "°C"
+    icon: mdi:thermometer
     availability_topic: "tele/tasmotaTH16b/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     device_class: temperature
 
   - platform: mqtt
-    name: "Temp TH16A"
-    state_topic: "tele/tasmotaTH16A/SENSOR"
-    value_template: "{{ value_json['DHT11'].Temperature }}"
-    unit_of_measurement: "°C"
-    icon: mdi:thermometer
-    availability_topic: "tele/tasmotaTH16A/LWT"
-    payload_available: "Online"
-    payload_not_available: "Offline"
-    device_class: temperature
-
-  - platform: mqtt
-    name: "Fukt TH16A"
-    state_topic: "tele/tasmotaTH16A/SENSOR"
+    name: "Fukt TH16b"
+    state_topic: "tele/tasmotaTH16b/SENSOR"
     value_template: "{{ value_json['DHT11'].Humidity }}"
     unit_of_measurement: "%"
     icon: mdi:water-percent
-    availability_topic: "tele/tasmotaTH16A/LWT"
+    availability_topic: "tele/tasmotaTH16b/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
     device_class: humidity
@@ -486,14 +489,24 @@ climate:
   - platform: generic_thermostat
     name: Innetemp
     heater: group.varme
-    #target_sensor: sensor.inne_temp1
-    target_sensor: sensor.altandorr_temperature
+    target_sensor: sensor.inne_temp1
+    #target_sensor: sensor.altandorr_temperature
     #target_temp: 4
     min_temp: 4
     max_temp: 30
     #precision: 1.0
     initial_hvac_mode: "heat"
     #initial_operation_mode: "auto"
+    min_cycle_duration:
+      minutes: 10
+
+  - platform: generic_thermostat
+    name: Gaststuga
+    heater: switch.sonoffth16b_power
+    target_sensor: sensor.temp_th16b
+    min_temp: 4
+    max_temp: 30
+    initial_hvac_mode: "off"
     min_cycle_duration:
       minutes: 10
 
@@ -633,6 +646,8 @@ history_graph:
       - sensor.temp_ute1
       - sensor.xiaomi_temp
       - sensor.altandorr_temperature
+      - sensor.sonoffth16a_temp
+      - sensor.temp_th16b
     hours_to_show: 24
     refresh: 60
 
