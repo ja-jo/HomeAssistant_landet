@@ -314,6 +314,27 @@
         data_template:
           entity_id: input_boolean.heating_timer3
 
+  - alias: "Varme_gaststuga"
+    trigger:
+      - platform: state
+        entity_id: sensor.thermostat_status
+        to: "heating"
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.temp_ute1
+        below: 20
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature >= 20 }}
+    action:
+      - service: climate.turn_on
+        data_template:
+          entity_id: climate.gaststuga
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.gaststuga
+          operation_mode: heat
+
   - alias: "Under5plus"
     trigger:
      - platform: time_pattern
@@ -412,9 +433,13 @@
 
   - alias: Sla av termostatelement
     trigger:
-      platform: state
-      #entity_id: climate.innetemp
-      entity_id: sensor.thermostat_status
+      platform: numeric_state
+      entity_id: climate.innetemp
+      value_template: '{{ states.climate.innetemp.attributes.temperature }}'
+      below: '20'
+ #     platform: state
+ #     entity_id: sensor.thermostat_status
+ #     entity_id: climate.innetemp
     condition:
       - condition: template
         value_template: >
