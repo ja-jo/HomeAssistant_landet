@@ -69,11 +69,8 @@
     icon: mdi:home
     view: yes
     entities:
-      - group.mvak
-      - group.mvak2
-      - group.varme
       - group.temp
-      - group.termostatelement
+      - climate.gaststuga
       - climate.innetemp
       - group.lampor
       - history_graph.tempgraf
@@ -189,4 +186,6 @@
       - sensor.batteri3
       - sensor.mijia2_temperatur
       - sensor.mijia2_fukt
+      - group.temp
+      - history_graph.tempgraf
       
