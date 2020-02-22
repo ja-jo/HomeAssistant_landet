@@ -199,13 +199,20 @@
         data_template:
           entity_id: climate.innetemp
           temperature: "{{ states.input_number.heating_temperature.state | float }}"
+      - service: climate.set_hvac_mode
+        data_template:
+          entity_id: climate.innetemp
+          hvac_mode: heat
       - service: input_boolean.turn_off
         data_template:
           entity_id: input_boolean.heating_timer
-      - service: climate.set_operation_mode
-        data:
-          entity_id: climate.innetemp
-          operation_mode: heat
+  #    - service: climate.turn_on
+  #      data_template:
+  #        entity_id: climate.innetemp
+#      - service: climate.set_hvac_mode
+#        data:
+#          entity_id: climate.innetemp
+#          operation_mode: heat
 #      - service: notify.signalmessenger
 #        data:
 #          message: Meddelande
@@ -528,15 +535,24 @@
 #      service_template: >
 #        {% if is_state ('sensor.temp_diff' , 'varme_on') %} switch.turn_on
 #        {% else %} switch.turn_off {% endif %}
-      service: climate.set_operation_mode
-      entity_id: climate.innetemp
+      service: climate.set_hvac_mode
       data_template:
-        operation_mode: >
+        entity_id: climate.innetemp
+        hvac_mode: >
           {% if is_state ('sensor.temp_diff' , 'varme_on') %}
             heat
           {% elif is_state ('sensor.temp_diff' , 'varme_off') %}
             off
           {% endif %}
+    #  service: climate.set_operation_mode
+    #  entity_id: climate.innetemp
+    #  data_template:
+    #    operation_mode: >
+    #      {% if is_state ('sensor.temp_diff' , 'varme_on') %}
+    #        heat
+    #      {% elif is_state ('sensor.temp_diff' , 'varme_off') %}
+    #        off
+    #      {% endif %}
 #      entity_id: switch.solar_pump
 #      service_template: >
 #        {% if is_state ('sensor.temp_diff' , 'pump_on') %} switch.turn_on

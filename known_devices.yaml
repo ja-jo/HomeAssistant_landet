@@ -766,3 +766,11 @@ noelsunlsiphone_2:
   name: NoelSunlsiPhone
   picture:
   track: true
+
+loopy:
+  hide_if_away: false
+  icon:
+  mac: 50:7A:C5:C9:DE:9E
+  name: Loopy
+  picture:
+  track: true
