@@ -154,9 +154,9 @@ sensor:
       manad:
         value_template: "{{ ['Jan1','Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'][now().month] }}"
         entity_id: sensor.time
-  - platform: onewire
-    names:
-      28-000005ad64c9: altandorr
+#  - platform: onewire
+#    names:
+#      28-000005ad64c9: altandorr
 #      28-000007a8cb66: Nr1
 #      28-01131b71cfe3: Ute2
 #      28-01131b790468: Inne
@@ -253,11 +253,15 @@ sensor:
       temp_diff:
         friendly_name: Temperature Difference
         value_template: >
-          {% if ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperature.state | float))
+          {% if ((states.sensor.inne_temp1.state | float ) - (states.sensor.temp_th16a.state | float))
             < (states.input_number.varme_on_offset.state | float ) %} varme_on
-          {% elif ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperature.state | float))
+          {% elif ((states.sensor.inne_temp1.state | float ) - (states.sensor.temp_th16a.state | float))
             > (states.input_number.varme_off_offset.state | float ) %} varme_off
           {% else %} pending {% endif %}
+
+#          {% if ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperature.state | float))
+#          {% elif ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperature.state | float))
+#sensor.temp_h16a
 
   - platform: statistics
     entity_id: sensor.inne_temp1
@@ -323,10 +327,11 @@ sensor:
         unit_of_measurement: "V"
 
   - platform: mqtt
-    name: "SonoffTH16A temp"
+    name: "Temp TH16A"
     state_topic: "tele/tasmotaTH16A/SENSOR"
     value_template: "{{ value_json['DS18B20'].Temperature }}"
     unit_of_measurement: "°C"
+    icon: mdi:thermometer
     availability_topic: "tele/tasmotaTH16A/LWT"
     payload_available: "Online"
     payload_not_available: "Offline"
@@ -488,7 +493,8 @@ script: !include scripts.yaml
 climate:
   - platform: generic_thermostat
     name: Innetemp
-    heater: group.varme
+    #heater: group.varme
+    heater: switch.sonoffth16a
     target_sensor: sensor.inne_temp1
     #target_sensor: sensor.altandorr_temperature
     #target_temp: 4
@@ -645,8 +651,8 @@ history_graph:
       - sensor.inne_temp1
       - sensor.temp_ute1
       - sensor.xiaomi_temp
-      - sensor.altandorr_temperature
-      - sensor.sonoffth16a_temp
+#      - sensor.altandorr_temperature
+      - sensor.temp_th16a
       - sensor.temp_th16b
     hours_to_show: 24
     refresh: 60

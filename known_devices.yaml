@@ -774,3 +774,11 @@ loopy:
   name: Loopy
   picture:
   track: true
+
+laptop_p7fbkl03:
+  hide_if_away: false
+  icon:
+  mac: D8:F2:CA:6E:75:8F
+  name: LAPTOP-P7FBKL03
+  picture:
+  track: true

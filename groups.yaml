@@ -3,6 +3,7 @@
     entities:
       - switch.Kallardorr
       - switch.Nr5
+      - switch.sonoff_power
       - switch.Nr9
       - switch.105460322cf432be35c3
       - switch.slampher_power
@@ -13,11 +14,12 @@
     name: Parkering
     entities:
       - switch.Nr5
+      - switch.sonoff_power
 
   varme:
     name: Varme
     entities:
-      - switch.Nr6
+      - switch.sonoffth16a
 
   termostatelement:
     name: Termostatelement
@@ -26,8 +28,6 @@
       - switch.Nr4
       - switch.Nr8
       - switch.Nr10
-      - switch.sonoff_power
-      - switch.sonoffth16a
       - switch.sonoffbasic_power
 
   sovrum:
@@ -146,7 +146,7 @@
       - sensor.xiaomi_temp
       - sensor.xiaomi_fukt
       - sensor.altandorr_temperature
-      - sensor.sonoffth16a_temp
+      - sensor.temp_th16a
       - sensor.temp_th16b
       - sensor.fukt_th16b
 
