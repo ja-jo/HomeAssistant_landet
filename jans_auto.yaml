@@ -505,6 +505,27 @@
           entity_id: group.termostatelement
         service: switch.turn_off
 
+  - alias: Sla av element gaststuga
+    trigger:
+      platform: numeric_state
+      entity_id: climate.innetemp
+      value_template: '{{ states.climate.innetemp.attributes.temperature }}'
+      below: '10'
+    condition:
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature < 10 }}
+      - condition: state
+        entity_id: sensor.thermostat_status
+        state: idle
+      - condition: template
+        value_template: >
+          {{ trigger.to_state.attributes.temperature != trigger.from_state.attributes.temperature }}
+    action:
+      - service: climate.turn_off
+        data_template:
+          entity_id: climate.gaststuga
+
 #  - alias: 'Altandorr oppen'
 #    trigger:
 #      - platform: numeric_state

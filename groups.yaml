@@ -26,6 +26,7 @@
     entities:
       - switch.Nr7
       - switch.Nr4
+      - switch.Nr6
       - switch.Nr8
       - switch.Nr10
       - switch.sonoffbasic_power
