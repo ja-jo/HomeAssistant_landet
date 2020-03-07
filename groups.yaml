@@ -2,19 +2,18 @@
     name: Lysen
     entities:
       - switch.Kallardorr
-      - switch.Nr5
       - switch.sonoff_power
-      - switch.Nr9
       - switch.105460322cf432be35c3
       - switch.slampher_power
+      - switch.sonoffbasic4
+      - switch.sonoffbasic5
       - light.altanlampa
       - light.75287157d8f15b8934dc
 
   parkering:
     name: Parkering
     entities:
-      - switch.Nr5
-      - switch.sonoff_power
+      - switch.sonoffbasic5
 
   varme:
     name: Varme
@@ -26,6 +25,7 @@
     entities:
       - switch.Nr7
       - switch.Nr4
+      - switch.Nr5
       - switch.Nr6
       - switch.Nr8
       - switch.Nr10

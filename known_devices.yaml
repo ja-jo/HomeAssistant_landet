@@ -782,3 +782,19 @@ laptop_p7fbkl03:
   name: LAPTOP-P7FBKL03
   picture:
   track: true
+
+sonoffbasic4_3028:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:BF:AB:D4
+  name: SonoffBasic4-3028
+  picture:
+  track: false
+
+tasmota_4834:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:BF:B2:E2
+  name: SonoffBasic5-4834
+  picture:
+  track: false

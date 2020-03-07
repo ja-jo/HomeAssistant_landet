@@ -457,6 +457,32 @@ switch:
     retain: false
 
   - platform: mqtt
+    name: "SonoffBasic4"
+    state_topic: "stat/SonoffBasic4/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/SonoffBasic4/POWER"
+    availability_topic: "tele/SonoffBasic4/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
+    name: "SonoffBasic5"
+    state_topic: "stat/SonoffBasic5/RESULT"
+    value_template: "{{ value_json.POWER }}"
+    command_topic: "cmnd/SonoffBasic5/POWER"
+    availability_topic: "tele/SonoffBasic5/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: false
+
+  - platform: mqtt
     name: "SonoffTH16A"
     state_topic: "stat/tasmotaTH16A/RESULT"
     value_template: "{{ value_json.POWER }}"
