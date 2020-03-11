@@ -246,6 +246,29 @@
           entity_id: climate.innetemp
           operation_mode: heat
 
+  - alias: "Sla av varme nar vi aker"
+    trigger:
+      platform: state
+      entity_id: group.familjen
+      from: 'home'
+      to: 'not_home'
+    condition:
+      - condition: state
+        entity_id: input_boolean.av_lamnar
+        state: 'on'
+    action:
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_temperature_hem.state | float }}"
+      - service: input_boolean.turn_off
+        data_template:
+          entity_id: input_boolean.av_lamnar
+      - service: climate.set_operation_mode
+        data:
+          entity_id: climate.innetemp
+          operation_mode: heat
+
   - alias: "Nattsankning_natt"
     trigger:
       - platform: time_pattern

@@ -86,6 +86,7 @@
       - group.varme
       - group.temp
       - group.termostatelement
+      - group.av_hem
       - climate.innetemp
       - climate.gaststuga
       - group.lampor
@@ -114,6 +115,12 @@
       - input_number.heater_ak2_minutes
       - input_number.heating_temperature2
       - input_boolean.heating_timer2
+
+  av_hem:
+    name: "Av vid hemfard"
+    entities:
+      - input_number.heating_temperatur_hem
+      - input_boolean.av_lamnar
 
   nattsankning:
     name: "Nattsankning 00-06"

@@ -613,6 +613,13 @@ input_number:
     step: 1
     icon: mdi:thermometer
 
+  heating_temperatur_hem:
+    name: Temperatur hemfard
+    min: 4
+    max: 25
+    step: 1
+    icon: mdi:thermometer
+
   heating_dag:
     name: Dag
     initial: 21
@@ -631,14 +638,14 @@ input_number:
 
   varme_on_offset:
     name: ON offset
-    initial: 1.5
+    initial: 2
     min: 0
     max: 10
     step: 0.5
 
   varme_off_offset:
     name: OFF offset
-    initial: 2.5
+    initial: 3
     min: 0
     max: 10
     step: 0.5
@@ -654,6 +661,10 @@ input_boolean:
 
   heating_timer3:
     name: Timer3
+    icon: mdi:toggle-switch
+
+  av_lamnar:
+    name: Av vid hemfard
     icon: mdi:toggle-switch
 
   nattsankning_switch:
