@@ -151,8 +151,9 @@
 #      - sensor.inne_temp2
 #      - sensor.inne_temp2_offset
       - sensor.temp_ute1
-      - sensor.xiaomi_temp
-      - sensor.xiaomi_fukt
+      - sensor.mijia1_temperatur
+      - sensor.mijia1_fukt
+#      - sensor.mijia1_batteri
       - sensor.altandorr_temperature
       - sensor.temp_th16a
       - sensor.temp_th16b
@@ -192,6 +193,9 @@
       - sensor.batteri1
       - sensor.batteri2
       - sensor.batteri3
+      - sensor.mijia1_temperatur
+      - sensor.mijia1_fukt
+      - sensor.mijia1_batteri
       - sensor.mijia2_temperatur
       - sensor.mijia2_fukt
       - group.temp

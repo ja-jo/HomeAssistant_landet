@@ -798,3 +798,11 @@ tasmota_4834:
   name: SonoffBasic5-4834
   picture:
   track: false
+
+espressif_2:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:0B:8D:80
+  name: espressif
+  picture:
+  track: false

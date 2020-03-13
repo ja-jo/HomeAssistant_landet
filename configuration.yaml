@@ -296,6 +296,28 @@ sensor:
     value_template: '{{ value_json.batt | is_defined }}'
     expire_after: 21600 # 6 hours
 
+  - platform: mqtt
+    state_topic: 'home/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/4C65A8DDD508' # MQTT topic, check MQTT messages; replace AA... with id (BLE MAC) of your device
+    name: "Mijia1_temperatur"
+    unit_of_measurement: '°C'
+    value_template: '{{ value_json.tem | is_defined }}'
+    expire_after: 21600 # 6 hours
+    device_class: temperature
+  - platform: mqtt
+    state_topic: 'home/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/4C65A8DDD508'
+    name: "Mijia1_fukt"
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.hum | is_defined }}'
+    expire_after: 21600 # 6 hours
+    device_class: humidity
+  - platform: mqtt
+    state_topic: 'home/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/4C65A8DDD508'
+    name: "Mijia1_batteri"
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.batt | is_defined }}'
+    expire_after: 21600 # 6 hours
+    device_class: battery
+
   - platform: template
     sensors:
       batteri1:
@@ -687,7 +709,7 @@ history_graph:
       - sensor.kallar_temp
       - sensor.inne_temp1
       - sensor.temp_ute1
-      - sensor.xiaomi_temp
+      - sensor.mijia1_temperatur
 #      - sensor.altandorr_temperature
       - sensor.temp_th16a
       - sensor.temp_th16b
