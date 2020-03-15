@@ -135,8 +135,8 @@
   - alias: "Test10"
     trigger:
       - platform: time_pattern
-        hours: '23'
-        minutes: '27'
+        hours: '18'
+        minutes: '00'
         seconds: '10'
 #    condition:
 #      - condition: or
@@ -149,14 +149,21 @@
 #        after: '20:00:00'
 #        before: '22:00:00'
     action:
-#      - service: notify.jans_automat
-#        data:
-#          message: "hello world2"
+#      - data:
+#          brightness_pct: 100
+#          color_name: yellow
+#          entity_id: light.altanlampa
+#          transition: 1200
+#    service: light.turn_on
       - service: light.turn_on
         data:
           entity_id: light.altanlampa
-          transition: 20
-          color_name: green
+          brightness_pct: 100
+          color_name: yellow
+          transition: 1200
+#      - service: notify.jans_automat
+#        data:
+#          message: "hello world2"
 #      - service: climate.set_operation_mode
 #        data:
 #          entity_id: climate.innetemp

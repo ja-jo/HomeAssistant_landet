@@ -175,6 +175,7 @@
       - automation.pa13_om_under_5minus
       - automation.pa15_om_under_0
       - automation.pa_16_om_under5
+      - automation.vakt_for_altandorren
 
   altandorrvakt:
     name: "Vakt for altandorr"
