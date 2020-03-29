@@ -573,7 +573,7 @@
 #          operation_mode: off
 
   - alias: 'Vakt for altandorren'
-    initial_state: 'on'
+    initial_state: 'off'
     trigger:
       platform: state
       entity_id: sensor.temp_diff
@@ -616,6 +616,22 @@
         hours: '0'
         minutes: '0'
         seconds: '30'
+    action:
+      - service: light.turn_off
+        data:
+          entity_id: light.altanlampa
+
+  # Sla av yeelight kl 23.15 nar det ar kallare an 10
+  - alias: "Altanlampa av"
+    trigger:
+      - platform: time_pattern
+        hours: '23'
+        minutes: '15'
+        seconds: '00'
+    condition:
+      - condition: numeric_state
+        entity_id: sensor.temp_ute1
+        below: 10
     action:
       - service: light.turn_off
         data:

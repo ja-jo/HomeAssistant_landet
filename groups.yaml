@@ -28,13 +28,13 @@
       - switch.Nr5
       - switch.Nr6
       - switch.Nr8
+      - switch.Nr9
       - switch.Nr10
-      - switch.sonoffbasic_power
 
   sovrum:
     name: Sovrum
     entities:
-      - switch.sonoffbasic_power
+      - switch.Nr9
 
   jans:
     name: Jans enheter
@@ -65,16 +65,14 @@
       - device_tracker.desktoptipt83c
       - device_tracker.fias_ipad
 
-  heaterak:
-    name: Heater AK
+  landet:
+    name: Landet
     icon: mdi:home
     view: yes
     entities:
       - group.temp
-      - climate.gaststuga
-      - climate.innetemp
-      - group.lampor
       - history_graph.tempgraf
+      - group.familjen
 
   huskonfig:
     name: Hus konfig

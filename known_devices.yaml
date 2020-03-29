@@ -221,7 +221,7 @@ jennysiphonejanslandetfunkarnu:
   mac: CC:44:63:1B:09:F0
   name: Jennys-iPhone
   picture:
-  track: false
+  track: true
 
 pellesdatorjanslandetfunkarnu:
   hide_if_away: false
@@ -517,7 +517,7 @@ jennys_iphone:
   mac: F8:2D:7C:5E:3B:D2
   name: Jennys-iPhone
   picture:
-  track: false
+  track: true
 
 android_7c5557a452dbc782:
   hide_if_away: false
@@ -806,3 +806,27 @@ espressif_2:
   name: espressif
   picture:
   track: false
+
+sensuss_ipad:
+  hide_if_away: false
+  icon:
+  mac: 98:01:A7:42:52:36
+  name: Sensuss-iPad
+  picture:
+  track: true
+
+galaxy_a20e:
+  hide_if_away: false
+  icon:
+  mac: DC:DC:E2:1B:4C:EA
+  name: Galaxy-A20e
+  picture:
+  track: true
+
+android_7ac13cb15a21e59b:
+  hide_if_away: false
+  icon:
+  mac: 94:DB:C9:EC:50:5B
+  name: android-7ac13cb15a21e59b
+  picture:
+  track: true
