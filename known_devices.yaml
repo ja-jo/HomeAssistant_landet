@@ -829,4 +829,20 @@ android_7ac13cb15a21e59b:
   mac: 94:DB:C9:EC:50:5B
   name: android-7ac13cb15a21e59b
   picture:
+  track: false
+
+f8_4e_73_a9_88_88:
+  hide_if_away: false
+  icon:
+  mac: F8:4E:73:A9:88:88
+  name: f8 4e 73 a9 88 88
+  picture:
+  track: true
+
+calypsosiphone6:
+  hide_if_away: false
+  icon:
+  mac: 28:5A:EB:D3:C0:58
+  name: CalypsosiPhone6
+  picture:
   track: true

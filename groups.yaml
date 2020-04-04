@@ -73,6 +73,7 @@
       - group.temp
       - history_graph.tempgraf
       - group.familjen
+      - group.jans
 
   huskonfig:
     name: Hus konfig

@@ -620,6 +620,7 @@
       - service: light.turn_off
         data:
           entity_id: light.altanlampa
+          transition: 60
 
   # Sla av yeelight kl 23.15 nar det ar kallare an 10
   - alias: "Altanlampa av"
@@ -636,6 +637,7 @@
       - service: light.turn_off
         data:
           entity_id: light.altanlampa
+          transition: 60
 
   - alias: "Kl16"
     trigger:
@@ -651,7 +653,7 @@
         data:
           entity_id: light.altanlampa
           brightness_pct: 100
-          transition: 30
+          transition: 300
           color_name: white
 
   - alias: "Kl17"
