@@ -846,3 +846,11 @@ calypsosiphone6:
   name: CalypsosiPhone6
   picture:
   track: true
+
+e0_cb_4e_a8_6d_3c:
+  hide_if_away: false
+  icon:
+  mac: E0:CB:4E:A8:6D:3C
+  name: e0 cb 4e a8 6d 3c
+  picture:
+  track: true
