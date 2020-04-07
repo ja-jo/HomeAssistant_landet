@@ -300,6 +300,10 @@
         data_template:
           entity_id: climate.innetemp
           temperature: "{{ states.input_number.heating_natt.state | float }}"
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.gaststuga
+          temperature: "{{ states.input_number.heating_natt.state | float }}"
 
   - alias: "Nattsankning_dag"
     trigger:
@@ -324,6 +328,10 @@
       - service: climate.set_temperature
         data_template:
           entity_id: climate.innetemp
+          temperature: "{{ states.input_number.heating_dag.state | float }}"
+      - service: climate.set_temperature
+        data_template:
+          entity_id: climate.gaststuga
           temperature: "{{ states.input_number.heating_dag.state | float }}"
 
   - alias: "Temp timer3"
