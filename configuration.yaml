@@ -69,6 +69,9 @@ logbook:
 system_log:
   fire_event: true
 
+# Monitor raspberry
+glances:
+
 # The System Health component provides an API to offer information on the system and its components.
 # It also allows to run diagnostic tools to diagnose problems.
 system_health:

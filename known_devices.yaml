@@ -854,3 +854,11 @@ e0_cb_4e_a8_6d_3c:
   name: e0 cb 4e a8 6d 3c
   picture:
   track: true
+
+galaxy_s10:
+  hide_if_away: false
+  icon:
+  mac: 8C:B8:4A:1E:F6:D1
+  name: Galaxy-S10
+  picture:
+  track: true
