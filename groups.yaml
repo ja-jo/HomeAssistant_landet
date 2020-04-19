@@ -47,6 +47,7 @@
       - device_tracker.plkl01d618ed6d547a50a1
       - device_tracker.med010
       - device_tracker.janshp2
+      - device_tracker.nile_win10
 
   familjen:
     name: Familjen
@@ -94,6 +95,7 @@
       - group.nattsankning
       - group.altandorrvakt
       - switch.sonoffth16b_power
+      - group.temp_minmax
 
   mvak:
     name: "Stugtimer1"
@@ -138,6 +140,14 @@
       - input_number.heater_ak3_minutes
       - input_number.heating_temperature3
       - input_boolean.heating_timer3
+
+  temp_minmax:
+    name: "Temp min max"
+    entities:
+      - sensor.inne_temp_max
+      - sensor.inne_temp_min
+      - sensor.ute_temp_max
+      - sensor.ute_temp_min
 
   temp:
     name: "Temp"

@@ -268,6 +268,40 @@ sensor:
 
   - platform: statistics
     entity_id: sensor.inne_temp1
+    name: Inne temp data
+    sampling_size: 1440
+    max_age:
+      hours: 24
+
+  - platform: statistics
+    entity_id: sensor.temp_ute1
+    name: Ute temp data
+    sampling_size: 1440
+    max_age:
+      hours: 24
+
+  - platform: template
+    sensors:
+      inne_temp_max:
+        friendly_name: Inne temp max
+        value_template: "{{ state_attr('sensor.inne_temp_data', 'max_value') }}"
+        unit_of_measurement: '°C'
+        device_class: temperature
+      inne_temp_min:
+        friendly_name: Inne temp min
+        value_template: "{{ state_attr('sensor.inne_temp_data', 'min_value') }}"
+        unit_of_measurement: '°C'
+        device_class: temperature
+      ute_temp_max:
+        friendly_name: Ute temp max
+        value_template: "{{ state_attr('sensor.ute_temp_data', 'max_value') }}"
+        unit_of_measurement: '°C'
+        device_class: temperature
+      ute_temp_min:
+        friendly_name: Ute temp min
+        value_template: "{{ state_attr('sensor.ute_temp_data', 'min_value') }}"
+        unit_of_measurement: '°C'
+        device_class: temperature
 
   - platform: mqtt
     name: "Test volt1"
@@ -383,6 +417,12 @@ sensor:
     payload_available: "Online"
     payload_not_available: "Offline"
     device_class: humidity
+
+  - platform: min_max
+    round_digits: 1
+    entity_ids:
+      - sensor.temp_ute1
+      - sensor.inne_temp1
 
 device_tracker:
 #  - platform: bluetooth_tracker
