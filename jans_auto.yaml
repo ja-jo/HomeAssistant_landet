@@ -267,7 +267,7 @@
       - service: climate.set_temperature
         data_template:
           entity_id: climate.innetemp
-          temperature: "{{ states.input_number.heating_temperature_hem.state | float }}"
+          temperature: "{{ states.input_number.heating_temperatur_hem.state | float }}"
       - service: input_boolean.turn_off
         data_template:
           entity_id: input_boolean.av_lamnar
