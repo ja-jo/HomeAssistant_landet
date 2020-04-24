@@ -131,6 +131,7 @@
       - input_number.heating_dag
       - input_number.heating_natt
       - input_boolean.nattsankning_switch
+      - input_boolean.nattsankning_gaststuga_switch
 
   husv:
     name: "Stugvarme"

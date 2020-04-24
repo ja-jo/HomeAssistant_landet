@@ -300,6 +300,27 @@
         data_template:
           entity_id: climate.innetemp
           temperature: "{{ states.input_number.heating_natt.state | float }}"
+
+  - alias: "Nattsankning_gaststuga_natt"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.temp_ute1
+          below: 20
+        - condition: state
+          entity_id: input_boolean.nattsankning_gaststuga_switch
+          state: 'on'
+        - condition: template
+          value_template: >
+            {{ states.climate.innetemp.attributes.temperature > 15 }}
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == "00:00"  }}'
+    action:
       - service: climate.set_temperature
         data_template:
           entity_id: climate.gaststuga
@@ -329,6 +350,27 @@
         data_template:
           entity_id: climate.innetemp
           temperature: "{{ states.input_number.heating_dag.state | float }}"
+
+  - alias: "Nattsankning_gaststuga_dag"
+    trigger:
+      - platform: time_pattern
+        minutes: '/5'
+        seconds: 2
+    condition:
+      condition: and
+      conditions:
+        - condition: numeric_state
+          entity_id: sensor.temp_ute1
+          below: 20
+        - condition: state
+          entity_id: input_boolean.nattsankning_gaststuga_switch
+          state: 'on'
+        - condition: template
+          value_template: >
+            {{ states.climate.innetemp.attributes.temperature > 15 }}
+        - condition: template
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == "06:00"  }}'
+    action:
       - service: climate.set_temperature
         data_template:
           entity_id: climate.gaststuga

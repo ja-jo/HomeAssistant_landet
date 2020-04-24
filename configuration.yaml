@@ -479,6 +479,7 @@ mqtt:
 # Example configuration.yaml entry
 tellstick:
   signal_repetitions: 2
+
 switch:
   - platform: tellstick
 
@@ -734,6 +735,10 @@ input_boolean:
 
   nattsankning_switch:
     name: Nattsankning
+    icon: mdi:toggle-switch
+
+  nattsankning_gaststuga_switch:
+    name: Nattsankning gaststuga
     icon: mdi:toggle-switch
 
 tuya:
