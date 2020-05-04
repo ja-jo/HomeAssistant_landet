@@ -862,3 +862,19 @@ galaxy_s10:
   name: Galaxy-S10
   picture:
   track: true
+
+desktop_em292gn:
+  hide_if_away: false
+  icon:
+  mac: 94:65:9C:9C:3F:10
+  name: DESKTOP-EM292GN
+  picture:
+  track: true
+
+med116:
+  hide_if_away: false
+  icon:
+  mac: 80:32:53:A5:A5:F0
+  name: MED116
+  picture:
+  track: true

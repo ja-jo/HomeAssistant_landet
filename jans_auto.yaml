@@ -825,3 +825,87 @@
           transition: 30
           color_name: gold
 
+  - alias: "ytterlampa_on"
+    trigger:
+      - platform: state
+        entity_id: light.75287157d8f15b8934dc
+        to: 'available'
+    condition:
+      - condition: state
+        entity_id: switch.Kallardorr
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.75287157d8f15b8934dc
+
+  - alias: "ytterlampa_off"
+    trigger:
+      - platform: state
+        entity_id: light.75287157d8f15b8934dc
+        to: 'available'
+    condition:
+      - condition: state
+        entity_id: switch.Kallardorr
+        state: 'off'
+    action:
+      - service: light.turn_off
+        data:
+          entity_id: light.75287157d8f15b8934dc
+
+  - alias: "altanlampa_on"
+    trigger:
+      - platform: state
+        entity_id: light.altanlampa
+        to: 'available'
+    condition:
+      - condition: state
+        entity_id: switch.Kallardorr
+        state: 'on'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.altanlampa
+
+  - alias: "altanlampa_off"
+    trigger:
+      - platform: state
+        entity_id: light.altanlampa
+        to: 'available'
+    condition:
+      - condition: state
+        entity_id: switch.Kallardorr
+        state: 'off'
+    action:
+      - service: light.turn_off
+        data:
+          entity_id: light.altanlampa
+
+  - alias: "slampher_on"
+    trigger:
+      - platform: state
+        entity_id: switch.slampher_power
+        to: 'available'
+    condition:
+      - condition: state
+        entity_id: switch.Kallardorr
+        state: 'on'
+    action:
+      - service: switch.turn_on
+        data:
+          entity_id: switch.slampher_power
+
+  - alias: "slampher_off"
+    trigger:
+      - platform: state
+        entity_id: switch.slampher_power
+        to: 'available'
+    condition:
+      - condition: state
+        entity_id: switch.Kallardorr
+        state: 'off'
+    action:
+      - service: switch.turn_off
+        data:
+          entity_id: switch.slampher_power
+
