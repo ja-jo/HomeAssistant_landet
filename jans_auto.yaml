@@ -808,7 +808,7 @@
           transition: 30
           color_name: orange
 
-  - alias: "Kl23"
+  - alias: "Kl23" 
     trigger:
       - platform: time_pattern
         hours: '23'
@@ -825,87 +825,87 @@
           transition: 30
           color_name: gold
 
-  - alias: "ytterlampa_on"
+  - alias: 'Termostatelement off'
     trigger:
-      - platform: state
-        entity_id: light.75287157d8f15b8934dc
-        to: 'available'
+      platform: numeric_state
+      entity_id: sensor.inne_temp
+      above: 22
     condition:
-      - condition: state
-        entity_id: switch.Kallardorr
-        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.temp_ute1
+        above: 15
+      - condition: time
+        after: '10:00:00'
+        before: '20:00:00'
     action:
-      - service: light.turn_on
-        data:
-          entity_id: light.75287157d8f15b8934dc
+      service: climate.set_hvac_mode
+      data:
+        entity_id: climate.innetemp
+        hvac_mode: 'off'
+#      data_template:
+#        entity_id: climate.innetemp
+#        hvac_mode: >
+#          {% if is_state ('sensor.temp_diff' , 'varme_off') %}
+#            off
+#          {% elif is_state ('sensor.temp_diff' , 'pending') %}
+#            off
+#          {% elif is_state ('sensor.temp_diff' , 'varme_on') %}
+#            on
+#          {% endif %}
 
-  - alias: "ytterlampa_off"
-    trigger:
-      - platform: state
-        entity_id: light.75287157d8f15b8934dc
-        to: 'available'
-    condition:
-      - condition: state
-        entity_id: switch.Kallardorr
-        state: 'off'
-    action:
-      - service: light.turn_off
-        data:
-          entity_id: light.75287157d8f15b8934dc
-
-  - alias: "altanlampa_on"
-    trigger:
-      - platform: state
-        entity_id: light.altanlampa
-        to: 'available'
-    condition:
-      - condition: state
-        entity_id: switch.Kallardorr
-        state: 'on'
-    action:
-      - service: light.turn_on
-        data:
-          entity_id: light.altanlampa
-
-  - alias: "altanlampa_off"
-    trigger:
-      - platform: state
-        entity_id: light.altanlampa
-        to: 'available'
-    condition:
-      - condition: state
-        entity_id: switch.Kallardorr
-        state: 'off'
-    action:
-      - service: light.turn_off
-        data:
-          entity_id: light.altanlampa
-
-  - alias: "slampher_on"
-    trigger:
-      - platform: state
-        entity_id: switch.slampher_power
-        to: 'available'
-    condition:
-      - condition: state
-        entity_id: switch.Kallardorr
-        state: 'on'
-    action:
-      - service: switch.turn_on
-        data:
-          entity_id: switch.slampher_power
-
-  - alias: "slampher_off"
-    trigger:
-      - platform: state
-        entity_id: switch.slampher_power
-        to: 'available'
-    condition:
-      - condition: state
-        entity_id: switch.Kallardorr
-        state: 'off'
-    action:
-      - service: switch.turn_off
-        data:
-          entity_id: switch.slampher_power
+#  - alias: "ytterlampa_off"
+#    trigger:
+#      - platform: state
+#        entity_id: light.75287157d8f15b8934dc
+#        to: 'on'
+#    condition:
+#      - condition: state
+#        entity_id: switch.Kallardorr
+#        state: 'off'
+#    action:
+#      - service: light.turn_off
+#        data:
+#          entity_id: light.75287157d8f15b8934dc
+#
+#  - alias: "altanlampa_off"
+#    trigger:
+#      - platform: state
+#        entity_id: light.altanlampa
+#        to: 'on'
+#    condition:
+#      - condition: state
+#        entity_id: switch.Kallardorr
+#        state: 'off'
+#    action:
+#      - service: light.turn_off
+#        data:
+#          entity_id: light.altanlampa
+#
+#  - alias: "slampher_on"
+#    trigger:
+#      - platform: state
+#        entity_id: switch.slampher_power
+#        to: 'available'
+#    condition:
+#      - condition: state
+#        entity_id: switch.Kallardorr
+#        state: 'on'
+#    action:
+#      - service: switch.turn_on
+#        data:
+#          entity_id: switch.slampher_power
+#
+#  - alias: "slampher_off"
+#    trigger:
+#      - platform: state
+#        entity_id: switch.slampher_power
+#        to: 'available'
+#    condition:
+#      - condition: state
+#        entity_id: switch.Kallardorr
+#        state: 'off'
+#    action:
+#      - service: switch.turn_off
+#        data:
+#          entity_id: switch.slampher_power
 

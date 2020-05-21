@@ -878,3 +878,19 @@ med116:
   name: MED116
   picture:
   track: true
+
+04_03_d6_53_96_91:
+  hide_if_away: false
+  icon:
+  mac: 04:03:D6:53:96:91
+  name: 04 03 d6 53 96 91
+  picture:
+  track: true
+
+huawei_mediapad_t3_10_592:
+  hide_if_away: false
+  icon:
+  mac: 90:17:C8:DC:23:5C
+  name: HUAWEI MediaPad T3 10-592
+  picture:
+  track: true
