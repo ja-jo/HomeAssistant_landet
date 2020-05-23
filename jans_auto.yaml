@@ -831,27 +831,12 @@
       entity_id: sensor.inne_temp
       above: 22
     condition:
-      - condition: numeric_state
-        entity_id: sensor.temp_ute1
-        above: 15
-      - condition: time
-        after: '10:00:00'
-        before: '20:00:00'
+      - condition: template
+        value_template: '{{ states.climate.innetemp.attributes.temperature < 22 }}'
     action:
-      service: climate.set_hvac_mode
-      data:
-        entity_id: climate.innetemp
-        hvac_mode: 'off'
-#      data_template:
-#        entity_id: climate.innetemp
-#        hvac_mode: >
-#          {% if is_state ('sensor.temp_diff' , 'varme_off') %}
-#            off
-#          {% elif is_state ('sensor.temp_diff' , 'pending') %}
-#            off
-#          {% elif is_state ('sensor.temp_diff' , 'varme_on') %}
-#            on
-#          {% endif %}
+      - data:
+          entity_id: group.termostatelement
+        service: switch.turn_off
 
 #  - alias: "ytterlampa_off"
 #    trigger:

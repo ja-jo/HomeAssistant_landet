@@ -236,6 +236,8 @@ sensor:
       thermostat_status:
         friendly_name: 'Husvarme status'
         value_template: "{{ states.climate.innetemp.attributes.hvac_action }}"
+#      thermostat_innetemp_temp:
+#        value_template: '{{ states.climate.innetemp.attributes.temperature }}'
 #  - platform: statistics
 #    name: altan statistik
 #    entity_id: sensor.altandorr_temp
