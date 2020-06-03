@@ -828,7 +828,7 @@
   - alias: 'Termostatelement off'
     trigger:
       platform: numeric_state
-      entity_id: sensor.inne_temp
+      entity_id: sensor.inne_temp1
       above: 22
     condition:
       - condition: template
