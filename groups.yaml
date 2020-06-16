@@ -157,6 +157,7 @@
       - sensor.inne_temperature
       - sensor.ute_temperature
       - sensor.yr_temperature
+      - sensor.yr_humidity
       - sensor.kallar_temp
       - sensor.kallar_fukt
       - sensor.inne_temp1
