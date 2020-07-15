@@ -138,12 +138,26 @@ sensor:
       - windDirection
       - humidity
       - fog
+
+#  - platform: smhi
+#    name: SMHI
+
+#  - platform: openweathermap
+#    api_key: 33cf19ebfcadc6c2e6dc6f0e28d471c8
+#    name: OpenWeatherMap
+#    monitored_conditions:
+#      - weather
+#      - temperature
+#      - humidity
+#      - pressure
+
 #  - platform: dovado
 #    username: admin
 #    password: pellemaja
 #    host: 192.168.0.1
 #    sensors:
 #      - network
+
   - platform: time_date
     display_options:
       - 'time'
@@ -763,6 +777,7 @@ history_graph:
 #      - sensor.altandorr_temperature
       - sensor.temp_th16a
       - sensor.temp_th16b
+      - sensor.badvattentemp
     hours_to_show: 24
     refresh: 60
 

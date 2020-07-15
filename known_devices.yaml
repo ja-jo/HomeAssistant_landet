@@ -894,3 +894,35 @@ huawei_mediapad_t3_10_592:
   name: HUAWEI MediaPad T3 10-592
   picture:
   track: true
+
+galaxy_s8:
+  hide_if_away: false
+  icon:
+  mac: 08:C5:E1:9F:2B:2D
+  name: Galaxy-S8
+  picture:
+  track: true
+
+d75b9088:
+  hide_if_away: false
+  icon:
+  mac: 3C:6A:A7:E7:0C:7A
+  name: D75B9088
+  picture:
+  track: true
+
+minnas_galaxy_a21s:
+  hide_if_away: false
+  icon:
+  mac: 12:11:DD:50:53:6F
+  name: Minnas-Galaxy-A21s
+  picture:
+  track: true
+
+huawei_p30_50eb8bbcf91c75:
+  hide_if_away: false
+  icon:
+  mac: D8:9B:3B:BC:48:25
+  name: HUAWEI P30-50eb8bbcf91c75
+  picture:
+  track: true

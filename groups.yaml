@@ -26,10 +26,10 @@
       - switch.Nr7
       - switch.Nr4
       - switch.Nr5
-      - switch.Nr6
       - switch.Nr8
       - switch.Nr9
       - switch.Nr10
+#      - switch.Nr6 Tillfalligt vattenpumpen
 
   sovrum:
     name: Sovrum
@@ -171,6 +171,7 @@
       - sensor.temp_th16a
       - sensor.temp_th16b
       - sensor.fukt_th16b
+      - sensor.badvattentemp
 
   testaut:
     name: "Testautomater"
@@ -212,6 +213,6 @@
       - sensor.mijia1_batteri
       - sensor.mijia2_temperatur
       - sensor.mijia2_fukt
-      - group.temp
-      - history_graph.tempgraf
+      - switch.Nr6
+#      - group.temp
       
