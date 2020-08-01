@@ -926,3 +926,19 @@ huawei_p30_50eb8bbcf91c75:
   name: HUAWEI P30-50eb8bbcf91c75
   picture:
   track: true
+
+tasmota_508293_0659:
+  hide_if_away: false
+  icon:
+  mac: EC:FA:BC:50:82:93
+  name: tasmota 508293-0659
+  picture:
+  track: true
+
+esp_4de4ad:
+  hide_if_away: false
+  icon:
+  mac: C8:2B:96:4D:E4:AD
+  name: ESP 4DE4AD
+  picture:
+  track: true

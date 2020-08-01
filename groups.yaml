@@ -7,13 +7,19 @@
       - switch.slampher_power
       - switch.sonoffbasic4
       - switch.sonoffbasic5
+      - switch.parkering
       - light.altanlampa
       - light.75287157d8f15b8934dc
 
   parkering:
     name: Parkering
     entities:
-      - switch.sonoffbasic5
+      - switch.parkering
+      - sensor.parkering_volt
+      - sensor.parkering_effekt
+      - sensor.parkering_stromstyrka
+      - sensor.parkering_energi_idag
+      - sensor.parkering_energi_igar
 
   varme:
     name: Varme
@@ -77,6 +83,7 @@
       - group.familjen
       - group.jans
       - group.temp_minmax
+      - group.parkering
 
   huskonfig:
     name: Hus konfig
@@ -97,6 +104,7 @@
       - group.altandorrvakt
       - switch.sonoffth16b_power
       - group.temp_minmax
+      - group.parkering
 
   mvak:
     name: "Stugtimer1"
