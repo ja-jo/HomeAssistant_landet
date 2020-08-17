@@ -838,6 +838,15 @@ history_graph:
     hours_to_show: 24
     refresh: 60
 
+  graphvolt:
+    name: Voltgraf
+    entities:
+      - sensor.batteri1
+      - sensor.batteri2
+      - sensor.batteri3
+    hours_to_show: 24
+    refresh: 60
+
 # Sensor section
 #sensor:
 #  - platform: template

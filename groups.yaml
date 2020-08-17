@@ -214,8 +214,6 @@
       - input_number.varme_off_offset
       - automation.vakt_for_altandorren
 
-
-
   mc:
     name: MC
     icon: mdi:car-battery
@@ -231,5 +229,6 @@
       - sensor.mijia2_fukt
       - switch.Nr6
       - sensor.testlandet
+      - history_graph.voltgraf
 #      - group.temp
       
