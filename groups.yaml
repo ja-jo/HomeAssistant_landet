@@ -73,38 +73,46 @@
       - device_tracker.desktoptipt83c
       - device_tracker.fias_ipad
 
+  personer:
+    name: Personer
+    icon: mdi:account
+    view: yes
+    entities:
+      - group.familjen
+      - group.jans
+
   landet:
     name: Landet
-    icon: mdi:home
+    icon: mdi:thermometer-lines
     view: yes
     entities:
       - group.temp
       - history_graph.tempgraf
-      - group.familjen
-      - group.jans
       - group.temp_minmax
+
+  lamps:
+    name: Lysen
+    icon: mdi:lightbulb-on-outline
+    view: yes
+    entities:
+      - group.lampor
       - group.parkering
 
-  huskonfig:
-    name: Hus konfig
-    icon: mdi:home-assistant
+  varmekonfig:
+    name: Varme konfig
+    icon: mdi:radiator
     view: yes
     entities:
       - group.mvak
       - group.mvak2
       - group.varme
-      - group.temp
       - group.termostatelement
       - group.av_hem
       - climate.innetemp
       - climate.gaststuga
-      - group.lampor
-      - history_graph.tempgraf
       - group.nattsankning
       - group.altandorrvakt
       - switch.sonoffth16b_power
-      - group.temp_minmax
-      - group.parkering
 
   mvak:
     name: "Stugtimer1"
@@ -164,8 +172,8 @@
     entities:
       - sensor.inne_temperature
       - sensor.ute_temperature
-      - sensor.yr_temperature
-      - sensor.yr_humidity
+#      - sensor.yr_temperature
+#      - sensor.yr_humidity
       - sensor.kallar_temp
       - sensor.kallar_fukt
       - sensor.inne_temp1
@@ -222,5 +230,6 @@
       - sensor.mijia2_temperatur
       - sensor.mijia2_fukt
       - switch.Nr6
+      - sensor.testlandet
 #      - group.temp
       

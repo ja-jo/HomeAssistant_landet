@@ -942,3 +942,67 @@ esp_4de4ad:
   name: ESP 4DE4AD
   picture:
   track: true
+
+56_c2_8a_96_d2_e4:
+  hide_if_away: false
+  icon:
+  mac: 56:C2:8A:96:D2:E4
+  name: 56 c2 8a 96 d2 e4
+  picture:
+  track: true
+
+74_b5_87_14_06_c6:
+  hide_if_away: false
+  icon:
+  mac: 74:B5:87:14:06:C6
+  name: 74 b5 87 14 06 c6
+  picture:
+  track: true
+
+applewaormelvin:
+  hide_if_away: false
+  icon:
+  mac: 18:55:E3:F1:10:29
+  name: AppleWaorMelvin
+  picture:
+  track: true
+
+iphone_yass:
+  hide_if_away: false
+  icon:
+  mac: E0:89:7E:26:F5:34
+  name: IPHONE-YASS
+  picture:
+  track: true
+
+oneplus5t:
+  hide_if_away: false
+  icon:
+  mac: 94:65:2D:DA:B4:00
+  name: OnePlus5T
+  picture:
+  track: true
+
+android_7f30ee4fa95261d8:
+  hide_if_away: false
+  icon:
+  mac: 30:D6:C9:0C:23:74
+  name: android-7f30ee4fa95261d8
+  picture:
+  track: true
+
+esp_034995:
+  hide_if_away: false
+  icon:
+  mac: C8:2B:96:03:49:95
+  name: ESP-034995
+  picture:
+  track: true
+
+esp_462fe4:
+  hide_if_away: false
+  icon:
+  mac: 48:3F:DA:46:2F:E4
+  name: ESP-462FE4
+  picture:
+  track: true
