@@ -73,13 +73,26 @@
       - device_tracker.desktoptipt83c
       - device_tracker.fias_ipad
 
-  personer:
-    name: Personer
-    icon: mdi:account
-    view: yes
+  mvak:
+    name: "Stugtimer1"
     entities:
-      - group.familjen
-      - group.jans
+      - sensor.departuretime_ak
+      - sensor.heater_start_time_ak
+      - input_number.heater_ak_hour
+      - input_number.heater_ak_minutes
+      - input_number.heating_temperature
+      - input_boolean.heating_timer
+      #- switch.nr4
+
+  mvak2:
+    name: "Stugtimer2"
+    entities:
+      - sensor.departuretime_ak2
+      - sensor.heater_start_time_ak2
+      - input_number.heater_ak2_hour
+      - input_number.heater_ak2_minutes
+      - input_number.heating_temperature2
+      - input_boolean.heating_timer2
 
   landet:
     name: Landet
@@ -88,6 +101,8 @@
     entities:
       - group.temp
       - history_graph.tempgraf
+      - climate.innetemp
+      - climate.duschrum
       - group.temp_minmax
 
   lamps:
@@ -109,31 +124,36 @@
       - group.termostatelement
       - group.av_hem
       - climate.innetemp
-      - climate.gaststuga
+      - climate.duschrum
       - group.nattsankning
       - group.altandorrvakt
       - switch.sonoffth16b_power
 
-  mvak:
-    name: "Stugtimer1"
+  personer:
+    name: Personer
+    icon: mdi:account
+    view: yes
     entities:
-      - sensor.departuretime_ak
-      - sensor.heater_start_time_ak
-      - input_number.heater_ak_hour
-      - input_number.heater_ak_minutes
-      - input_number.heating_temperature
-      - input_boolean.heating_timer
-      #- switch.nr4
+      - group.familjen
+      - group.jans
 
-  mvak2:
-    name: "Stugtimer2"
+  mc:
+    name: MC
+    icon: mdi:car-battery
+    view: yes
     entities:
-      - sensor.departuretime_ak2
-      - sensor.heater_start_time_ak2
-      - input_number.heater_ak2_hour
-      - input_number.heater_ak2_minutes
-      - input_number.heating_temperature2
-      - input_boolean.heating_timer2
+      - sensor.batteri1
+      - sensor.batteri2
+      - sensor.batteri3
+      - sensor.altan_temperatur
+      - sensor.altan_fukt
+      - sensor.altan_batteri
+      - sensor.mijia2_temperatur
+      - sensor.mijia2_fukt
+      - switch.Nr6
+      - sensor.testlandet
+      - history_graph.voltgraf
+#      - group.temp
 
   av_hem:
     name: "Av vid hemfard"
@@ -180,13 +200,12 @@
 #      - sensor.inne_temp2
 #      - sensor.inne_temp2_offset
       - sensor.temp_ute1
-      - sensor.mijia1_temperatur
-      - sensor.mijia1_fukt
+      - sensor.altan_temperatur
+      - sensor.altan_fukt
 #      - sensor.mijia1_batteri
-      - sensor.altandorr_temperature
-      - sensor.temp_th16a
-      - sensor.temp_th16b
-      - sensor.fukt_th16b
+      - sensor.altandorr_temperatur
+      - sensor.dusch_temperatur
+      - sensor.dusch_fukt
       - sensor.badvattentemp
 
   testaut:
@@ -213,22 +232,3 @@
       - input_number.varme_on_offset
       - input_number.varme_off_offset
       - automation.vakt_for_altandorren
-
-  mc:
-    name: MC
-    icon: mdi:car-battery
-    view: yes
-    entities:
-      - sensor.batteri1
-      - sensor.batteri2
-      - sensor.batteri3
-      - sensor.mijia1_temperatur
-      - sensor.mijia1_fukt
-      - sensor.mijia1_batteri
-      - sensor.mijia2_temperatur
-      - sensor.mijia2_fukt
-      - switch.Nr6
-      - sensor.testlandet
-      - history_graph.voltgraf
-#      - group.temp
-      

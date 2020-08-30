@@ -239,6 +239,7 @@ sensor:
     name: "Badvattentemp"
     state_topic: "homeassistant/bad1/temp1"
     unit_of_measurement: "°C"
+    expire_after: 86400 # 24 hours
 #  - platform: template
 #    sensors:
 #      inne_temp2_offset:
@@ -356,21 +357,24 @@ sensor:
 
   - platform: mqtt
     state_topic: 'home/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/4C65A8DDD508' # MQTT topic, check MQTT messages; replace AA... with id (BLE MAC) of your device
-    name: "Mijia1_temperatur"
+    #name: "Mijia1_temperatur"
+    name: "Altan temperatur"
     unit_of_measurement: '°C'
     value_template: '{{ value_json.tem | is_defined }}'
     expire_after: 21600 # 6 hours
     device_class: temperature
   - platform: mqtt
     state_topic: 'home/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/4C65A8DDD508'
-    name: "Mijia1_fukt"
+    #name: "Mijia1_fukt"
+    name: "Altan fukt"
     unit_of_measurement: '%'
     value_template: '{{ value_json.hum | is_defined }}'
     expire_after: 21600 # 6 hours
     device_class: humidity
   - platform: mqtt
     state_topic: 'home/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/4C65A8DDD508'
-    name: "Mijia1_batteri"
+    #name: "Mijia1_batteri"
+    name: "Altan batteri"
     unit_of_measurement: '%'
     value_template: '{{ value_json.batt | is_defined }}'
     expire_after: 21600 # 6 hours
@@ -407,7 +411,8 @@ sensor:
         unit_of_measurement: "V"
 
   - platform: mqtt
-    name: "Temp TH16A"
+    #name: "Temp TH16A"
+    name: "Altandorr temperatur"
     state_topic: "tele/tasmotaTH16A/SENSOR"
     value_template: "{{ value_json['DS18B20'].Temperature }}"
     unit_of_measurement: "°C"
@@ -418,9 +423,10 @@ sensor:
     device_class: temperature
 
   - platform: mqtt
-    name: "Temp TH16b"
+    #name: "Temp TH16b"
+    name: "Dusch temperatur"
     state_topic: "tele/tasmotaTH16b/SENSOR"
-    value_template: "{{ value_json['DHT11'].Temperature }}"
+    value_template: "{{ value_json['AM2301'].Temperature }}"
     unit_of_measurement: "°C"
     icon: mdi:thermometer
     availability_topic: "tele/tasmotaTH16b/LWT"
@@ -429,9 +435,10 @@ sensor:
     device_class: temperature
 
   - platform: mqtt
-    name: "Fukt TH16b"
+    #name: "Fukt TH16b"
+    name: "Dusch fukt"
     state_topic: "tele/tasmotaTH16b/SENSOR"
-    value_template: "{{ value_json['DHT11'].Humidity }}"
+    value_template: "{{ value_json['AM2301'].Humidity }}"
     unit_of_measurement: "%"
     icon: mdi:water-percent
     availability_topic: "tele/tasmotaTH16b/LWT"
@@ -672,9 +679,9 @@ climate:
       minutes: 10
 
   - platform: generic_thermostat
-    name: Gaststuga
+    name: Duschrum
     heater: switch.sonoffth16b_power
-    target_sensor: sensor.temp_th16b
+    target_sensor: sensor.dusch_temperatur
     min_temp: 4
     max_temp: 30
     #initial_hvac_mode: "off"
@@ -833,7 +840,9 @@ history_graph:
       - sensor.mijia1_temperatur
 #      - sensor.altandorr_temperature
       - sensor.temp_th16a
+      - sensor.altandorr_temperatur
       - sensor.temp_th16b
+      - sensor.dusch_temperatur
       - sensor.badvattentemp
     hours_to_show: 24
     refresh: 60
