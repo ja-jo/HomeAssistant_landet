@@ -278,9 +278,9 @@ sensor:
       temp_diff:
         friendly_name: Temperature Difference
         value_template: >
-          {% if ((states.sensor.inne_temp1.state | float ) - (states.sensor.temp_th16a.state | float))
+          {% if ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperatur.state | float))
             < (states.input_number.varme_on_offset.state | float ) %} varme_on
-          {% elif ((states.sensor.inne_temp1.state | float ) - (states.sensor.temp_th16a.state | float))
+          {% elif ((states.sensor.inne_temp1.state | float ) - (states.sensor.altandorr_temperatur.state | float))
             > (states.input_number.varme_off_offset.state | float ) %} varme_off
           {% else %} pending {% endif %}
 
@@ -837,9 +837,8 @@ history_graph:
       - sensor.kallar_temp
       - sensor.inne_temp1
       - sensor.temp_ute1
-      - sensor.mijia1_temperatur
+      - sensor.altan_temperatur
 #      - sensor.altandorr_temperature
-      - sensor.temp_th16a
       - sensor.altandorr_temperatur
       - sensor.temp_th16b
       - sensor.dusch_temperatur
