@@ -35,6 +35,7 @@
       - switch.Nr8
       - switch.Nr9
       - switch.Nr10
+      - switch.sonoffbasic_power
 #      - switch.Nr6 Tillfalligt vattenpumpen
 
   sovrum:

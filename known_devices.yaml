@@ -1022,3 +1022,19 @@ ac_67_5d_2e_f1_da:
   name: 74 42 8b b4 2b 2a
   picture:
   track: true
+
+galaxy_s20:
+  hide_if_away: false
+  icon:
+  mac: E6:BA:35:3D:BA:E3
+  name: Galaxy-S20
+  picture:
+  track: true
+
+galaxy_s20_2:
+  hide_if_away: false
+  icon:
+  mac: C2:01:A1:0A:77:CB
+  name: Galaxy-S20
+  picture:
+  track: true
