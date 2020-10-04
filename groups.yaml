@@ -73,6 +73,9 @@
       - device_tracker.fiasdatorjanslandetfunkarnu
       - device_tracker.desktoptipt83c
       - device_tracker.fias_ipad
+      - device_tracker.galaxy_s20
+      - device_tracker.galaxy_s20_2
+      - device_tracker.galaxy_s20_3
 
   mvak:
     name: "Stugtimer1"
@@ -201,8 +204,9 @@
 #      - sensor.inne_temp2
 #      - sensor.inne_temp2_offset
       - sensor.temp_ute1
-      - sensor.altan_temperatur
-      - sensor.altan_fukt
+      - sensor.mijia_altan_temp
+      - sensor.mijia_altan_fukt
+      - sensor.mijia_altan_batteri
 #      - sensor.mijia1_batteri
       - sensor.altandorr_temperatur
       - sensor.dusch_temperatur

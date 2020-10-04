@@ -837,8 +837,7 @@ history_graph:
       - sensor.kallar_temp
       - sensor.inne_temp1
       - sensor.temp_ute1
-      - sensor.altan_temperatur
-#      - sensor.altandorr_temperature
+      - sensor.mijia_altan_temp
       - sensor.altandorr_temperatur
       - sensor.temp_th16b
       - sensor.dusch_temperatur
