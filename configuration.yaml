@@ -139,6 +139,55 @@ sensor:
       - humidity
       - fog
 
+  - platform: trafikverket_weatherstation
+    name: "Brottby"
+    api_key: cd77b4cd4c0c40d4970426637c3c9b34
+    station: "Brottby"
+    monitored_conditions:
+        - air_temp
+        - road_temp
+        - humidity
+        - precipitation
+        - wind_direction
+        - wind_direction_text
+#        - wind_force
+#        - wind_force_max
+        - precipitation_amount
+        - precipitation_amountname
+
+  - platform: trafikverket_weatherstation
+    name: "V\u00E4tterhaga"
+    api_key: cd77b4cd4c0c40d4970426637c3c9b34
+    station: "V\u00E4tterhaga"
+
+    monitored_conditions:
+        - air_temp
+        - road_temp
+        - humidity
+        - precipitation
+        - wind_direction
+        - wind_direction_text
+#        - wind_force
+#        - wind_force_max
+        - precipitation_amount
+        - precipitation_amountname
+
+  - platform: trafikverket_weatherstation
+    name: "Ledinge trafikplats"
+    api_key: cd77b4cd4c0c40d4970426637c3c9b34
+    station: Ledinge
+    monitored_conditions:
+        - air_temp
+        - road_temp
+        - humidity
+        - precipitation
+        - wind_direction
+        - wind_direction_text
+#        - wind_force
+#        - wind_force_max
+        - precipitation_amount
+        - precipitation_amountname
+
 #  - platform: smhi
 #    name: SMHI
 
@@ -205,10 +254,35 @@ sensor:
     name: "Kallar temp"
     state_topic: "homeassistant/DHT11/tempDHT"
     unit_of_measurement: "°C"
+#    value_template: >-
+#      {%- if value|float >= 0 and value|float <= 45 -%}
+#      {{ value | round(1) }}
+#      {%- else -%}
+#      nan
+#      {%- endif -%}
+
+#  - platform: mqtt  
+#    state_topic: "mymqtt/sensornode1"  
+#    name: "SN1 Temperature"  
+#    unit_of_measurement: "°F"  
+#    value_template: >-
+#      {%- if value_json.temperature|float >= 40 and value_json.temperature|float <= 120 -%}
+#      {{ value_json.temperature | round(1) }}
+#      {%- else -%}
+#      nan
+#      {%- endif -%}
+
   - platform: mqtt
     name: "Temp ute1"
     state_topic: "homeassistant/max1/tempds1"
     unit_of_measurement: "°C"
+#    value_template: >-
+#      {%- if value|float >= 0 and value|float <= 45 -%}
+#      {{ value | round(1) }}
+#      {%- else -%}
+#      nan
+#      {%- endif -%}
+
   - platform: mqtt
     name: "Kallar fukt"
     state_topic: "homeassistant/DHT11/fuktDHT"
@@ -231,10 +305,6 @@ sensor:
     state_topic: "homeassistant/xiaomi/sensor1/fukt"
     unit_of_measurement: "%"
     icon: mdi:water-percent
-  - platform: mqtt
-    name: "Temp ute1"
-    state_topic: "homeassistant/max1/tempds1"
-    unit_of_measurement: "°C"
   - platform: mqtt
     name: "Badvattentemp"
     state_topic: "homeassistant/bad1/temp1"
@@ -551,11 +621,11 @@ switch:
   - platform: tellstick
 
   - platform: mqtt
-    name: "Sonoff power"
-    state_topic: "stat/sonoff/RESULT"
+    name: "SonoffS26 power"
+    state_topic: "stat/sonoffS26/RESULT"
     value_template: "{{ value_json.POWER }}"
-    command_topic: "cmnd/sonoff/POWER"
-    availability_topic: "tele/sonoff/LWT"
+    command_topic: "cmnd/sonoffS26/POWER"
+    availability_topic: "tele/sonoffS26/LWT"
     qos: 1
     payload_on: "ON"
     payload_off: "OFF"

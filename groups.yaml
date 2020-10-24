@@ -2,7 +2,7 @@
     name: Lysen
     entities:
       - switch.Kallardorr
-      - switch.sonoff_power
+      - switch.sonoffs26_power
       - switch.105460322cf432be35c3
       - switch.slampher_power
       - switch.sonoffbasic4
@@ -107,7 +107,6 @@
       - history_graph.tempgraf
       - climate.innetemp
       - climate.duschrum
-      - group.temp_minmax
 
   lamps:
     name: Lysen
@@ -140,6 +139,36 @@
     entities:
       - group.familjen
       - group.jans
+
+  vader:
+    name: "V\u00E4der"
+    icon: mdi:weather-partly-rainy
+    view: yes
+    entities:
+      - sensor.ledinge_trafikplats_air_temperature
+      - sensor.ledinge_trafikplats_humidity
+      - sensor.ledinge_trafikplats_precipitation_amount
+      - sensor.ledinge_trafikplats_precipitation_name
+      - sensor.ledinge_trafikplats_precipitation_type
+      - sensor.ledinge_trafikplats_road_temperature
+      - sensor.ledinge_trafikplats_wind_direction
+      - sensor.ledinge_trafikplats_wind_direction_text
+      - sensor.vatterhaga_air_temperature
+      - sensor.vatterhaga_humidity
+      - sensor.vatterhaga_precipitation_amount
+      - sensor.vatterhaga_precipitation_name
+      - sensor.vatterhaga_precipitation_type
+      - sensor.vatterhaga_road_temperature
+      - sensor.vatterhaga_wind_direction
+      - sensor.vatterhaga_wind_direction_text
+      - sensor.brottby_air_temperature
+      - sensor.brottby_humidity
+      - sensor.brottby_precipitation_amount
+      - sensor.brottby_precipitation_name
+      - sensor.brottby_precipitation_type
+      - sensor.brottby_road_temperature
+      - sensor.brottby_wind_direction
+      - sensor.brottby_wind_direction_text
 
   mc:
     name: MC
