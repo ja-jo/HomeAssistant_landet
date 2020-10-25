@@ -107,6 +107,7 @@
       - history_graph.tempgraf
       - climate.innetemp
       - climate.duschrum
+      - group.temp_minmax
 
   lamps:
     name: Lysen
