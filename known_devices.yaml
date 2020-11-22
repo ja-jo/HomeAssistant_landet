@@ -1061,3 +1061,43 @@ loopy_2:
   name: Loopy
   picture:
   track: true
+
+sensuss_ipad_2:
+  hide_if_away: false
+  icon:
+  mac: 7E:A4:50:42:8B:C8
+  name: Sensuss-iPad
+  picture:
+  track: true
+
+sensuss_ipad_3:
+  hide_if_away: false
+  icon:
+  mac: 72:64:46:41:2B:CB
+  name: Sensuss-iPad
+  picture:
+  track: true
+
+fias_ipad_2:
+  hide_if_away: false
+  icon:
+  mac: 66:48:08:6C:AC:A5
+  name: Fias-iPad
+  picture:
+  track: true
+
+96_fe_5d_f0_1b_7f:
+  hide_if_away: false
+  icon:
+  mac: 96:FE:5D:F0:1B:7F
+  name: 96 fe 5d f0 1b 7f
+  picture:
+  track: true
+
+jennys_iphone_2:
+  hide_if_away: false
+  icon:
+  mac: 92:93:7D:FD:3F:38
+  name: Jennys-iPhone
+  picture:
+  track: true

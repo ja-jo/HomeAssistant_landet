@@ -622,42 +622,48 @@
 #          entity_id: climate.innetemp
 #          operation_mode: off
 
-  - alias: 'Vakt for altandorren'
-    initial_state: 'off'
+  - alias: 'Vakt for altandorren oppen'
+    initial_state: 'on'
     trigger:
+      entity_id: binary_sensor.altandorr
+      for: 120
+      from: 'on'
       platform: state
-      entity_id: sensor.temp_diff
+      to: 'off'
     action:
-#      - service: climate.set_operation_mode
-#        data:
-#          entity_id: climate.innetemp
-#          operation_mode: off
-#      entity_id: group.termostatelement
-#      service_template: >
-#        {% if is_state ('sensor.temp_diff' , 'varme_on') %} switch.turn_on
-#        {% else %} switch.turn_off {% endif %}
       service: climate.set_hvac_mode
       data_template:
         entity_id: climate.innetemp
         hvac_mode: >
-          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
+          {% if is_state ('binary_sensor.altandorr' , 'on') %}
             heat
-          {% elif is_state ('sensor.temp_diff' , 'varme_off') %}
+          {% elif is_state ('binary_sensor.altandorr' , 'off') %}
             off
           {% endif %}
-    #  service: climate.set_operation_mode
-    #  entity_id: climate.innetemp
-    #  data_template:
-    #    operation_mode: >
-    #      {% if is_state ('sensor.temp_diff' , 'varme_on') %}
-    #        heat
-    #      {% elif is_state ('sensor.temp_diff' , 'varme_off') %}
-    #        off
-    #      {% endif %}
-#      entity_id: switch.solar_pump
-#      service_template: >
-#        {% if is_state ('sensor.temp_diff' , 'pump_on') %} switch.turn_on
-#        {% else %} switch.turn_off {% endif %}
+
+  - alias: 'Vakt for altandorren stangd'
+    initial_state: 'off'
+    trigger:
+      entity_id: binary_sensor.altandorr
+      for: 30
+      from: 'off'
+      platform: state
+      to: 'on'
+    action:
+      service: climate.set_hvac_mode
+      data_template:
+        entity_id: climate.innetemp
+        hvac_mode: >
+          {% if is_state ('binary_sensor.altandorr' , 'on') %}
+            heat
+          {% elif is_state ('binary_sensor.altandorr' , 'off') %}
+            off
+          {% endif %}
+#          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
+#            heat
+#          {% elif is_state ('sensor.temp_diff' , 'varme_off') %}
+#            off
+#          {% endif %}
 
   # Sla av yeelight kl 00
   - alias: "Altanlampa av"

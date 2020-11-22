@@ -36,7 +36,7 @@
       - switch.Nr9
       - switch.Nr10
       - switch.sonoffbasic_power
-#      - switch.Nr6 Tillfalligt vattenpumpen
+      - switch.Nr6
 
   sovrum:
     name: Sovrum
@@ -186,6 +186,7 @@
       - sensor.mijia2_fukt
       - switch.Nr6
       - sensor.testlandet
+      - binary_sensor.altandorr
       - history_graph.voltgraf
 #      - group.temp
 
