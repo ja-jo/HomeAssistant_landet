@@ -222,11 +222,11 @@
     entities:
       - sensor.ispindlejd_tilt
       - sensor.ispindlejd_gravity
+      - sensor.ispindlesg
       - sensor.ispindlejd_temp
       - sensor.ispindlejd_batteri
       - sensor.ispindlejd_signal
       - sensor.ispindlejd_interval
-      - sensor.ispindlesg
       - history_graph.jasmatare
 
   mc:
