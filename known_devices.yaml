@@ -1101,3 +1101,19 @@ jennys_iphone_2:
   name: Jennys-iPhone
   picture:
   track: true
+
+fias_ipad_3:
+  hide_if_away: false
+  icon:
+  mac: 1A:3D:25:8C:91:0C
+  name: Fias-iPad
+  picture:
+  track: true
+
+espressif_3:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:A8:06:C0
+  name: espressif
+  picture:
+  track: true

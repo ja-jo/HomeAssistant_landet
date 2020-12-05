@@ -150,8 +150,8 @@ sensor:
         - precipitation
         - wind_direction
         - wind_direction_text
-#        - wind_force
-#        - wind_force_max
+#        - wind_speed
+#        - wind_speed_max
         - precipitation_amount
         - precipitation_amountname
 
@@ -167,8 +167,8 @@ sensor:
         - precipitation
         - wind_direction
         - wind_direction_text
-#        - wind_force
-#        - wind_force_max
+#        - wind_speed
+#        - wind_speed_max
         - precipitation_amount
         - precipitation_amountname
 
@@ -183,8 +183,8 @@ sensor:
         - precipitation
         - wind_direction
         - wind_direction_text
-#        - wind_force
-#        - wind_force_max
+#        - wind_speed
+#        - wind_speed_max
         - precipitation_amount
         - precipitation_amountname
 
@@ -210,22 +210,26 @@ sensor:
   - platform: time_date
     display_options:
       - 'time'
+
   - platform: template
     sensors:
       veckodag:
         value_template: "{{ ['Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag','Söndag'][now().weekday()] }}"
         entity_id: sensor.time
+
   - platform: template
     sensors:
       manad:
         value_template: "{{ ['Jan1','Jan','Feb','Mar','Apr','Maj','Jun','Jul','Aug','Sep','Okt','Nov','Dec'][now().month] }}"
         entity_id: sensor.time
+
 #  - platform: onewire
 #    names:
 #      28-000005ad64c9: altandorr
 #      28-000007a8cb66: Nr1
 #      28-01131b71cfe3: Ute2
 #      28-01131b790468: Inne
+
   - platform: template
     sensors:
       departuretime_ak:
@@ -234,6 +238,7 @@ sensor:
         entity_id: 
          - input_number.heater_ak_minutes
          - input_number.heater_ak_hour
+
   - platform: template
     sensors:
       departuretime_ak2:
@@ -242,6 +247,7 @@ sensor:
         entity_id: 
          - input_number.heater_ak2_minutes
          - input_number.heater_ak2_hour
+
   - platform: template
     sensors:
       departuretime_ak3:
@@ -250,6 +256,55 @@ sensor:
         entity_id: 
          - input_number.heater_ak3_minutes
          - input_number.heater_ak3_hour
+
+  - platform: mqtt
+    name: "iSpindleJD tilt"
+    state_topic: "ispindel/iSpindelJD/tilt"
+    unit_of_measurement: "°"
+    icon: mdi:beer
+    expire_after: 36000 # 10 timmar
+  - platform: mqtt
+    name: "iSpindleJD temp"
+    state_topic: "ispindel/iSpindelJD/temperature"
+    unit_of_measurement: "°C"
+    expire_after: 36000 # 10 timmar
+    device_class: temperature
+#ispindel/iSpindelJD/temp_units C
+  - platform: mqtt
+    name: "iSpindleJD batteri"
+    state_topic: "ispindel/iSpindelJD/battery"
+    unit_of_measurement: "V"
+    expire_after: 36000 # 10 timmar
+    device_class: battery
+  - platform: mqtt
+    name: "iSpindleJD gravity"
+    state_topic: "ispindel/iSpindelJD/gravity"
+    unit_of_measurement: "plato"
+    icon: mdi:beer
+    expire_after: 36000 # 10 timmar
+  - platform: template
+    sensors:
+      ispindlesg:
+        friendly_name: "iSpindleJD SG"
+        value_template: "{{ ( 1 + states('sensor.ispindlejd_gravity')|float / ( 258.6 - 227.1 * states('sensor.ispindlejd_gravity')|float / 258.2 ) ) | round(3) }}"
+        #1+A16/(258,6-227,1*A16/258,2)
+        unit_of_measurement: "SG"
+    #icon: mdi:beer
+    #expire_after: 36000 # 10 timmar
+  - platform: mqtt
+    name: "iSpindleJD interval"
+    state_topic: "ispindel/iSpindelJD/interval"
+    unit_of_measurement: "sekunder"
+    icon: mdi:av-timer
+    #device_class: timestamp
+    expire_after: 36000 # 10 timmar
+  - platform: mqtt
+    name: "iSpindleJD signal"
+    state_topic: "ispindel/iSpindelJD/RSSI"
+    unit_of_measurement: "signal"
+    icon: mdi:radio-tower
+    expire_after: 36000 # 10 timmar
+
   - platform: mqtt
     name: "Kallar temp"
     state_topic: "homeassistant/DHT11/tempDHT"
@@ -922,6 +977,16 @@ history_graph:
       - sensor.batteri2
       - sensor.batteri3
     hours_to_show: 24
+    refresh: 60
+
+  graphispindle:
+    name: Jasmatare
+    entities:
+      - sensor.ispindlejd_tilt
+      - sensor.ispindlesg
+      - sensor.ispindlejd_temp
+      - sensor.ispindlejd_batteri
+    hours_to_show: 48
     refresh: 60
 
 # Sensor section
