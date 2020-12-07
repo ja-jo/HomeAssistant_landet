@@ -623,7 +623,6 @@
 #          operation_mode: off
 
   - alias: 'Vakt for altandorren oppen'
-    initial_state: 'on'
     trigger:
       entity_id: binary_sensor.altandorr
       for: 120
@@ -642,7 +641,6 @@
           {% endif %}
 
   - alias: 'Vakt for altandorren stangd'
-    initial_state: 'off'
     trigger:
       entity_id: binary_sensor.altandorr
       for: 30
@@ -653,12 +651,16 @@
       service: climate.set_hvac_mode
       data_template:
         entity_id: climate.innetemp
-        hvac_mode: >
-          {% if is_state ('binary_sensor.altandorr' , 'on') %}
-            heat
-          {% elif is_state ('binary_sensor.altandorr' , 'off') %}
-            off
-          {% endif %}
+        hvac_mode: heat
+#      service: climate.set_hvac_mode
+#      data_template:
+#        entity_id: climate.innetemp
+#        hvac_mode: >
+#          {% if is_state ('binary_sensor.altandorr' , 'on') %}
+#            heat
+#          {% elif is_state ('binary_sensor.altandorr' , 'off') %}
+#            off
+#          {% endif %}
 #          {% if is_state ('sensor.temp_diff' , 'varme_on') %}
 #            heat
 #          {% elif is_state ('sensor.temp_diff' , 'varme_off') %}

@@ -246,6 +246,7 @@
       - sensor.testlandet
       - binary_sensor.altandorr
       - history_graph.voltgraf
+      - group.testdeltaco
 
   av_hem:
     name: "Av vid hemfard"
@@ -325,3 +326,10 @@
       - input_number.varme_on_offset
       - input_number.varme_off_offset
       - automation.vakt_for_altandorren
+
+  testdeltaco:
+    name: TestDeltaco
+    entities:
+      - switch.05301030f4cfa21a4548
+      - switch.30214007c82b96597487
+
