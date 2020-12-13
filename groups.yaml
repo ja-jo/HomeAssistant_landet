@@ -36,7 +36,7 @@
       - switch.Nr9
       - switch.Nr10
       - switch.sonoffbasic_power
-      - switch.Nr6
+  #    - switch.Nr6
 
   sovrum:
     name: Sovrum
@@ -146,33 +146,10 @@
     icon: mdi:weather-partly-rainy
     view: yes
     entities:
-      - sensor.ledinge_trafikplats_air_temperature
-      - sensor.ledinge_trafikplats_humidity
-      - sensor.ledinge_trafikplats_precipitation_amount
-      - sensor.ledinge_trafikplats_precipitation_name
-      - sensor.ledinge_trafikplats_precipitation_type
-      - sensor.ledinge_trafikplats_road_temperature
-      - sensor.ledinge_trafikplats_wind_direction
-      - sensor.ledinge_trafikplats_wind_direction_text
-      - sensor.vatterhaga_air_temperature
-      - sensor.vatterhaga_humidity
-      - sensor.vatterhaga_precipitation_amount
-      - sensor.vatterhaga_precipitation_name
-      - sensor.vatterhaga_precipitation_type
-      - sensor.vatterhaga_road_temperature
-      - sensor.vatterhaga_wind_direction
-      - sensor.vatterhaga_wind_direction_text
-      - sensor.brottby_air_temperature
-      - sensor.brottby_humidity
-      - sensor.brottby_precipitation_amount
-      - sensor.brottby_precipitation_name
-      - sensor.brottby_precipitation_type
-      - sensor.brottby_road_temperature
-      - sensor.brottby_wind_direction
-      - sensor.brottby_wind_direction_text
       - group.ledinge
       - group.vatterhaga
       - group.brottby
+      - history_graph.vagmatare
 
   ledinge:
     name: "Trafikverket Ledinge"

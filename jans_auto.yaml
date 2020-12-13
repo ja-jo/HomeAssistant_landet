@@ -846,8 +846,36 @@
           entity_id: group.termostatelement
         service: switch.turn_off
 
-#  - alias: "ytterlampa_off"
-#    trigger:
+  - alias: Sla pa varmeflakt
+    trigger:
+      - platform: state
+        entity_id: sensor.thermostat_status
+        to: "heating"
+    condition:
+      - condition: template
+        value_template: >
+          {{ states.climate.innetemp.attributes.temperature >= 20 }}
+      - condition: numeric_state
+        entity_id: sensor.inne_temp1
+        below: 15
+    action:
+      - data:
+          entity_id: switch.Nr6
+        service: switch.turn_on
+
+  - alias: Sla av varmeflakt
+    trigger:
+      - platform: state
+        entity_id: sensor.thermostat_status
+        to: "off"
+    condition:
+    action:
+      - data:
+          entity_id: switch.Nr6
+        service: switch.turn_off
+
+#    trigger:    condition:
+#  - alias: "ytterlampa_off"        to: "heating"
 #      - platform: state
 #        entity_id: light.75287157d8f15b8934dc
 #        to: 'on'

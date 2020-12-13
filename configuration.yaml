@@ -980,13 +980,27 @@ history_graph:
     refresh: 60
 
   graphispindle:
-    name: Jasmatare
+    name: "J\u00E4sm\u00E4tare"
     entities:
       - sensor.ispindlejd_tilt
       - sensor.ispindlesg
       - sensor.ispindlejd_temp
       - sensor.ispindlejd_batteri
     hours_to_show: 48
+    refresh: 60
+
+  graphvagar:
+    name: "V\u00E4gm\u00E4tare"
+    entities:
+      - sensor.brottby_air_temperature
+      - sensor.brottby_humidity
+      - sensor.brottby_road_temperature
+      - sensor.ledinge_trafikplats_air_temperature
+      - sensor.ledinge_trafikplats_humidity
+      - sensor.ledinge_trafikplats_road_temperature
+      - sensor.vatterhaga_air_temperature
+      - sensor.vatterhaga_humidity
+      - sensor.vatterhaga_road_temperature
     refresh: 60
 
 # Sensor section
