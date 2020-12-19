@@ -22,7 +22,7 @@
       - sensor.parkering_energi_igar
 
   varme:
-    name: Varme
+    name: "V\u00E4rme"
     entities:
       - switch.sonoffth16a
 
@@ -36,7 +36,11 @@
       - switch.Nr9
       - switch.Nr10
       - switch.sonoffbasic_power
-  #    - switch.Nr6
+
+  flaktelement:
+    name: "Fl\u00E4ktelement"
+    entities:
+      - switch.Nr6
 
   sovrum:
     name: Sovrum
@@ -118,7 +122,7 @@
       - group.parkering
 
   varmekonfig:
-    name: Varme konfig
+    name: "V\u00E4rme konfig"
     icon: mdi:radiator
     view: yes
     entities:
@@ -126,6 +130,7 @@
       - group.mvak2
       - group.varme
       - group.termostatelement
+      - group.flaktelement
       - group.av_hem
       - climate.innetemp
       - climate.duschrum
@@ -226,13 +231,13 @@
       - group.testdeltaco
 
   av_hem:
-    name: "Av vid hemfard"
+    name: "Av vid hemf\u00E4rd"
     entities:
       - input_number.heating_temperatur_hem
       - input_boolean.av_lamnar
 
   nattsankning:
-    name: "Nattsankning 00-06"
+    name: "Natts\u00E4nkning 00-06"
     entities:
       - input_number.heating_dag
       - input_number.heating_natt
@@ -240,7 +245,7 @@
       - input_boolean.nattsankning_gaststuga_switch
 
   husv:
-    name: "Stugvarme"
+    name: "Stugv\u00E4rme"
     entities:
       - sensor.departuretime_ak3
       - sensor.heater_start_time_ak3
@@ -298,7 +303,7 @@
       - automation.vakt_for_altandorren
 
   altandorrvakt:
-    name: "Vakt for altandorr"
+    name: "Vakt f\u00F6r altand\u00F6rr"
     entities:
       - input_number.varme_on_offset
       - input_number.varme_off_offset

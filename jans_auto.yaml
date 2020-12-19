@@ -681,7 +681,7 @@
           transition: 60
 
   # Sla av yeelight kl 23.15 nar det ar kallare an 10
-  - alias: "Altanlampa av"
+  - alias: "Altanlampa av2"
     trigger:
       - platform: time_pattern
         hours: '23'
@@ -867,7 +867,7 @@
     trigger:
       - platform: state
         entity_id: sensor.thermostat_status
-        to: "off"
+        from: "heating"
     condition:
     action:
       - data:
