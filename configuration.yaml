@@ -365,6 +365,10 @@ sensor:
     state_topic: "homeassistant/bad1/temp1"
     unit_of_measurement: "°C"
     expire_after: 86400 # 24 hours
+  - platform: mqtt
+    name: "Badvattenvolt"
+    state_topic: "homeassistant/bad1/volt"
+    expire_after: 86400 # 24 hours
 #  - platform: template
 #    sensors:
 #      inne_temp2_offset:
@@ -533,6 +537,15 @@ sensor:
             0
           {% endif %}
         friendly_name: "Batteri3"
+        unit_of_measurement: "V"
+      badbatteri:
+        value_template: >-
+          {% if states('sensor.badvattenvolt')|float > 0 %}
+            {{ (states('sensor.badvattenvolt') | float /215.233) | round(2) }}
+          {% else %}
+            0
+          {% endif %}
+        friendly_name: "Batteri badm\u00E4tare"
         unit_of_measurement: "V"
 
   - platform: mqtt
@@ -973,9 +986,9 @@ history_graph:
   graphvolt:
     name: Voltgraf
     entities:
-      - sensor.batteri1
-      - sensor.batteri2
-      - sensor.batteri3
+      - sensor.volt1
+      - sensor.volt2
+      - sensor.volt3
     hours_to_show: 24
     refresh: 60
 
