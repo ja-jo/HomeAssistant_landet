@@ -331,12 +331,25 @@ sensor:
     name: "Temp ute1"
     state_topic: "homeassistant/max1/tempds1"
     unit_of_measurement: "°C"
+    value_template: >-
+      {% if ( value|float ) > -35 %}
+        {{ value | round(2) }}
+      {% else %}
+        0
+      {% endif %}
+
+#  - platform: mqtt
+#    name: "Temp ute2"
+#    state_topic: "homeassistant/max1/tempds2"
+#    unit_of_measurement: "°C"
+
+#    value_template: "{{ value | round(2) }}"
 #    value_template: >-
-#      {%- if value|float >= 0 and value|float <= 45 -%}
-#      {{ value | round(1) }}
-#      {%- else -%}
-#      nan
-#      {%- endif -%}
+#      {% if ( value|float ) > 0 %}
+#        {{ value | round(2) }}
+#      {% else %}
+#        nan
+#      {% endif %}
 
   - platform: mqtt
     name: "Kallar fukt"
@@ -547,6 +560,21 @@ sensor:
           {% endif %}
         friendly_name: "Batteri badm\u00E4tare"
         unit_of_measurement: "V"
+#      temp_ute1b:
+#        value_template: >-
+#          {% if states('sensor.badvattenvolt')|float > 0 %}
+#            {{ (states('sensor.badvattenvolt') | float /215.233) | round(2) }}
+#          {% else %}
+#            0
+#          {% endif %}
+#        friendly_name: "Batteri badm\u00E4tare"
+#        unit_of_measurement: "V"
+#          {% if states('sensor.temp_ute1')|float > 30 %}
+#            {{ (states('sensor.temp_ute1') | round(2) }}
+#          {% else %}
+#            nan
+#          {% endif %}
+#        unit_of_measurement: "°C"
 
   - platform: mqtt
     #name: "Temp TH16A"
