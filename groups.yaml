@@ -96,7 +96,7 @@
     name: "Stugtimer2"
     entities:
       - sensor.departuretime_ak2
-      - sensor.heater_start_time_ak2
+#      - sensor.heater_start_time_ak2
       - input_number.heater_ak2_hour
       - input_number.heater_ak2_minutes
       - input_number.heating_temperature2
@@ -128,6 +128,7 @@
     entities:
       - group.mvak
       - group.mvak2
+      - group.duschvarme
       - group.varme
       - group.termostatelement
       - group.flaktelement
@@ -246,15 +247,15 @@
       - input_boolean.nattsankning_switch
       - input_boolean.nattsankning_gaststuga_switch
 
-  husv:
-    name: "Stugv\u00E4rme"
+  duschvarme:
+    name: "Duschv\u00E4rme"
     entities:
-      - sensor.departuretime_ak3
-      - sensor.heater_start_time_ak3
-      - input_number.heater_ak3_hour
-      - input_number.heater_ak3_minutes
-      - input_number.heating_temperature3
-      - input_boolean.heating_timer3
+      - sensor.duschtid
+#      - sensor.heater_start_time_ak3
+      - input_number.heater_dusch_hour
+      - input_number.heater_dusch_minutes
+      - input_number.dusch_temperatur
+      - input_boolean.heating_dusch
 
   temp_minmax:
     name: "Temp min max"

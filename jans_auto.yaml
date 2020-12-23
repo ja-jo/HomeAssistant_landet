@@ -376,7 +376,7 @@
           entity_id: climate.gaststuga
           temperature: "{{ states.input_number.heating_dag.state | float }}"
 
-  - alias: "Temp timer3"
+  - alias: "Dusch timer"
     trigger:
       - platform: time_pattern
         minutes: '/5'
@@ -384,22 +384,19 @@
     condition:
       condition: and
       conditions:
-        - condition: numeric_state
-          entity_id: sensor.temp_ute1
-          below: 20
         - condition: state
-          entity_id: input_boolean.heating_timer3
+          entity_id: input_boolean.heating_dusch
           state: 'on'
         - condition: template
-          value_template: '{{ ( now().strftime("%s") | float+( (states.input_number.heating_temperature3.state | float ) - ( states.sensor.inne_temp1.state | float ) ) / ( states.sensor.temp_ute1.state | float * (0.3/9.4) + 1.9319 ) *3600) | int >= strptime(now().strftime("%Y-%m-%d ")+ states.sensor.departuretime_ak3.state,"%Y-%m-%d %H:%M") | int }}'
+          value_template: '{{ ((now().strftime("%s") | int + 0) | timestamp_custom("%H:%M")) == states.sensor.duschtid.state  }}'
     action:
       - service: climate.set_temperature
         data_template:
-          entity_id: climate.innetemp
-          temperature: "{{ states.input_number.heating_temperature3.state | float }}"
+          entity_id: climate.duschrum
+          temperature: "{{ states.input_number.heating_duschtid.state | float }}"
       - service: input_boolean.turn_off
         data_template:
-          entity_id: input_boolean.heating_timer3
+          entity_id: input_boolean.heating_dusch
 
   - alias: "Varme_gaststuga"
     trigger:
