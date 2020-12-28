@@ -271,11 +271,11 @@
     name: "Temp"
     entities:
       - sensor.inne_temperature
-      - sensor.ute_temperature
+      - sensor.ute_temp
 #      - sensor.yr_temperature
 #      - sensor.yr_humidity
-      - sensor.kallar_temp
-      - sensor.kallar_fukt
+      - sensor.kallar_temperatur
+      - sensor.kallar_fukt_2
       - sensor.inne_temp1
 #      - sensor.inne_temp2
 #      - sensor.inne_temp2_offset

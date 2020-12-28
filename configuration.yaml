@@ -310,10 +310,10 @@ sensor:
     icon: mdi:radio-tower
     expire_after: 36000 # 10 timmar
 
-  - platform: mqtt
-    name: "Kallar temp"
-    state_topic: "homeassistant/DHT11/tempDHT"
-    unit_of_measurement: "°C"
+#  - platform: mqtt
+#    name: "Kallar temp"
+#    state_topic: "homeassistant/DHT11/tempDHT"
+#    unit_of_measurement: "°C"
 #    value_template: >-
 #      {%- if value|float >= 0 and value|float <= 45 -%}
 #      {{ value | round(1) }}
@@ -332,16 +332,16 @@ sensor:
 #      nan
 #      {%- endif -%}
 
-  - platform: mqtt
-    name: "Temp ute1"
-    state_topic: "homeassistant/max1/tempds1"
-    unit_of_measurement: "°C"
-    value_template: >-
-      {% if ( value|float ) > -35 %}
-        {{ value | round(2) }}
-      {% else %}
-        0
-      {% endif %}
+#  - platform: mqtt
+#    name: "Temp ute1"
+#    state_topic: "homeassistant/max1/tempds1"
+#    unit_of_measurement: "°C"
+#    value_template: >-
+#      {% if ( value|float ) > -35 %}
+#        {{ value | round(2) }}
+#      {% else %}
+#        0
+#      {% endif %}
 
 #  - platform: mqtt
 #    name: "Temp ute2"
@@ -356,11 +356,11 @@ sensor:
 #        nan
 #      {% endif %}
 
-  - platform: mqtt
-    name: "Kallar fukt"
-    state_topic: "homeassistant/DHT11/fuktDHT"
-    unit_of_measurement: "%"
-    icon: mdi:water-percent
+#  - platform: mqtt
+#    name: "Kallar fukt"
+#    state_topic: "homeassistant/DHT11/fuktDHT"
+#    unit_of_measurement: "%"
+#    icon: mdi:water-percent
   - platform: mqtt
     name: "Inne temp1"
     state_topic: "homeassistant/mini1/temp1"
@@ -448,7 +448,7 @@ sensor:
       hours: 24
 
   - platform: statistics
-    entity_id: sensor.temp_ute1
+    entity_id: sensor.ute_temp
     name: Ute temp data
     sampling_size: 1440
     max_age:
@@ -468,12 +468,12 @@ sensor:
         device_class: temperature
       ute_temp_max:
         friendly_name: Ute temp max
-        value_template: "{{ state_attr('sensor.ute_temp_data', 'max_value') }}"
+        value_template: "{{ state_attr('sensor.ute_temp', 'max_value') }}"
         unit_of_measurement: '°C'
         device_class: temperature
       ute_temp_min:
         friendly_name: Ute temp min
-        value_template: "{{ state_attr('sensor.ute_temp_data', 'min_value') }}"
+        value_template: "{{ state_attr('sensor.ute_temp', 'min_value') }}"
         unit_of_measurement: '°C'
         device_class: temperature
 
@@ -625,7 +625,7 @@ sensor:
   - platform: min_max
     round_digits: 1
     entity_ids:
-      - sensor.temp_ute1
+      - sensor.ute_temp
       - sensor.inne_temp1
 
     # Parkering
@@ -1016,11 +1016,10 @@ history_graph:
     name: Tempgraf
     entities:
       - sensor.inne_temperature
-      - sensor.ute_temperature
+      - sensor.ute_temp
       - sensor.yr_temperature
-      - sensor.kallar_temp
+      - sensor.kallar_temperatur
       - sensor.inne_temp1
-      - sensor.temp_ute1
       - sensor.mijia_altan_temp
       - sensor.altandorr_temperatur
       - sensor.temp_th16b
