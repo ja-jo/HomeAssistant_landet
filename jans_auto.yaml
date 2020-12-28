@@ -393,10 +393,22 @@
       - service: climate.set_temperature
         data_template:
           entity_id: climate.duschrum
-          temperature: "{{ states.input_number.heating_duschtid.state | float }}"
+          temperature: "{{ states.input_number.dusch_temperatur.state | float }}"
       - service: input_boolean.turn_off
         data_template:
           entity_id: input_boolean.heating_dusch
+      - service: climate.turn_on
+        data_template:
+          entity_id: climate.duschrum
+
+#      - service: climate.set_hvac_mode
+#        data:
+#          entity_id: climate.duschrum
+#          operation_mode: heat
+#      - service: climate.set_operation_mode
+#        data:
+#          entity_id: climate.duschrum
+#          operation_mode: heat
 
   - alias: "Varme_gaststuga"
     trigger:
