@@ -255,7 +255,9 @@
       - input_number.heater_dusch_hour
       - input_number.heater_dusch_minutes
       - input_number.dusch_temperatur
+      - input_number.heater_dusch_timer
       - input_boolean.heating_dusch
+      - timer.duschtimer
 
   temp_minmax:
     name: "Temp min max"

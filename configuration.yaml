@@ -914,6 +914,14 @@ input_number:
     max: 55
     step: 5
   
+  heater_dusch_timer:
+    name: Timer
+    icon: mdi:timer
+    initial: 6
+    min: 0
+    max: 23
+    step: 1
+  
   heating_temperature:
     name: Temperatur
     min: 4
@@ -1053,6 +1061,10 @@ history_graph:
       - sensor.vatterhaga_humidity
       - sensor.vatterhaga_road_temperature
     refresh: 60
+
+timer:
+  duschtimer:
+    duration: '01:00:00'
 
 # Sensor section
 #sensor:
