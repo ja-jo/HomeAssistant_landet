@@ -42,6 +42,15 @@
     entities:
       - switch.Nr6
 
+  toatank:
+    name: "Toatank"
+    icon: mdi:toilet
+    entities:
+      - binary_sensor.toatank_gron
+      - binary_sensor.toatank_gul
+      - binary_sensor.toatank_rod
+      - switch.rela_test
+
   sovrum:
     name: Sovrum
     entities:
@@ -230,6 +239,7 @@
       - binary_sensor.altandorr
       - history_graph.voltgraf
       - group.testdeltaco
+      - group.toatank
       - sensor.badbatteri
       - sensor.badvattenvolt
 
