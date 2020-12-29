@@ -279,7 +279,6 @@
       - sensor.inne_temp1
 #      - sensor.inne_temp2
 #      - sensor.inne_temp2_offset
-      - sensor.temp_ute1
       - sensor.mijia_altan_temp
       - sensor.mijia_altan_fukt
       - sensor.mijia_altan_batteri

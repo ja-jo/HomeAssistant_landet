@@ -285,7 +285,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.temp_ute1
+          entity_id: sensor.ute_temp
           below: 20
         - condition: state
           entity_id: input_boolean.nattsankning_switch
@@ -310,7 +310,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.temp_ute1
+          entity_id: sensor.ute_temp
           below: 20
         - condition: state
           entity_id: input_boolean.nattsankning_gaststuga_switch
@@ -335,7 +335,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.temp_ute1
+          entity_id: sensor.ute_temp
           below: 20
         - condition: state
           entity_id: input_boolean.nattsankning_switch
@@ -360,7 +360,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.temp_ute1
+          entity_id: sensor.ute_temp
           below: 20
         - condition: state
           entity_id: input_boolean.nattsankning_gaststuga_switch
@@ -447,7 +447,7 @@
         to: "heating"
     condition:
       - condition: numeric_state
-        entity_id: sensor.temp_ute1
+        entity_id: sensor.ute_temp
         below: 20
       - condition: template
         value_template: >
@@ -470,7 +470,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.ute_temperature
+          entity_id: sensor.ute_temp
           below: 5
         - condition: state
           entity_id: switch.nr4
@@ -491,7 +491,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.ute_temperature
+          entity_id: sensor.ute_temp
           below: 0
         - condition: state
           entity_id: switch.nr4
@@ -512,7 +512,7 @@
       condition: and
       conditions:
         - condition: numeric_state
-          entity_id: sensor.ute_temperature
+          entity_id: sensor.ute_temp
           below: -5
         - condition: state
           entity_id: switch.nr4
@@ -536,7 +536,7 @@
           entity_id: switch.nr4
           state: 'on'
         - condition: template
-          value_template: '{{ ((now().strftime("%s") | int + ( ( ( states("sensor.ute_temperature") | int * -1 ) / 5 +2 ) * 3600)) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state }}'
+          value_template: '{{ ((now().strftime("%s") | int + ( ( ( states("sensor.ute_temp") | int * -1 ) / 5 +2 ) * 3600)) | timestamp_custom("%H:%M")) == states.sensor.departuretime_ak.state }}'
     action:
     - data:
         #entity_id: group.varme
@@ -728,7 +728,7 @@
         seconds: '00'
     condition:
       - condition: numeric_state
-        entity_id: sensor.temp_ute1
+        entity_id: sensor.ute_temp
         below: 10
     action:
       - service: light.turn_off
