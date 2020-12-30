@@ -49,6 +49,9 @@
       - binary_sensor.toatank_gron
       - binary_sensor.toatank_gul
       - binary_sensor.toatank_rod
+      - switch.gron_lampa
+      - switch.gul_lampa
+      - switch.rod_lampa
       - switch.rela_test
 
   sovrum:
