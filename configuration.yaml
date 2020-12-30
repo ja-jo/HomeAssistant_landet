@@ -468,12 +468,12 @@ sensor:
         device_class: temperature
       ute_temp_max:
         friendly_name: Ute temp max
-        value_template: "{{ state_attr('sensor.ute_temp', 'max_value') }}"
+        value_template: "{{ state_attr('sensor.ute_temp_data', 'max_value') }}"
         unit_of_measurement: '°C'
         device_class: temperature
       ute_temp_min:
         friendly_name: Ute temp min
-        value_template: "{{ state_attr('sensor.ute_temp', 'min_value') }}"
+        value_template: "{{ state_attr('sensor.ute_temp_data', 'min_value') }}"
         unit_of_measurement: '°C'
         device_class: temperature
 

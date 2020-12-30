@@ -1133,3 +1133,11 @@ desktop_tipt83c:
   name: DESKTOP-TIPT83C
   picture:
   track: true
+
+fias_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:BC:43:EF
+  name: FIAS-DATOR
+  picture:
+  track: true
