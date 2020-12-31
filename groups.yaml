@@ -140,7 +140,6 @@
     entities:
       - group.mvak
       - group.mvak2
-      - group.duschvarme
       - group.varme
       - group.termostatelement
       - group.flaktelement
@@ -158,6 +157,14 @@
     entities:
       - group.familjen
       - group.jans
+
+  dusch:
+    name: Dusch
+    icon: mdi:shower-head
+    view: yes
+    entities:
+      - group.duschvarme
+      - climate.duschrum
 
   vader:
     name: "V\u00E4der"
@@ -211,6 +218,7 @@
     view: yes
     entities:
       - group.ispindle
+      - history_graph.jasmatare
 
   ispindle:
     name: "iSpindleJD j\u00E4sm\u00E4tare"
@@ -264,7 +272,6 @@
     name: "Duschv\u00E4rme"
     entities:
       - sensor.duschtid
-#      - sensor.heater_start_time_ak3
       - input_number.heater_dusch_hour
       - input_number.heater_dusch_minutes
       - input_number.dusch_temperatur
