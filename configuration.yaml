@@ -842,7 +842,7 @@ climate:
   - platform: generic_thermostat
     name: Innetemp
     #heater: group.varme
-    heater: switch.sonoffth16a
+    heater: switch.sonoffbasic4
     target_sensor: sensor.inne_temp1
     #target_sensor: sensor.altandorr_temperature
     #target_temp: 4

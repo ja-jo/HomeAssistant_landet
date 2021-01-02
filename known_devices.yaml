@@ -1141,3 +1141,19 @@ fias_dator:
   name: FIAS-DATOR
   picture:
   track: true
+
+esp_a418ff:
+  hide_if_away: false
+  icon:
+  mac: 48:3F:DA:A4:18:FF
+  name: ESP-A418FF
+  picture:
+  track: true
+
+esp_1a4548:
+  hide_if_away: false
+  icon:
+  mac: F4:CF:A2:1A:45:48
+  name: ESP 1A4548
+  picture:
+  track: true
