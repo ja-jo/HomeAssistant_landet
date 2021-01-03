@@ -23,7 +23,8 @@
   varme:
     name: "V\u00E4rme"
     entities:
-      - switch.sonoffth16a
+      - switch.sonoffbasic4
+      - switch.sonoffth16b_power
 
   termostatelement:
     name: Termostatelement
@@ -89,8 +90,6 @@
       - device_tracker.desktoptipt83c
       - device_tracker.fias_ipad
       - device_tracker.galaxy_s20
-      - device_tracker.galaxy_s20_2
-      - device_tracker.galaxy_s20_3
 
   mvak:
     name: "Stugtimer1"
@@ -147,7 +146,6 @@
       - climate.duschrum
       - group.nattsankning
       - group.altandorrvakt
-      - switch.sonoffth16b_power
 
   personer:
     name: Personer
