@@ -1027,7 +1027,7 @@ galaxy_s20:
   hide_if_away: false
   icon:
   mac: E6:BA:35:3D:BA:E3
-  name: Galaxy-S20
+  name: Pelles_Galaxy-S20
   picture:
   track: true
 
@@ -1035,14 +1035,14 @@ galaxy_s20_2:
   hide_if_away: false
   icon:
   mac: C2:01:A1:0A:77:CB
-  name: Pelles_Galaxy-S20b.lan
+  name: Galaxy-S20_2.lan
   picture:
   track: true
 
 galaxy_s20_3:
   icon:
   mac: 62:14:45:2E:86:A3
-  name: Pelles_Galaxy-S20.lan
+  name: Galaxy-S20_3.lan
   picture:
   track: true
 
@@ -1116,7 +1116,7 @@ espressif_3:
   mac: CC:50:E3:A8:06:C0
   name: espressif
   picture:
-  track: true
+  track: false
 
 desktop_nv007on:
   hide_if_away: false
@@ -1148,12 +1148,28 @@ esp_a418ff:
   mac: 48:3F:DA:A4:18:FF
   name: ESP-A418FF
   picture:
-  track: true
+  track: fale
 
 esp_1a4548:
   hide_if_away: false
   icon:
   mac: F4:CF:A2:1A:45:48
   name: ESP 1A4548
+  picture:
+  track:true
+
+galaxy_s20_5g:
+  hide_if_away: false
+  icon:
+  mac: 62:43:8D:7F:A8:48
+  name: Fias_Galaxy-S20-5G
+  picture:
+  track: true
+
+pelles_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:CE:85:E5
+  name: Pelles-dator
   picture:
   track: true

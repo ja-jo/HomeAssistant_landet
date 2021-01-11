@@ -90,6 +90,7 @@
       - device_tracker.desktoptipt83c
       - device_tracker.fias_ipad
       - device_tracker.galaxy_s20
+      - device_tracker.galaxy_s20_5g
 
   mvak:
     name: "Stugtimer1"
