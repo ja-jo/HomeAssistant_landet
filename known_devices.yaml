@@ -1173,3 +1173,803 @@ pelles_dator:
   name: Pelles-dator
   picture:
   track: true
+
+pelles_s20:
+  hide_if_away: false
+  icon:
+  mac: C2:01:A1:0A:77:CB
+  name: Pelles-S20b
+  picture:
+  track: true
+
+chromecast:
+  hide_if_away: false
+  icon:
+  mac: D0:E7:82:F7:5A:B0
+  name: Chromecast
+  picture:
+  track: true
+
+esp_be35c3:
+  hide_if_away: false
+  icon:
+  mac: 2C:F4:32:BE:35:C3
+  name: ESP BE35C3
+  picture:
+  track: true
+
+esp_1a4548:
+  hide_if_away: false
+  icon:
+  mac: F4:CF:A2:1A:45:48
+  name: ESP 1A4548
+  picture:
+  track: true
+
+espressif:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:A8:06:C0
+  name: espressif
+  picture:
+  track: true
+
+jans_zero:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:7A:1F:98
+  name: jans-zero
+  picture:
+  track: true
+
+mijia_altan:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:0B:8D:80
+  name: mijia altan
+  picture:
+  track: true
+
+kallare:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:D6:96:BA
+  name: kallare
+  picture:
+  track: true
+
+esp_8934dc:
+  hide_if_away: false
+  icon:
+  mac: D8:F1:5B:89:34:DC
+  name: ESP 8934DC
+  picture:
+  track: true
+
+sonoffbasic4_3028:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:BF:AB:D4
+  name: SonoffBasic4-3028
+  picture:
+  track: true
+
+tasmotath16b_4150:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:B5:B0:36
+  name: tasmotaTH16b-4150
+  picture:
+  track: true
+
+sonoffs26_0937:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:15:43:A9
+  name: sonoffS26-0937
+  picture:
+  track: true
+
+yeelink_light_color2_miap152b:
+  hide_if_away: false
+  icon:
+  mac: 04:CF:8C:A0:15:2B
+  name: yeelink-light-color2 miap152b
+  picture:
+  track: true
+
+sonoffbasic_1523:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:C1:A5:F3
+  name: sonoffbasic-1523
+  picture:
+  track: true
+
+tasmotapowr2_0659:
+  hide_if_away: false
+  icon:
+  mac: EC:FA:BC:50:82:93
+  name: tasmotaPOWR2-0659
+  picture:
+  track: true
+
+esp_83e137:
+  hide_if_away: false
+  icon:
+  mac: 84:0D:8E:83:E1:37
+  name: ESP 83E137
+  picture:
+  track: true
+
+android_fb076e124a83f2b1:
+  hide_if_away: false
+  icon:
+  mac: 1C:B0:94:A6:36:6D
+  name: android-fb076e124a83f2b1
+  picture:
+  track: true
+
+jans_manjaro2:
+  hide_if_away: false
+  icon:
+  mac: 08:11:96:36:94:D0
+  name: jans-manjaro2
+  picture:
+  track: true
+
+honor_9_5af5052c4cb36b96:
+  hide_if_away: false
+  icon:
+  mac: 70:8A:09:D8:D5:45
+  name: Honor 9-5af5052c4cb36b96
+  picture:
+  track: true
+
+fias_ipad:
+  hide_if_away: false
+  icon:
+  mac: 1A:3D:25:8C:91:0C
+  name: Fias-iPad
+  picture:
+  track: true
+
+fias_s20:
+  hide_if_away: false
+  icon:
+  mac: 62:43:8D:7F:A8:48
+  name: Fias-S20
+  picture:
+  track: true
+
+android_7f30ee4fa95261d8:
+  hide_if_away: false
+  icon:
+  mac: 30:D6:C9:0C:23:74
+  name: android-7f30ee4fa95261d8
+  picture:
+  track: true
+
+b8_27_eb_50_0d_5b:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:50:0D:5B
+  name: b8 27 eb 50 0d 5b
+  picture:
+  track: true
+
+78_ba_f9_79_11_a3:
+  hide_if_away: false
+  icon:
+  mac: 78:BA:F9:79:11:A3
+  name: 78 ba f9 79 11 a3
+  picture:
+  track: true
+
+volt:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:AE:06:F0
+  name: volt
+  picture:
+  track: true
+
+med010:
+  hide_if_away: false
+  icon:
+  mac: B8:EE:65:5F:B2:61
+  name: MED010
+  picture:
+  track: true
+
+pelles_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:CE:85:E5
+  name: Pelles-dator
+  picture:
+  track: true
+
+24_be_05_1c_e2_ef:
+  hide_if_away: false
+  icon:
+  mac: 24:BE:05:1C:E2:EF
+  name: 24 be 05 1c e2 ef
+  picture:
+  track: true
+
+john_iphone:
+  hide_if_away: false
+  icon:
+  mac: 96:FE:5D:F0:1B:7F
+  name: John--iPhone
+  picture:
+  track: true
+
+med116:
+  hide_if_away: false
+  icon:
+  mac: 80:32:53:A5:A5:F0
+  name: MED116
+  picture:
+  track: true
+
+jakobs_iphone:
+  hide_if_away: false
+  icon:
+  mac: 6E:02:69:AA:CE:C2
+  name: Jakobs-iPhone
+  picture:
+  track: true
+
+ac_67_5d_2e_f1_da:
+  hide_if_away: false
+  icon:
+  mac: AC:67:5D:2E:F1:DA
+  name: ac 67 5d 2e f1 da
+  picture:
+  track: true
+
+android_57c72add50bdf4d6:
+  hide_if_away: false
+  icon:
+  mac: EC:9B:F3:4F:6D:C6
+  name: android-57c72add50bdf4d6
+  picture:
+  track: true
+
+fias_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:BC:43:EF
+  name: FIAS-DATOR
+  picture:
+  track: true
+
+92_93_7d_fd_3f_38:
+  hide_if_away: false
+  icon:
+  mac: 92:93:7D:FD:3F:38
+  name: 92 93 7d fd 3f 38
+  picture:
+  track: true
+
+pelles_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:CE:85:E5
+  name: Pelles-dator
+  picture:
+  track: true
+
+chromecast:
+  hide_if_away: false
+  icon:
+  mac: D0:E7:82:F7:5A:B0
+  name: Chromecast
+  picture:
+  track: true
+
+volt:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:AE:06:F0
+  name: volt
+  picture:
+  track: true
+
+esp_1a4548:
+  hide_if_away: false
+  icon:
+  mac: F4:CF:A2:1A:45:48
+  name: ESP 1A4548
+  picture:
+  track: true
+
+espressif:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:A8:06:C0
+  name: espressif
+  picture:
+  track: true
+
+jans_zero:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:7A:1F:98
+  name: jans-zero
+  picture:
+  track: true
+
+mijia_altan:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:0B:8D:80
+  name: mijia altan
+  picture:
+  track: true
+
+kallare:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:D6:96:BA
+  name: kallare
+  picture:
+  track: true
+
+esp_8934dc:
+  hide_if_away: false
+  icon:
+  mac: D8:F1:5B:89:34:DC
+  name: ESP 8934DC
+  picture:
+  track: true
+
+sonoffbasic4_3028:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:BF:AB:D4
+  name: SonoffBasic4-3028
+  picture:
+  track: true
+
+tasmotath16b_4150:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:B5:B0:36
+  name: tasmotaTH16b-4150
+  picture:
+  track: true
+
+sonoffs26_0937:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:15:43:A9
+  name: sonoffS26-0937
+  picture:
+  track: true
+
+yeelink_light_color2_miap152b:
+  hide_if_away: false
+  icon:
+  mac: 04:CF:8C:A0:15:2B
+  name: yeelink-light-color2 miap152b
+  picture:
+  track: true
+
+sonoffbasic_1523:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:C1:A5:F3
+  name: sonoffbasic-1523
+  picture:
+  track: true
+
+tasmotapowr2_0659:
+  hide_if_away: false
+  icon:
+  mac: EC:FA:BC:50:82:93
+  name: tasmotaPOWR2-0659
+  picture:
+  track: true
+
+esp_83e137:
+  hide_if_away: false
+  icon:
+  mac: 84:0D:8E:83:E1:37
+  name: ESP 83E137
+  picture:
+  track: true
+
+android_fb076e124a83f2b1:
+  hide_if_away: false
+  icon:
+  mac: 1C:B0:94:A6:36:6D
+  name: android-fb076e124a83f2b1
+  picture:
+  track: true
+
+jans_manjaro2:
+  hide_if_away: false
+  icon:
+  mac: 08:11:96:36:94:D0
+  name: jans-manjaro2
+  picture:
+  track: true
+
+honor_9_5af5052c4cb36b96:
+  hide_if_away: false
+  icon:
+  mac: 70:8A:09:D8:D5:45
+  name: Honor 9-5af5052c4cb36b96
+  picture:
+  track: true
+
+android_57c72add50bdf4d6:
+  hide_if_away: false
+  icon:
+  mac: EC:9B:F3:4F:6D:C6
+  name: android-57c72add50bdf4d6
+  picture:
+  track: true
+
+med116:
+  hide_if_away: false
+  icon:
+  mac: 80:32:53:A5:A5:F0
+  name: MED116
+  picture:
+  track: true
+
+pelles_s20:
+  hide_if_away: false
+  icon:
+  mac: E6:BA:35:3D:BA:E3
+  name: Pelles-S20
+  picture:
+  track: true
+
+fias_ipad:
+  hide_if_away: false
+  icon:
+  mac: 1A:3D:25:8C:91:0C
+  name: Fias-iPad
+  picture:
+  track: true
+
+fias_s20:
+  hide_if_away: false
+  icon:
+  mac: 62:43:8D:7F:A8:48
+  name: Fias-S20
+  picture:
+  track: true
+
+android_7f30ee4fa95261d8:
+  hide_if_away: false
+  icon:
+  mac: 30:D6:C9:0C:23:74
+  name: android-7f30ee4fa95261d8
+  picture:
+  track: true
+
+b8_27_eb_50_0d_5b:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:50:0D:5B
+  name: b8 27 eb 50 0d 5b
+  picture:
+  track: true
+
+78_ba_f9_79_11_a3:
+  hide_if_away: false
+  icon:
+  mac: 78:BA:F9:79:11:A3
+  name: 78 ba f9 79 11 a3
+  picture:
+  track: true
+
+esp_be35c3:
+  hide_if_away: false
+  icon:
+  mac: 2C:F4:32:BE:35:C3
+  name: ESP BE35C3
+  picture:
+  track: true
+
+med010:
+  hide_if_away: false
+  icon:
+  mac: B8:EE:65:5F:B2:61
+  name: MED010
+  picture:
+  track: true
+
+jakobs_iphone:
+  hide_if_away: false
+  icon:
+  mac: 6E:02:69:AA:CE:C2
+  name: Jakobs-iPhone
+  picture:
+  track: true
+
+esp_be35c3:
+  hide_if_away: false
+  icon:
+  mac: 2C:F4:32:BE:35:C3
+  name: ESP BE35C3
+  picture:
+  track: true
+
+chromecast:
+  hide_if_away: false
+  icon:
+  mac: D0:E7:82:F7:5A:B0
+  name: Chromecast
+  picture:
+  track: true
+
+volt:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:AE:06:F0
+  name: volt
+  picture:
+  track: true
+
+esp_1a4548:
+  hide_if_away: false
+  icon:
+  mac: F4:CF:A2:1A:45:48
+  name: ESP 1A4548
+  picture:
+  track: true
+
+espressif:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:A8:06:C0
+  name: espressif
+  picture:
+  track: true
+
+jans_zero:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:7A:1F:98
+  name: jans-zero
+  picture:
+  track: true
+
+mijia_altan:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:0B:8D:80
+  name: mijia altan
+  picture:
+  track: true
+
+kallare:
+  hide_if_away: false
+  icon:
+  mac: 68:C6:3A:D6:96:BA
+  name: kallare
+  picture:
+  track: true
+
+esp_8934dc:
+  hide_if_away: false
+  icon:
+  mac: D8:F1:5B:89:34:DC
+  name: ESP 8934DC
+  picture:
+  track: true
+
+sonoffbasic4_3028:
+  hide_if_away: false
+  icon:
+  mac: DC:4F:22:BF:AB:D4
+  name: SonoffBasic4-3028
+  picture:
+  track: true
+
+tasmotath16b_4150:
+  hide_if_away: false
+  icon:
+  mac: A4:CF:12:B5:B0:36
+  name: tasmotaTH16b-4150
+  picture:
+  track: true
+
+sonoffs26_0937:
+  hide_if_away: false
+  icon:
+  mac: CC:50:E3:15:43:A9
+  name: sonoffS26-0937
+  picture:
+  track: true
+
+yeelink_light_color2_miap152b:
+  hide_if_away: false
+  icon:
+  mac: 04:CF:8C:A0:15:2B
+  name: yeelink-light-color2 miap152b
+  picture:
+  track: true
+
+sonoffbasic_1523:
+  hide_if_away: false
+  icon:
+  mac: C4:4F:33:C1:A5:F3
+  name: sonoffbasic-1523
+  picture:
+  track: true
+
+tasmotapowr2_0659:
+  hide_if_away: false
+  icon:
+  mac: EC:FA:BC:50:82:93
+  name: tasmotaPOWR2-0659
+  picture:
+  track: true
+
+esp_83e137:
+  hide_if_away: false
+  icon:
+  mac: 84:0D:8E:83:E1:37
+  name: ESP 83E137
+  picture:
+  track: true
+
+android_fb076e124a83f2b1:
+  hide_if_away: false
+  icon:
+  mac: 1C:B0:94:A6:36:6D
+  name: android-fb076e124a83f2b1
+  picture:
+  track: true
+
+honor_9_5af5052c4cb36b96:
+  hide_if_away: false
+  icon:
+  mac: 70:8A:09:D8:D5:45
+  name: Honor 9-5af5052c4cb36b96
+  picture:
+  track: true
+
+android_57c72add50bdf4d6:
+  hide_if_away: false
+  icon:
+  mac: EC:9B:F3:4F:6D:C6
+  name: android-57c72add50bdf4d6
+  picture:
+  track: true
+
+med116:
+  hide_if_away: false
+  icon:
+  mac: 80:32:53:A5:A5:F0
+  name: MED116
+  picture:
+  track: true
+
+pelles_s20:
+  hide_if_away: false
+  icon:
+  mac: E6:BA:35:3D:BA:E3
+  name: Pelles-S20
+  picture:
+  track: true
+
+fias_ipad:
+  hide_if_away: false
+  icon:
+  mac: 1A:3D:25:8C:91:0C
+  name: Fias-iPad
+  picture:
+  track: true
+
+fias_s20:
+  hide_if_away: false
+  icon:
+  mac: 62:43:8D:7F:A8:48
+  name: Fias-S20
+  picture:
+  track: true
+
+android_7f30ee4fa95261d8:
+  hide_if_away: false
+  icon:
+  mac: 30:D6:C9:0C:23:74
+  name: android-7f30ee4fa95261d8
+  picture:
+  track: true
+
+b8_27_eb_50_0d_5b:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:50:0D:5B
+  name: b8 27 eb 50 0d 5b
+  picture:
+  track: true
+
+jakobs_iphone:
+  hide_if_away: false
+  icon:
+  mac: 6E:02:69:AA:CE:C2
+  name: Jakobs-iPhone
+  picture:
+  track: true
+
+78_ba_f9_79_11_a3:
+  hide_if_away: false
+  icon:
+  mac: 78:BA:F9:79:11:A3
+  name: 78 ba f9 79 11 a3
+  picture:
+  track: true
+
+pelles_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:CE:85:E5
+  name: Pelles-dator
+  picture:
+  track: true
+
+med010:
+  hide_if_away: false
+  icon:
+  mac: B8:EE:65:5F:B2:61
+  name: MED010
+  picture:
+  track: true
+
+ac_67_5d_2e_f1_da:
+  hide_if_away: false
+  icon:
+  mac: AC:67:5D:2E:F1:DA
+  name: ac 67 5d 2e f1 da
+  picture:
+  track: true
+
+john_iphone:
+  hide_if_away: false
+  icon:
+  mac: 96:FE:5D:F0:1B:7F
+  name: John--iPhone
+  picture:
+  track: true
+
+jennys_iphone:
+  hide_if_away: false
+  icon:
+  mac: 92:93:7D:FD:3F:38
+  name: Jennys-iPhone
+  picture:
+  track: true
+
+fias_dator:
+  hide_if_away: false
+  icon:
+  mac: D0:37:45:BC:43:EF
+  name: FIAS-DATOR
+  picture:
+  track: true
+
+samsung_galaxy_s7:
+  hide_if_away: false
+  icon:
+  mac: 2C:0E:3D:5E:63:BE
+  name: Samsung-Galaxy-S7
+  picture:
+  track: true
+
+jans_manjaro2:
+  hide_if_away: false
+  icon:
+  mac: 08:11:96:36:94:D0
+  name: jans-manjaro2
+  picture:
+  track: true
