@@ -123,6 +123,7 @@
       - climate.innetemp
       - climate.duschrum
       - group.temp_minmax
+      - group.soluppner
 
   lamps:
     name: Lysen
@@ -284,6 +285,12 @@
       - sensor.inne_temp_min
       - sensor.ute_temp_max
       - sensor.ute_temp_min
+
+  soluppner:
+    name: "Solen"
+    entities:
+      - sensor.nextsunrise
+      - sensor.nextsunset
 
   temp:
     name: "Temp"

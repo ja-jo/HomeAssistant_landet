@@ -232,6 +232,21 @@ sensor:
 
   - platform: template
     sensors:
+      nextsunrise:
+        entity_id: sun.sun
+        friendly_name: "Soluppg\u00E5ng"
+        value_template: >
+          {{ as_timestamp(states.sun.sun.attributes.next_rising) | timestamp_custom(' %H:%M') }}
+        icon_template: mdi:weather-sunset-up
+      nextsunset:
+        entity_id: sun.sun
+        friendly_name: "Solnedg\u00E5ng"
+        value_template: >
+          {{ as_timestamp(states.sun.sun.attributes.next_setting) | timestamp_custom(' %H:%M') }}
+        icon_template: mdi:weather-sunset-down
+
+  - platform: template
+    sensors:
       departuretime_ak:
         friendly_name: 'Timer 1'
         value_template: '{% if states.input_number.heater_ak_hour.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_hour.state|round(0)|string }}:{% if states.input_number.heater_ak_minutes.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.heater_ak_minutes.state|round(0)|string }}'
@@ -1077,3 +1092,6 @@ timer:
 #         - input_number.heater_ak_hour
 #
 
+# \u00E5 \u00E4 \u00F6 \u00C5 \u00C4 \u00D6
+# R\u00C4KSM\u00D6RG\u00C5S
+# r\u00E4ksm\u00F6rg\u00E5s
