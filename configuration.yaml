@@ -289,8 +289,8 @@ sensor:
     sensors:
       ispindlesg:
         friendly_name: "iSpindleJD SG"
-        value_template: "{{ ( 1 + states('sensor.ispindlejd_gravity')|float / ( 258.6 - 227.1 * states('sensor.ispindlejd_gravity')|float / 258.2 ) ) | round(3) }}"
-        #1+A16/(258,6-227,1*A16/258,2)
+        value_template: "{{ ( 1 + states('sensor.ispindlejd_gravity')|float / ( 258.6 - 227.1 * states('sensor.ispindlejd_gravity')|float / 258.2 ) ) | round(4) }}"
+        # Formel: 1+A16/(258,6-227,1*A16/258,2)
         unit_of_measurement: "SG"
     #icon: mdi:beer
     #expire_after: 36000 # 10 timmar
