@@ -5,7 +5,6 @@
       - switch.sonoffs26_power
       - switch.105460322cf432be35c3
       - switch.slampher_power
-      - switch.sonoffbasic5
       - switch.parkering
       - light.altanlampa
       - light.75287157d8f15b8934dc
@@ -40,7 +39,7 @@
   flaktelement:
     name: "Fl\u00E4ktelement"
     entities:
-      - switch.Nr6
+      - switch.sonoffbasic5
 
   toatank:
     name: "Toatank"
@@ -331,6 +330,10 @@
       - automation.pa15_om_under_0
       - automation.pa_16_om_under5
       - automation.vakt_for_altandorren
+      - automation.sla_av_element_gaststuga
+      - automation.varme_gaststuga
+      - automation.nattsankning_gaststuga_natt
+      - automation.nattsankning_gaststuga_dag
 
   altandorrvakt:
     name: "Vakt f\u00F6r altand\u00F6rr"
