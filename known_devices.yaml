@@ -1220,3 +1220,11 @@ laptop_8lnp08g9:
   name: 8c 85 90 8d e4 28
   picture:
   track: true
+
+a0_d3_c1_43_0c_c8:
+  hide_if_away: false
+  icon:
+  mac: A0:D3:C1:43:0C:C8
+  name: a0 d3 c1 43 0c c8
+  picture:
+  track: true

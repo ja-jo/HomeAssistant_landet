@@ -2,12 +2,13 @@
     name: Lysen
     entities:
       - switch.Kallardorr
-      - switch.sonoffs26_power
-      - switch.105460322cf432be35c3
       - switch.slampher_power
       - switch.parkering
       - light.altanlampa
+      - light.altanslinga
+      - light.garageslinga
       - light.75287157d8f15b8934dc
+      #- switch.105460322cf432be35c3
 
   parkering:
     name: Parkering
@@ -22,8 +23,8 @@
   varme:
     name: "V\u00E4rme"
     entities:
-      - switch.sonoffbasic4
-      - switch.sonoffth16b_power
+      - switch.sonoffbasic5
+      - switch.sonoffs26_power
 
   termostatelement:
     name: Termostatelement
@@ -39,7 +40,7 @@
   flaktelement:
     name: "Fl\u00E4ktelement"
     entities:
-      - switch.sonoffbasic5
+      - switch.sonoffbasic4
 
   toatank:
     name: "Toatank"

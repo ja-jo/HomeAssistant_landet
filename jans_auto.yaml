@@ -595,9 +595,6 @@
       - data:
           entity_id: group.termostatelement
         service: switch.turn_on
-      - data:
-          entity_id: switch.sonoffbasic_power
-        service: switch.turn_on
 
   - alias: Sla av termostatelement2
     trigger:

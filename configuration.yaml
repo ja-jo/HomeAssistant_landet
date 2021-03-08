@@ -856,8 +856,8 @@ script: !include scripts.yaml
 climate:
   - platform: generic_thermostat
     name: Innetemp
-    #heater: group.varme
-    heater: switch.sonoffbasic4
+    heater: group.varme
+    #heater: switch.sonoffbasic5
     target_sensor: sensor.inne_temp1
     #target_sensor: sensor.altandorr_temperature
     #target_temp: 4
@@ -967,7 +967,7 @@ input_number:
 
   heating_dag:
     name: Dag
-    initial: 21
+    #initial: 21
     min: 4
     max: 25
     step: 1
@@ -975,7 +975,7 @@ input_number:
 
   heating_natt:
     name: Natt
-    initial: 18
+    #initial: 18
     min: 4
     max: 25
     step: 1
@@ -1079,6 +1079,14 @@ history_graph:
 timer:
   duschtimer:
     duration: '01:00:00'
+
+light:
+  - platform: switch
+    name: Altanslinga
+    entity_id: switch.05301030f4cfa21a4548
+  - platform: switch
+    name: Garageslinga
+    entity_id: switch.105460322cf432be35c3
 
 # Sensor section
 #sensor:
