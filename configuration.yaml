@@ -106,9 +106,15 @@ yeelight:
       transition: 1000
       save_on_change: true
 
+notify:
+  - name: gmail_jan
+    platform: smtp
+    #sender: jan@jans-raspberrypi.dejemyr.se
+    sender: jan.dejemyr@gmail.com
+    recipient: jan.dejemyr@gmail.com
+    sender_name: Jans HomeAssistant
 
-# Anvand signal for meddelanden
-#notify:
+# signal for meddelanden
 #  - name: Jans-automat
 #    platform: signalmessenger
 #    sender_nr: "+46704842816"

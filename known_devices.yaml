@@ -1228,3 +1228,19 @@ a0_d3_c1_43_0c_c8:
   name: a0 d3 c1 43 0c c8
   picture:
   track: true
+
+fias_s20_2:
+  hide_if_away: false
+  icon:
+  mac: CE:C2:AB:CA:77:17
+  name: Fias-S20
+  picture:
+  track: true
+
+wlan0:
+  hide_if_away: false
+  icon:
+  mac: 84:E3:42:6B:E7:3C
+  name: wlan0
+  picture:
+  track: true
