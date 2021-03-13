@@ -316,6 +316,32 @@ sensor:
     #icon: mdi:beer
     #expire_after: 36000 # 10 timmar
 
+  - platform: filter
+    name: "SG filtrerad"
+    entity_id: sensor.ispindlesg
+    filters:
+      - filter: outlier
+        window_size: 4
+        radius: 2.0
+      - filter: lowpass
+        time_constant: 10
+      - filter: time_simple_moving_average
+        window_size: "00:05"
+        precision: 4
+
+  - platform: filter
+    name: "Tilt filtrerad"
+    entity_id: sensor.ispindlejd_tilt
+    filters:
+      - filter: outlier
+        window_size: 4
+        radius: 2.0
+      - filter: lowpass
+        time_constant: 10
+      - filter: time_simple_moving_average
+        window_size: "00:05"
+        precision: 4
+
   - platform: mqtt
     name: "iSpindleJD interval"
     state_topic: "ispindel/iSpindelJD/interval"
@@ -507,6 +533,28 @@ sensor:
   - platform: mqtt
     name: "Test volt3"
     state_topic: "homeassistant/volt3"
+  - platform: filter
+    name: "Volt1 filtrerad"
+    entity_id: sensor.volt1
+    filters:
+      - filter: time_simple_moving_average
+        window_size: "00:05"
+        precision: 2
+  - platform: filter
+    name: "Volt2 filtrerad"
+    entity_id: sensor.volt2
+    filters:
+      - filter: time_simple_moving_average
+        window_size: "00:05"
+        precision: 2
+  - platform: filter
+    name: "Volt3 filtrerad"
+    entity_id: sensor.volt3
+    filters:
+      - filter: time_simple_moving_average
+        window_size: "00:05"
+        precision: 2
+
 
   - platform: mqtt
     state_topic: 'homeassistant/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/582D3438050B' # MQTT topic, check MQTT messages; replace AA... with id (BLE MAC) of your device
@@ -1055,6 +1103,9 @@ history_graph:
       - sensor.volt1
       - sensor.volt2
       - sensor.volt3
+      - sensor.volt1_filtrerad
+      - sensor.volt2_filtrerad
+      - sensor.volt3_filtrerad
     hours_to_show: 24
     refresh: 60
 
@@ -1063,6 +1114,8 @@ history_graph:
     entities:
       - sensor.ispindlejd_tilt
       - sensor.ispindlesg
+      - sensor.tilt_filtrerad
+      - sensor.sg_filtrerad
       - sensor.ispindlejd_temp
       - sensor.ispindlejd_batteri
     hours_to_show: 48
@@ -1089,7 +1142,7 @@ timer:
 light:
   - platform: switch
     name: Altanslinga
-    entity_id: switch.05301030f4cfa21a4548
+    entity_id: switch.bf29d464aeb2f9199b7hqg_2
   - platform: switch
     name: Garageslinga
     entity_id: switch.105460322cf432be35c3

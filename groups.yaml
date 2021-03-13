@@ -30,7 +30,7 @@
     name: Termostatelement
     entities:
       - switch.Nr7
-      - switch.Nr4
+      - switch.bf29d464aeb2f9199b7hqg_1
       - switch.Nr5
       - switch.Nr8
       - switch.Nr9
@@ -166,6 +166,7 @@
     entities:
       - group.duschvarme
       - climate.duschrum
+      - group.toatank
 
   vader:
     name: "V\u00E4der"
@@ -225,8 +226,10 @@
     name: "iSpindleJD j\u00E4sm\u00E4tare"
     entities:
       - sensor.ispindlejd_tilt
+      - sensor.tilt_filtrerad
       - sensor.ispindlejd_gravity
       - sensor.ispindlesg
+      - sensor.sg_filtrerad
       - sensor.ispindlejd_temp
       - sensor.ispindlejd_batteri
       - sensor.ispindlejd_signal
@@ -241,6 +244,9 @@
       - sensor.volt1
       - sensor.volt2
       - sensor.volt3
+      - sensor.volt1_filtrerad
+      - sensor.volt2_filtrerad
+      - sensor.volt3_filtrerad
       - sensor.altan_temperatur
       - sensor.altan_fukt
       - sensor.altan_batteri
@@ -251,7 +257,6 @@
       - binary_sensor.altandorr
       - history_graph.voltgraf
       - group.testdeltaco
-      - group.toatank
       - sensor.badbatteri
       - sensor.badvattenvolt
 
