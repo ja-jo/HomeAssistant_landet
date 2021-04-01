@@ -1244,3 +1244,27 @@ wlan0:
   name: wlan0
   picture:
   track: true
+
+02_7a_af_5c_ee_78:
+  hide_if_away: false
+  icon:
+  mac: 02:7A:AF:5C:EE:78
+  name: 02 7a af 5c ee 78
+  picture:
+  track: true
+
+emils_iphone7_2:
+  hide_if_away: false
+  icon:
+  mac: 6A:F6:7C:DF:71:A9
+  name: Emils-iPhone7
+  picture:
+  track: true
+
+honor_9_4b8e6bda3092a7b7:
+  hide_if_away: false
+  icon:
+  mac: 04:4F:4C:AB:D8:20
+  name: Honor 9-4b8e6bda3092a7b7
+  picture:
+  track: true
