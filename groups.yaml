@@ -247,11 +247,9 @@
       - sensor.volt1_filtrerad
       - sensor.volt2_filtrerad
       - sensor.volt3_filtrerad
-      - sensor.altan_temperatur
-      - sensor.altan_fukt
-      - sensor.altan_batteri
-      - sensor.mijia2_temperatur
-      - sensor.mijia2_fukt
+      - sensor.mijia2_altan_temp
+      - sensor.mijia2_altan_fukt
+      - sensor.mijia2_altan_batteri
       - switch.Nr6
       - sensor.testlandet
       - binary_sensor.altandorr
@@ -272,7 +270,6 @@
       - input_number.heating_dag
       - input_number.heating_natt
       - input_boolean.nattsankning_switch
-      - input_boolean.nattsankning_gaststuga_switch
 
   duschvarme:
     name: "Duschv\u00E4rme"
@@ -315,7 +312,6 @@
       - sensor.mijia_altan_fukt
       - sensor.mijia_altan_batteri
 #      - sensor.mijia1_batteri
-      - sensor.altandorr_temperatur
       - sensor.dusch_temperatur
       - sensor.dusch_fukt
       - sensor.badvattentemp

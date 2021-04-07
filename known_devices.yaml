@@ -1268,3 +1268,51 @@ honor_9_4b8e6bda3092a7b7:
   name: Honor 9-4b8e6bda3092a7b7
   picture:
   track: true
+
+6a_14_53_6a_f8_4d:
+  hide_if_away: false
+  icon:
+  mac: 6A:14:53:6A:F8:4D
+  name: 6a 14 53 6a f8 4d
+  picture:
+  track: true
+
+anns_iphone:
+  hide_if_away: false
+  icon:
+  mac: 64:0B:D7:7D:91:7E
+  name: Anns-Iphone
+  picture:
+  track: true
+
+liz_iphone_11:
+  hide_if_away: false
+  icon:
+  mac: 6E:8D:DB:07:AC:67
+  name: Liz-iPhone-11
+  picture:
+  track: true
+
+michaels_iphone_2:
+  hide_if_away: false
+  icon:
+  mac: 9A:A8:1B:4E:70:A5
+  name: Michaels-iPhone
+  picture:
+  track: true
+
+calypsoiphone11:
+  hide_if_away: false
+  icon:
+  mac: 86:B1:7D:BF:E0:11
+  name: CalypsoiPhone11
+  picture:
+  track: true
+
+ullasipohansson:
+  hide_if_away: false
+  icon:
+  mac: BC:B8:63:66:E1:06
+  name: UllasiPohansson
+  picture:
+  track: true
