@@ -36,6 +36,27 @@
         data:
           entity_id: group.lampor
 
+  - alias: "On nar altandorren oppnas"
+    trigger:
+      entity_id: binary_sensor.altandorr
+      from: 'on'
+      platform: state
+      to: 'off'
+    condition:
+      - condition: or
+        conditions:
+          - condition: sun
+            after: sunset
+          - condition: sun
+            before: sunrise
+    action:
+      - service: switch.turn_on
+        data:
+          entity_id: group.lampor
+      - service: light.turn_on
+        data:
+          entity_id: group.lampor
+
   - alias: "Test pa"
     trigger:
       platform: state

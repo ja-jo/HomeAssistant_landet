@@ -241,9 +241,9 @@
     icon: mdi:car-battery
     view: yes
     entities:
-      - sensor.volt1
-      - sensor.volt2
-      - sensor.volt3
+      - sensor.volt1_2
+      - sensor.volt2_2
+      - sensor.volt3_2
       - sensor.volt1_filtrerad
       - sensor.volt2_filtrerad
       - sensor.volt3_filtrerad
