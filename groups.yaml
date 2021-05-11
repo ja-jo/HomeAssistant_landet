@@ -70,7 +70,6 @@
       - device_tracker.plkl01d618ed6d547a50a1
       - device_tracker.med010
       - device_tracker.janshp2
-      - device_tracker.nile_win10
 
   familjen:
     name: Familjen
@@ -91,8 +90,10 @@
       - device_tracker.galaxy_s20
       - device_tracker.galaxy_s20_2
       - device_tracker.galaxy_s20_5g
+      - device_tracker.fias_ipad_2
       - device_tracker.fias_ipad_3
       - device_tracker.fias_s20
+      - device_tracker.fias_s20_2
 
   mvak:
     name: "Stugtimer1"
