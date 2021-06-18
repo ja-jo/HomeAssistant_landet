@@ -1316,3 +1316,27 @@ ullasipohansson:
   name: UllasiPohansson
   picture:
   track: true
+
+noelsunlsiphone_3:
+  hide_if_away: false
+  icon:
+  mac: B2:EA:2C:AC:5A:A3
+  name: NoelSunlsiPhone
+  picture:
+  track: true
+
+ipad:
+  hide_if_away: false
+  icon:
+  mac: 52:4F:67:67:41:58
+  name: iPad
+  picture:
+  track: true
+
+jans_manjaro2:
+  hide_if_away: false
+  icon:
+  mac: 2C:76:8A:DA:6C:BF
+  name: jans-manjaro2
+  picture:
+  track: true

@@ -101,7 +101,7 @@ sun:
 # Example configuration.yaml entry
 yeelight:
   devices:
-    192.168.1.47:
+    192.168.1.48:
       name: Altanlampa
       transition: 1000
       save_on_change: true
@@ -323,11 +323,13 @@ sensor:
       - filter: outlier
         window_size: 4
         radius: 2.0
+        precision: 6
       - filter: lowpass
         time_constant: 10
+        precision: 6
       - filter: time_simple_moving_average
         window_size: "00:05"
-        precision: 4
+        precision: 6
 
   - platform: filter
     name: "Tilt filtrerad"
@@ -501,6 +503,46 @@ sensor:
     max_age:
       hours: 24
 
+  - platform: statistics
+    entity_id: sensor.vatterhaga_precipitation_amount
+    name: Regn stat
+
+  - platform: statistics
+    entity_id: sensor.vatterhaga_precipitation_amount
+    name: Vatterhaga regn dag
+    sampling_size: 1440
+    max_age:
+      hours: 24
+
+  - platform: statistics
+    entity_id: sensor.vatterhaga_precipitation_amount
+    name: Vatterhaga regn vecka
+    sampling_size: 10080
+    max_age:
+      hours: 168
+
+  - platform: statistics
+    entity_id: sensor.vatterhaga_precipitation_amount
+    name: Vatterhaga regn manad
+    sampling_size: 43200
+    max_age:
+      hours: 720
+
+  - platform: template
+    sensors:
+      vatterhaga_regn_dag_total:
+        friendly_name: "V\u00E4tterhaga regn dag total"
+        value_template: "{{ state_attr('sensor.vatterhaga_regn_dag', 'total') }}"
+        unit_of_measurement: 'mm'
+      vatterhaga_regn_vecka_total:
+        friendly_name: "V\u00E4tterhaga regn vecka total"
+        value_template: "{{ state_attr('sensor.vatterhaga_regn_vecka', 'total') }}"
+        unit_of_measurement: 'mm'
+      vatterhaga_regn_manad_total:
+        friendly_name: "V\u00E4tterhaga regn manad total"
+        value_template: "{{ state_attr('sensor.vatterhaga_regn_manad', 'total') }}"
+        unit_of_measurement: 'mm'
+
   - platform: template
     sensors:
       inne_temp_max:
@@ -535,26 +577,40 @@ sensor:
     state_topic: "homeassistant/volt3"
   - platform: filter
     name: "Volt1 filtrerad"
-    entity_id: sensor.volt1
+    entity_id: sensor.volt1_2
     filters:
+      - filter: outlier
+        window_size: 4
+        radius: 2.0
+      - filter: lowpass
+        time_constant: 10
       - filter: time_simple_moving_average
         window_size: "00:05"
         precision: 2
   - platform: filter
     name: "Volt2 filtrerad"
-    entity_id: sensor.volt2
+    entity_id: sensor.volt2_2
     filters:
+      - filter: outlier
+        window_size: 4
+        radius: 2.0
+      - filter: lowpass
+        time_constant: 10
       - filter: time_simple_moving_average
         window_size: "00:05"
         precision: 2
   - platform: filter
     name: "Volt3 filtrerad"
-    entity_id: sensor.volt3
+    entity_id: sensor.volt3_2
     filters:
+      - filter: outlier
+        window_size: 4
+        radius: 2.0
+      - filter: lowpass
+        time_constant: 10
       - filter: time_simple_moving_average
         window_size: "00:05"
         precision: 2
-
 
   - platform: mqtt
     state_topic: 'homeassistant/OpenMQTTGateway_ESP32_BLE/BTtoMQTT/582D3438050B' # MQTT topic, check MQTT messages; replace AA... with id (BLE MAC) of your device
@@ -1100,9 +1156,9 @@ history_graph:
   graphvolt:
     name: Voltgraf
     entities:
-      - sensor.volt1
-      - sensor.volt2
-      - sensor.volt3
+      - sensor.volt1_2
+      - sensor.volt2_2
+      - sensor.volt3_2
       - sensor.volt1_filtrerad
       - sensor.volt2_filtrerad
       - sensor.volt3_filtrerad

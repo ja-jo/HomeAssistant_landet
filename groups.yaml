@@ -177,6 +177,7 @@
       - group.ledinge
       - group.vatterhaga
       - group.brottby
+      - group.vatterhaga_stat
       - history_graph.vagmatare
 
   ledinge:
@@ -214,6 +215,13 @@
       - sensor.brottby_road_temperature
       - sensor.brottby_wind_direction
       - sensor.brottby_wind_direction_text
+
+  vatterhaga_stat:
+    name: "Statistik V\u00E4tterhaga"
+    entities:
+      - sensor.vatterhaga_regn_dag_total
+      - sensor.vatterhaga_regn_vecka_total
+      - sensor.vatterhaga_regn_manad_total
 
   ol:
     name: "\u00D6l"
