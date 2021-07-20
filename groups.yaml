@@ -256,8 +256,7 @@
       - sensor.volt1_filtrerad
       - sensor.volt2_filtrerad
       - sensor.volt3_filtrerad
-      - sensor.mijia2_altan_temp
-      - sensor.mijia2_altan_fukt
+      - sensor.mijia_altan_batteri
       - sensor.mijia2_altan_batteri
       - switch.Nr6
       - sensor.testlandet
@@ -319,7 +318,8 @@
 #      - sensor.inne_temp2_offset
       - sensor.mijia_altan_temp
       - sensor.mijia_altan_fukt
-      - sensor.mijia_altan_batteri
+      - sensor.mijia2_altan_temp
+      - sensor.mijia2_altan_fukt
 #      - sensor.mijia1_batteri
       - sensor.dusch_temperatur
       - sensor.dusch_fukt

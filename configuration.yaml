@@ -101,18 +101,21 @@ sun:
 # Example configuration.yaml entry
 yeelight:
   devices:
-    192.168.1.48:
+    192.168.1.47:
       name: Altanlampa
       transition: 1000
       save_on_change: true
 
+#notify_events:
+#  token: HQhtsEKwFbk-BQxfQRhYnt5IU7Lotedi
+
 notify:
-  - name: gmail_jan
+  - name: "gmail_jan"
     platform: smtp
     #sender: jan@jans-raspberrypi.dejemyr.se
-    sender: jan.dejemyr@gmail.com
-    recipient: jan.dejemyr@gmail.com
-    sender_name: Jans HomeAssistant
+    sender: "jan.dejemyr@gmail.com"
+    recipient: "jan.dejemyr@gmail.com"
+    sender_name: "Jans HomeAssistant"
 
 # signal for meddelanden
 #  - name: Jans-automat

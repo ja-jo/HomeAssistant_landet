@@ -139,8 +139,8 @@
   - alias: "Testmedd"
     trigger:
       - platform: time_pattern
-        hours: '14'
-        minutes: '10'
+        hours: '21'
+        minutes: '41'
         seconds: '00'
     action:
       - service: notify.gmail_jan

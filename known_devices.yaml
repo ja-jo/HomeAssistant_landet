@@ -1340,3 +1340,59 @@ jans_manjaro2:
   name: jans-manjaro2
   picture:
   track: true
+
+e2_e5_5a_76_39_66:
+  hide_if_away: false
+  icon:
+  mac: E2:E5:5A:76:39:66
+  name: e2 e5 5a 76 39 66
+  picture:
+  track: true
+
+rs_s20:
+  hide_if_away: false
+  icon:
+  mac: 42:B3:70:5B:93:60
+  name: Rs-S20
+  picture:
+  track: true
+
+goulos_mbp:
+  hide_if_away: false
+  icon:
+  mac: E4:CE:8F:0F:71:50
+  name: Goulos-MBP
+  picture:
+  track: true
+
+med116_2:
+  hide_if_away: false
+  icon:
+  mac: F8:75:A4:8A:5F:6E
+  name: MED116
+  picture:
+  track: true
+
+iphone_2_2:
+  hide_if_away: false
+  icon:
+  mac: 8E:5F:25:3F:FE:FB
+  name: iPhone-2
+  picture:
+  track: true
+
+calles_mobil:
+  hide_if_away: false
+  icon:
+  mac: 6E:61:18:B0:BB:E1
+  name: Calles-mobil
+  picture:
+  track: true
+
+laptop_f1nren7p:
+  hide_if_away: false
+  icon:
+  mac: DC:E9:94:7B:20:63
+  name: LAPTOP-F1NREN7P
+  picture:
+  track: true
