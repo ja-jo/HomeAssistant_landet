@@ -136,17 +136,27 @@
         data:
           entity_id: group.lampor
 
-  - alias: "Testmedd"
+  - alias: "Skicka gul lampa"
     trigger:
-      - platform: time_pattern
-        hours: '21'
-        minutes: '41'
-        seconds: '00'
+      - platform: state
+        entity_id: switch.gul_lampa
+        to: 'on'
     action:
-      - service: notify.gmail_jan
+      - service: mqtt.publish
         data:
-          title: "Testmail jan"
-          message: "Testmeddelande"
+          topic: homeassistant/mail
+          payload: "Gul lampa"
+
+  - alias: "Skicka rod lampa"
+    trigger:
+      - platform: state
+        entity_id: switch.rod_lampa
+        to: 'on'
+    action:
+      - service: mqtt.publish
+        data:
+          topic: homeassistant/mail
+          payload: "Rod lampa"
 
   # Test11
 #  - alias: "Test11"

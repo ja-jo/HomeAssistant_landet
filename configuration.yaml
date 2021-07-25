@@ -112,10 +112,13 @@ yeelight:
 notify:
   - name: "gmail_jan"
     platform: smtp
-    #sender: jan@jans-raspberrypi.dejemyr.se
-    sender: "jan.dejemyr@gmail.com"
+    encryption: none
+    port: 25
+    sender: "jan@jans-raspberrypi.dejemyr.se"
+    sender_name: "Jans HomeAssistant landet"
+    #sender: "jan.dejemyr@gmail.com"
     recipient: "jan.dejemyr@gmail.com"
-    sender_name: "Jans HomeAssistant"
+    debug: true
 
 # signal for meddelanden
 #  - name: Jans-automat
